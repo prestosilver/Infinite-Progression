@@ -1,0 +1,16 @@
+{
+    "name": "PyMods",
+    "rootNamespace": "PyMods",
+    "references": [
+        "GUID:3a8ffcc4b830f994f8f93d19b6a46b2c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

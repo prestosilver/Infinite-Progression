@@ -1,0 +1,18 @@
+{
+    "name": "IP.Game",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e9781d99c44ac074b96b96b9b48e2036",
+        "GUID:3a8ffcc4b830f994f8f93d19b6a46b2c",
+        "GUID:d9dfee0d7d886d384bd0cead233ffdd4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

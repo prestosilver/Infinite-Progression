@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="512mm"
+   height="512mm"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="icon.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   inkscape:export-filename="/home/john/doc/unity/IP/Assets/Art/icon.png"
+   inkscape:export-xdpi="25.4"
+   inkscape:export-ydpi="25.4">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient2922"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop2920" />
+    </linearGradient>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask3285">
+      <circle
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:17.0904;stroke-miterlimit:4;stroke-dasharray:none"
+         id="circle3287"
+         cx="256"
+         cy="256"
+         r="181" />
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask3289">
+      <circle
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:17.0904;stroke-miterlimit:4;stroke-dasharray:none"
+         id="circle3291"
+         cx="256"
+         cy="256"
+         r="181" />
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask3293">
+      <circle
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:17.0904;stroke-miterlimit:4;stroke-dasharray:none"
+         id="circle3295"
+         cx="256"
+         cy="256"
+         r="181" />
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask3297">
+      <circle
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:17.0904;stroke-miterlimit:4;stroke-dasharray:none"
+         id="circle3299"
+         cx="256"
+         cy="256"
+         r="181" />
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask3301">
+      <circle
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:17.0904;stroke-miterlimit:4;stroke-dasharray:none"
+         id="circle3303"
+         cx="256"
+         cy="256"
+         r="181" />
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask3305">
+      <circle
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:17.0904;stroke-miterlimit:4;stroke-dasharray:none"
+         id="circle3307"
+         cx="256"
+         cy="256"
+         r="181" />
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask3309">
+      <circle
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:17.0904;stroke-miterlimit:4;stroke-dasharray:none"
+         id="circle3311"
+         cx="256"
+         cy="256"
+         r="181" />
+    </mask>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.12652344"
+     inkscape:cx="298.27845"
+     inkscape:cy="1639.7458"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     width="512mm"
+     showborder="true"
+     inkscape:pagecheckerboard="true"
+     inkscape:window-width="1346"
+     inkscape:window-height="364"
+     inkscape:window-x="10"
+     inkscape:window-y="394"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#000000;stroke:#000000;stroke-width:14.7058"
+       id="rect41"
+       width="1009.2941"
+       height="485.29416"
+       x="-248.64709"
+       y="7.3529"
+       rx="24.06164"
+       ry="9.9438858"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <ellipse
+       style="fill:#000000;stroke:#000000;stroke-width:20;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path839"
+       cx="255.99998"
+       cy="256"
+       r="246"
+       mask="url(#mask3309)"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <rect
+       style="fill:#333333;stroke:#333333;stroke-width:19.9999;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect855"
+       width="392"
+       height="55.000099"
+       x="60"
+       y="60.000004"
+       rx="9.405715"
+       ry="3.9501395"
+       mask="url(#mask3305)"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <rect
+       style="fill:#333333;stroke:#333333;stroke-width:19.9999;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect855-6"
+       width="392"
+       height="55.000099"
+       x="59.99995"
+       y="154.99995"
+       rx="9.405715"
+       ry="3.9501395"
+       mask="url(#mask3301)"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <rect
+       style="fill:#333333;stroke:#333333;stroke-width:19.9999;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect855-6-3"
+       width="392"
+       height="55.000099"
+       x="58.724949"
+       y="421.99994"
+       rx="9.405715"
+       ry="3.9501398"
+       mask="url(#mask3297)"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <ellipse
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#333333;stroke-width:28.9322;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path3103-9"
+       cx="255.49998"
+       cy="364.14807"
+       rx="23.033884"
+       ry="23.033899"
+       mask="url(#mask3293)"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <ellipse
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#333333;stroke-width:28.9322;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path3103-9-1"
+       cx="255.99998"
+       cy="274.82251"
+       rx="23.033884"
+       ry="23.033899"
+       mask="url(#mask3289)"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:207.065px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.303318"
+       x="169.75668"
+       y="379.99371"
+       id="text3139"
+       mask="url(#mask3285)"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"><tspan
+         sodipodi:role="line"
+         id="tspan3137"
+         x="169.75668"
+         y="379.99371"
+         style="font-size:207.065px;fill:#ffffff;stroke-width:0.303318">∞</tspan></text>
+  </g>
+</svg>
