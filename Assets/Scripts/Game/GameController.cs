@@ -218,8 +218,6 @@ public class GameController : MonoBehaviour
         }
         if (id <= 2)
             type = 0;
-        if (id == 3)
-            type = 1;
         if (!gencont && type == 4)
             type = 2;
         GameObject slider = Instantiate(prefabs[type]);
@@ -283,6 +281,39 @@ public class GameController : MonoBehaviour
         Leaderboard();
         AddNext(slider_ammnt);
         Save();
+    }
+
+    public GameObject GetRandOf(string kind, int defaultId, int before)
+    {
+        GameObject result;
+        int rid = 0;
+        if (kind == "slider")
+        {
+            do
+            {
+                result = sliders[(int)(SeededRand.Perlin(100 * before + 1 + rid) * (before - 1))];
+                rid += 1;
+                if (rid > 100)
+                {
+                    result = sliders[defaultId];
+                    break;
+                }
+            } while (result.GetComponent<SliderController>() != null);
+        }
+        else
+        {
+            do
+            {
+                result = sliders[(int)(SeededRand.Perlin(100 * before + 1 + rid) * (before - 1))];
+                rid += 1;
+                if (rid > 100)
+                {
+                    result = sliders[defaultId];
+                    break;
+                }
+            } while (result.GetComponent<ModController>().mod.name != kind);
+        }
+        return result;
     }
 
     public virtual void Leaderboard()

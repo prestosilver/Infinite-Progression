@@ -6,14 +6,17 @@ using UnityEngine;
 public class SaveMenuController : MonoBehaviour
 {
     public GameObject itemPrefab;
+    public GameObject newPrefab;
     public Transform parentTransform;
+    public Transform canvas;
 
     // Start is called before the first frame update
     void Start()
     {
         List<Save> result = new List<Save>();
-        string SearchPath = Application.persistentDataPath + "/Saves/";
-        foreach (string dir in Directory.GetDirectories(SearchPath))
+        string searchPath = Application.persistentDataPath + "/Saves/";
+        if (!Directory.Exists(searchPath)) Directory.CreateDirectory(searchPath);
+        foreach (string dir in Directory.GetDirectories(searchPath))
         {
             if (File.Exists(dir + "/save.json"))
             {
@@ -25,9 +28,8 @@ public class SaveMenuController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Create()
     {
-
+        Instantiate(newPrefab, canvas);
     }
 }

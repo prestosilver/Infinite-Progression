@@ -888,11 +888,6 @@ MonoBehaviour:
   presBar: {fileID: 1635199543}
   prefabs:
   - {fileID: 8441206419659227168, guid: dba22010386538b4e883486535342e60, type: 3}
-  - {fileID: 8441206419659227168, guid: ccc33afb11b60154e9e8c344af1136b3, type: 3}
-  - {fileID: 8441206419659227168, guid: da503afbb78bf1b3bb02e1adf7310383, type: 3}
-  - {fileID: 8441206419659227168, guid: 01438e941ee9479cea99e6173e75adcd, type: 3}
-  - {fileID: 8441206419659227168, guid: cef68a04a82cda4b494dec17c342d42e, type: 3}
-  - {fileID: 8441206419659227168, guid: 6618f427a98964f42a8f7cb41db139dc, type: 3}
   sliders: []
   next_button: {fileID: 1710974121}
   pres_button: {fileID: 890763637}

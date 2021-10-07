@@ -79,10 +79,15 @@ namespace PyMods
             return data;
         }
 
-        public dynamic BulkTick(dynamic data, int ammnt)
+        public dynamic BulkTick(dynamic data, BigNumber ticks)
         {
-            data = scope.GetVariable<Func<object, object, object>>("BulkTick")(data, ammnt);
-            Debug.Log(engine.Operations.GetMember(data, "result"));
+            data = scope.GetVariable<Func<object, object, object>>("bulkTick")(data, ticks);
+            return data;
+        }
+
+        public dynamic GetVar(dynamic data, string name)
+        {
+            data = engine.Operations.GetMember(data, name);
             return data;
         }
 
@@ -95,12 +100,6 @@ namespace PyMods
         public dynamic createModule()
         {
             return scope.GetVariable<Func<object>>("createModule")();
-        }
-
-        public dynamic BulkTick(dynamic data, BigNumber ticks)
-        {
-            data = scope.GetVariable<Func<object, object, object>>("bulkTick")(data, ticks);
-            return data;
         }
     }
 }

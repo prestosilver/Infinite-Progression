@@ -1,0 +1,7 @@
+{
+  "name": "Discount Module",
+  "description": "Get Discounts on stuff",
+  "main_file": "main.py",
+  "ui_file": "ui.json",
+  "chance": 2
+}

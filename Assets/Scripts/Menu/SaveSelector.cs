@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using PyMods;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ public class SaveSelector : MonoBehaviour
     public void Load()
     {
         Saves.saveName = save.name;
+        GameController.mods = ModManager.instance.LoadMods(save.mods);
         SceneManager.LoadScene("MainGame");
     }
 

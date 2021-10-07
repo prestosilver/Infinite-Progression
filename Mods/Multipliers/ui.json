@@ -1,0 +1,28 @@
+{
+  "buttons": [
+    {
+      "x": 214,
+      "y": -3,
+      "w": 50,
+      "h": 25,
+      "onClick": ""
+    }
+  ],
+  "sliders": [],
+  "text": [
+    {
+      "x": 164,
+      "y": -3,
+      "w": 50,
+      "h": 25,
+      "dynamic_text": "discountText"
+    },
+    {
+      "x": 5,
+      "y": -3,
+      "w": 159,
+      "h": 25,
+      "dynamic_text": "nameText"
+    }
+  ]
+}

@@ -53,6 +53,10 @@ MonoBehaviour:
     type: 3}
   ButtonPrefab: {fileID: 433945244429323128, guid: 1fb8d4777a5d9ca0cac803a2a892c979,
     type: 3}
+  sliderPrefab: {fileID: 4040114443510533762, guid: d768525b3d1c8ec75b1c17ee95c4e965,
+    type: 3}
+  textPrefab: {fileID: 4040114443510533762, guid: 4dbd2799ca5caabdbb3fb4f35c623b28,
+    type: 3}
 --- !u!114 &4304472285093253621
 MonoBehaviour:
   m_ObjectHideFlags: 0

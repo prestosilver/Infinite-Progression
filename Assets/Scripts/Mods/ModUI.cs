@@ -9,14 +9,13 @@ namespace PyMods
     {
         public List<ModUIButton> buttons;
         public List<ModUISlider> sliders;
+        public List<ModUIText> text;
         public int height;
     }
 
     [Serializable]
     public class ModUIButton
     {
-        public string text;
-
         public int x;
         public int y;
         public int w;
@@ -28,13 +27,23 @@ namespace PyMods
     [Serializable]
     public class ModUISlider
     {
-        public string text;
-
         public int x;
         public int y;
         public int w;
         public int h;
 
-        public double progress;
+        public string variable;
+    }
+
+    [Serializable]
+    public class ModUIText
+    {
+        public int x;
+        public int y;
+        public int w;
+        public int h;
+
+        public string dynamic_text;
+        public string static_text;
     }
 }

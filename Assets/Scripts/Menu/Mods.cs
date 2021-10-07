@@ -27,11 +27,6 @@ public class Mods : MonoBehaviour
     public ModItem modItemPrefab;
 
     /// <summary>
-    /// Button that will start loading enabled mods
-    /// </summary>
-    public Button loadButton;
-
-    /// <summary>
     /// Are the enabled mods loaded?
     /// </summary>
     private bool isLoaded;
@@ -110,8 +105,6 @@ public class Mods : MonoBehaviour
 
         SetTogglesInteractable(false);
 
-        loadButton.GetComponentInChildren<Text>().text = "U N L O A D";
-
         isLoaded = true;
     }
 
@@ -125,8 +118,6 @@ public class Mods : MonoBehaviour
         GameController.mods = new List<Mod>();
 
         SetTogglesInteractable(true);
-
-        loadButton.GetComponentInChildren<Text>().text = "L O A D";
 
         isLoaded = false;
     }
@@ -150,6 +141,12 @@ public class Mods : MonoBehaviour
     public void Play()
     {
         Load();
+        NamePick.modPickSave.mods = new List<string>();
+        foreach (Mod mod in modItems.Keys)
+        {
+            NamePick.modPickSave.mods.Add(mod.name);
+        }
+        NamePick.modPickSave.Create();
         SceneManager.LoadScene("MainGame");
     }
 }
