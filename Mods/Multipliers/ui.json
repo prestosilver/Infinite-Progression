@@ -1,11 +1,20 @@
 {
   "buttons": [
     {
+      "x": 164,
+      "y": -3,
+      "w": 50,
+      "h": 25,
+      "onClick": "upgradeClick",
+      "enable": "upgradeAvail"
+    },
+    {
       "x": 214,
       "y": -3,
       "w": 50,
       "h": 25,
-      "onClick": ""
+      "onClick": "betterUpgradeClick",
+      "enable": "betterUpgradeAvail"
     }
   ],
   "sliders": [],
@@ -15,7 +24,14 @@
       "y": -3,
       "w": 50,
       "h": 25,
-      "dynamic_text": "discountText"
+      "static_text": "X"
+    },
+    {
+      "x": 214,
+      "y": -3,
+      "w": 50,
+      "h": 25,
+      "static_text": "XX"
     },
     {
       "x": 5,

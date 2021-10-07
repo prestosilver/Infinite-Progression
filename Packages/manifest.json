@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "com.github.superunitybuild.buildactions": "git@github.com:superunitybuild/buildactions.git",
+    "com.github.superunitybuild.buildtool": "git@github.com:superunitybuild/buildtool.git",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.collab-proxy": "1.9.0",
     "com.unity.ide.rider": "2.0.7",

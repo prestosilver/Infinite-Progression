@@ -1,7 +1,7 @@
 {
-  "name": "Discount Module",
-  "description": "Get Discounts on stuff",
+  "name": "Multiplier Modules",
+  "description": "Multiplies currency gain at the cost of another currency",
   "main_file": "main.py",
   "ui_file": "ui.json",
-  "chance": 2
+  "chance": 60
 }
