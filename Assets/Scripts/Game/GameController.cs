@@ -8,6 +8,9 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    public static GameController instance;
+    void Awake() => instance = this;
+
     public GameObject parent, more_button_text, confirmPrefab, conf;
     public Text presText, TpsText;
     public Slider presBar;
@@ -89,7 +92,7 @@ public class GameController : MonoBehaviour
     {
         int num = (int)(Mathf.Round(SeededRand.Perlin(100 * id) * (sum)));
         int type = 0;
-        if (id <= 3)
+        if (id <= 2)
         {
             AddType(id, type);
             return;
@@ -283,7 +286,7 @@ public class GameController : MonoBehaviour
         Save();
     }
 
-    public GameObject GetRandOf(string kind, int defaultId, int before)
+    public static GenericController GetRandOf(string kind, int defaultId, int before)
     {
         GameObject result;
         int rid = 0;
@@ -291,11 +294,11 @@ public class GameController : MonoBehaviour
         {
             do
             {
-                result = sliders[(int)(SeededRand.Perlin(100 * before + 1 + rid) * (before - 1))];
+                result = instance.sliders[(int)(SeededRand.Perlin(100 * before + 1 + rid) * (before - 1))];
                 rid += 1;
                 if (rid > 100)
                 {
-                    result = sliders[defaultId];
+                    result = instance.sliders[defaultId];
                     break;
                 }
             } while (result.GetComponent<SliderController>() != null);
@@ -304,16 +307,16 @@ public class GameController : MonoBehaviour
         {
             do
             {
-                result = sliders[(int)(SeededRand.Perlin(100 * before + 1 + rid) * (before - 1))];
+                result = instance.sliders[(int)(SeededRand.Perlin(100 * before + 1 + rid) * (before - 1))];
                 rid += 1;
                 if (rid > 100)
                 {
-                    result = sliders[defaultId];
+                    result = instance.sliders[defaultId];
                     break;
                 }
             } while (result.GetComponent<ModController>().mod.name != kind);
         }
-        return result;
+        return result.GetComponent<GenericController>();
     }
 
     public virtual void Leaderboard()
@@ -367,4 +370,10 @@ public class GameController : MonoBehaviour
         Save();
         SceneManager.LoadScene("AutoBuyers", LoadSceneMode.Additive);
     }
+
+    public static SliderController GetSlider(int id)
+    {
+        return instance.sliders[id].GetComponent<SliderController>();
+    }
+
 }
