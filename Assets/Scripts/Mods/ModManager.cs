@@ -14,12 +14,16 @@ namespace PyMods
         public List<Mod> GetModList()
         {
             List<Mod> result = new List<Mod>();
-            string SearchPath = Application.persistentDataPath + "/Mods";
-            foreach (string dir in Directory.GetDirectories(SearchPath))
+            string[] SearchPath = { Application.persistentDataPath + "/Mods", Application.dataPath + "/../Mods" };
+            foreach (string path in SearchPath)
             {
-                if (File.Exists(dir + "/info.json"))
+                if (!Directory.Exists(path)) continue;
+                foreach (string dir in Directory.GetDirectories(path))
                 {
-                    result.Add(new Mod(dir));
+                    if (File.Exists(dir + "/info.json"))
+                    {
+                        result.Add(new Mod(dir));
+                    }
                 }
             }
             return result;
