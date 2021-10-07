@@ -22,6 +22,7 @@ namespace PyMods
         public int h;
 
         public string onClick;
+        public string enable;
     }
 
     [Serializable]

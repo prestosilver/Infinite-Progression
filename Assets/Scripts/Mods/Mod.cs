@@ -91,15 +91,21 @@ namespace PyMods
             return data;
         }
 
+        public dynamic GetFunc(dynamic data, string name)
+        {
+            data = scope.GetVariable<Func<object, object>>(name)(data);
+            return data;
+        }
+
         public dynamic onClick(dynamic data, string button)
         {
             data = scope.GetVariable<Func<object, object>>(button)(data);
             return data;
         }
 
-        public dynamic createModule()
+        public dynamic createModule(int id)
         {
-            return scope.GetVariable<Func<object>>("createModule")();
+            return scope.GetVariable<Func<object, object>>("createModule")(id);
         }
     }
 }

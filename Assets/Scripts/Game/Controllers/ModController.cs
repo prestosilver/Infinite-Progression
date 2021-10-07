@@ -15,12 +15,14 @@ public class ModController : GenericController
 
     private Dictionary<Slider, string> sliders;
     private Dictionary<Text, string> dyntext;
+    private Dictionary<Button, string> btns;
     private dynamic data;
 
     public GameObject ConstructUI(ModUI ui)
     {
         sliders = new Dictionary<Slider, string>();
         dyntext = new Dictionary<Text, string>();
+        btns = new Dictionary<Button, string>();
         GameObject result = Instantiate(panelPrefab, transform);
 
         foreach (ModUIButton btn in ui.buttons)
@@ -29,6 +31,7 @@ public class ModController : GenericController
             button.GetComponent<RectTransform>().anchoredPosition = new Vector2(btn.x, btn.y);
             button.GetComponent<RectTransform>().sizeDelta = new Vector2(btn.w, btn.h);
             button.GetComponent<Button>().onClick.AddListener(() => mod.onClick(data, btn.onClick));
+            btns.Add(button.GetComponent<Button>(), btn.enable);
         }
 
         foreach (ModUISlider sl in ui.sliders)
@@ -44,7 +47,7 @@ public class ModController : GenericController
             GameObject slider = Instantiate(textPrefab, result.transform);
             slider.GetComponent<RectTransform>().anchoredPosition = new Vector2(txt.x, txt.y);
             slider.GetComponent<RectTransform>().sizeDelta = new Vector2(txt.w, txt.h);
-            if (txt.dynamic_text != "")
+            if (txt.dynamic_text != null)
                 dyntext.Add(slider.GetComponent<Text>(), txt.dynamic_text);
             else
                 slider.GetComponent<Text>().text = txt.static_text;
@@ -56,7 +59,7 @@ public class ModController : GenericController
     public override void SetupVars(int id, List<GameObject> sliders)
     {
         panel = ConstructUI(mod.UI);
-        data = mod.createModule();
+        data = mod.createModule(id);
     }
 
     public override bool BulkTick(BigNumber ticks)
@@ -75,6 +78,11 @@ public class ModController : GenericController
         foreach (Text textf in dyntext.Keys)
         {
             textf.text = mod.GetVar(data, dyntext[textf]);
+        }
+
+        foreach (Button btn in btns.Keys)
+        {
+            btn.interactable = mod.GetFunc(data, btns[btn]);
         }
     }
 }
