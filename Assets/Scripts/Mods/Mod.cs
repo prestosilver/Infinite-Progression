@@ -15,6 +15,7 @@ namespace PyMods
         public string description;
         public string main_file;
         public string ui_file;
+        public List<string> requires;
         public int chance;
     }
 
@@ -24,7 +25,7 @@ namespace PyMods
         public string mainFile;
         public string infoFile;
         public string uiFile;
-
+        public List<string> requires;
 
         public string description;
         public ModUI UI;
@@ -47,16 +48,14 @@ namespace PyMods
             UI = JsonUtility.FromJson<ModUI>(File.ReadAllText(uiFile));
 
             description = info.description;
+            requires = info.requires;
             chance = info.chance;
 
             isEnabled = false;
 
             engine = Python.CreateEngine();
-
             scope = engine.CreateScope();
-
             source = engine.CreateScriptSourceFromFile(mainFile);
-
             source.Execute(scope);
         }
 
@@ -106,6 +105,18 @@ namespace PyMods
         public dynamic createModule(int id)
         {
             return scope.GetVariable<Func<object, object>>("createModule")(id);
+        }
+
+        public dynamic LoadSave(string save, int id)
+        {
+            dynamic data = scope.GetVariable<Func<object, object, object>>("loadSave")(save, id);
+            return data;
+        }
+
+        public dynamic saveData(dynamic data)
+        {
+            data = scope.GetVariable<Func<object, object>>("saveData")(data);
+            return data;
         }
     }
 }

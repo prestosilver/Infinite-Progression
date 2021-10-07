@@ -46,46 +46,44 @@ public class GameController : MonoBehaviour
             Debug.Log("" + m.name + ": " + m.chance);
             sum += m.chance;
         }
-        byte[] save = Saves.Load();
-        slider_ammnt = (int)Saves.FindInt(save, 0);
-        presLevel = (int)Saves.FindInt(save, 4);
-        SeededRand.seed = (int)Saves.FindInt(save, 8);
-        seeded = Saves.FindBool(save, 12);
-        ver = Saves.FindVer(save);
-        int head = Saves.GetHeadSize(save);
-        for (int i = 1; i < slider_ammnt + 1; i++)
+        List<string> save = Saves.Read();
+        if (save.Count > 0)
         {
-            if (ver <= 1)
+            string[] misc = save[0].Split(';');
+            presLevel = int.Parse(misc[0]);
+            int modid = 1;
+            foreach (string line in save.GetRange(1, save.Count - 1))
             {
-                AddNext(i);
+                if (line.Split(';')[0] == "slider")
+                    AddType(modid, 0);
+                else
+                {
+                    int i = 0;
+                    foreach (Mod m in mods)
+                    {
+                        if (m.name == line.Split(';')[0])
+                        {
+                            AddMod(modid, i);
+                        }
+                        i++;
+                    }
+                }
+                sliders[modid - 1].GetComponent<GenericController>().LoadSave(line.Split(';')[1]);
+                modid++;
             }
-            else
-            {
-                AddType(i, Saves.FindInt(save, head + ((i - 1) * Saves.singleObjectSize)));
-            }
+            slider_ammnt = sliders.Count;
+            ConsistantTPS.tps = new BigNumber(120);
+            ConsistantTPS.tps.mantissa = float.Parse(misc[1]);
+            ConsistantTPS.tps.exponent_little = int.Parse(misc[2]);
+            ConsistantTPS.tps.exponent_big = int.Parse(misc[3]);
+            BigNumber n = new BigNumber(presLevel);
+            ConsistantTPS.tps = 120 * ((n * (n + 1) * (2 * n + 1) / 6) + 1);
+            presText.text = "" + slider_ammnt + "/" + (10 * (presLevel + 1));
         }
-        int j = 0;
-        foreach (GameObject slider in sliders)
+        else
         {
-            slider.GetComponent<GenericController>().LoadSave(Saves.FindObject(save, head + (j * Saves.singleObjectSize)));
-            if (slider.GetComponent<AutoController>() != null)
-            {
-                AutoController ac = slider.GetComponent<AutoController>();
-                ac.level = Saves.FindInt(save, head + 36 + (j * Saves.singleObjectSize));
-                ac.active = Saves.FindBool(save, head + 40 + (j * Saves.singleObjectSize));
-            }
-            j++;
+            ConsistantTPS.tps = new BigNumber(120);
         }
-        ConsistantTPS.tps = new BigNumber(120);
-        if (ver >= 3)
-        {
-            ConsistantTPS.tps.mantissa = Saves.FindFloat(save, 16);
-            ConsistantTPS.tps.exponent_little = Saves.FindInt(save, 20);
-            ConsistantTPS.tps.exponent_big = Saves.FindInt(save, 24);
-        }
-        BigNumber n = new BigNumber(presLevel);
-        ConsistantTPS.tps = 120 * ((n * (n + 1) * (2 * n + 1) / 6) + 1);
-        presText.text = "" + slider_ammnt + "/" + (10 * (presLevel + 1));
     }
 
     public virtual void AddNext(int id)
@@ -130,18 +128,10 @@ public class GameController : MonoBehaviour
             {
                 g.GetComponent<SliderController>().next_button = null;
             }
-            else if (g.GetComponent<LockController>() != null)
-            {
-                g.GetComponent<LockController>().next_button = null;
-            }
-            else if (g.GetComponent<GeneratorController>() != null)
-            {
-                gencont = true;
-                gen = tmpid;
-            }
             tmpid++;
         }
         GameObject slider = Instantiate(modPrefab);
+        slider.GetComponent<ModController>().id = id;
         slider.GetComponent<ModController>().mod = mods[type];
         GenericController cont = (GenericController)slider.GetComponents(typeof(GenericController))[0];
         GameObject nprev = null;
@@ -170,7 +160,7 @@ public class GameController : MonoBehaviour
                 prev = g;
                 cost_mul = 0;
             }
-            if (g.GetComponent<SliderController>() != null || g.GetComponent<LockController>() != null || g.GetComponent<InsaneLockController>() != null)
+            if (g.GetComponent<SliderController>() != null)
             {
                 last = g;
             }
@@ -184,13 +174,6 @@ public class GameController : MonoBehaviour
             more_button_text.GetComponent<Text>().text += last.GetComponent<SliderController>().textName;
             last.GetComponent<SliderController>().price = Mathf.Max(cost_mul * 10000, 5000);
             last.GetComponent<SliderController>().next_button = next_button;
-        }
-        else if (last.GetComponent<LockController>() != null)
-        {
-            more_button_text.GetComponent<Text>().text = "Unlock Next";
-            more_button_text.GetComponent<Text>().text += " - Lock ";
-            more_button_text.GetComponent<Text>().text += last.GetComponent<LockController>().price;
-            last.GetComponent<LockController>().next_button = next_button;
         }
         var rectTransform = parent.GetComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, 110 + (30 * (rows)));
@@ -207,15 +190,6 @@ public class GameController : MonoBehaviour
             if (g.GetComponent<SliderController>() != null)
             {
                 g.GetComponent<SliderController>().next_button = null;
-            }
-            else if (g.GetComponent<LockController>() != null)
-            {
-                g.GetComponent<LockController>().next_button = null;
-            }
-            else if (g.GetComponent<GeneratorController>() != null)
-            {
-                gencont = true;
-                gen = tmpid;
             }
             tmpid++;
         }
@@ -251,7 +225,7 @@ public class GameController : MonoBehaviour
                 prev = g;
                 cost_mul = 0;
             }
-            if (g.GetComponent<SliderController>() != null || g.GetComponent<LockController>() != null || g.GetComponent<InsaneLockController>() != null)
+            if (g.GetComponent<SliderController>() != null)
             {
                 last = g;
             }
@@ -265,13 +239,6 @@ public class GameController : MonoBehaviour
             more_button_text.GetComponent<Text>().text += last.GetComponent<SliderController>().textName;
             last.GetComponent<SliderController>().price = Mathf.Max(cost_mul * 10000, 5000);
             last.GetComponent<SliderController>().next_button = next_button;
-        }
-        else if (last.GetComponent<LockController>() != null)
-        {
-            more_button_text.GetComponent<Text>().text = "Unlock Next";
-            more_button_text.GetComponent<Text>().text += " - Lock ";
-            more_button_text.GetComponent<Text>().text += last.GetComponent<LockController>().price;
-            last.GetComponent<LockController>().next_button = next_button;
         }
         var rectTransform = parent.GetComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, 110 + (30 * (rows)));
@@ -294,20 +261,20 @@ public class GameController : MonoBehaviour
         {
             do
             {
-                result = instance.sliders[(int)(SeededRand.Perlin(100 * before + 1 + rid) * (before - 1))];
+                result = instance.sliders[(int)(SeededRand.Perlin(100 * before + 100 * defaultId + 1 + rid) * (before - 1))];
                 rid += 1;
                 if (rid > 100)
                 {
                     result = instance.sliders[defaultId];
                     break;
                 }
-            } while (result.GetComponent<SliderController>() != null);
+            } while (result.GetComponent<SliderController>() == null);
         }
         else
         {
             do
             {
-                result = instance.sliders[(int)(SeededRand.Perlin(100 * before + 1 + rid) * (before - 1))];
+                result = instance.sliders[(int)(SeededRand.Perlin(100 * before + 100 * defaultId + 1 + rid) * (before - 1))];
                 rid += 1;
                 if (rid > 100)
                 {
@@ -355,8 +322,7 @@ public class GameController : MonoBehaviour
     public void Save()
     {
         SaveThing();
-        byte[] save = Saves.SlidersToByteArray(sliders, slider_ammnt, presLevel, SeededRand.seed, seeded);
-        Saves.Save(save);
+        Saves.Save();
     }
 
     public void Home()

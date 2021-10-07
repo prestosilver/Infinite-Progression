@@ -7,13 +7,9 @@ import SeededRand
 import GameController
 
 class Data:
-    def __init__(self):
-        self.level = 0
-        self.nameText = "/M"
-        GameController.GetRandOf("slider")
-
-    def updateProgress(self):
-        self.discountText = str(self.amount.mantissa)
+    def __init__(self, id):
+        self.id = id
+        self.discounts = GameController.GetRandOf("",)
 
 def onLoad():
     return  "Success Loading"
@@ -21,28 +17,26 @@ def onLoad():
 def onUnload():
     return "Success Unloading"
 
-def createModule():
-    data = Data()
-    data.result = "Created InsaneLock"
-    data.updateProgress()
+def createModule(id):
+    data.result = "Created Template"
     return data
 
 def tick(data):
-    data.amount += 1
-    data.updateProgress()
     return data
 
 def bulkTick(data, amount):
-    data.amount += amount
-    data.updateProgress()
     return data
 
 def destroyModule(data):
-    data.result = "Success Unloading"
-    data.updateProgress()
     return data
 
-def resetClick(data):
-    data.amount = 0
-    data.updateProgress()
+def prestige(data):
+    pass
+
+def loadSave(save, id):
+    data = createModule(id)
     return data
+
+def saveData(data):
+    result = ""
+    return result

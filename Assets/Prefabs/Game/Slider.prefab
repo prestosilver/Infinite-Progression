@@ -1080,7 +1080,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6485838689732317087}
   - component: {fileID: 3749667632728602361}
-  - component: {fileID: 109471205820775171}
   - component: {fileID: 5094117656245358462}
   - component: {fileID: 6057335453027572259}
   m_Layer: 0
@@ -1146,23 +1145,6 @@ MonoBehaviour:
     exponent_big: 0
     mantissa: 0
     inverse: 0
---- !u!114 &109471205820775171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8441206419659227168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1675c232c70856f4aa1b310c2ecf06a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 0
-  type: 0
-  vis: {fileID: 0}
-  btns: []
-  active: 0
 --- !u!114 &5094117656245358462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1187,4 +1169,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573937adee650ae5da35e115acb20e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chance: 25
+  chance: 10

@@ -18,16 +18,31 @@ public class SliderController : GenericController
     public bool is_first = true;
     public BigNumber value = new BigNumber(0);
 
-    public override void LoadSave(byte[] objSave)
+    public override void LoadSave(string save)
     {
-        mult = Saves.FindInt(objSave, 4);
-        increase = Saves.FindFloat(objSave, 8);
-        max.mantissa = Saves.FindFloat(objSave, 12);
-        max.exponent_big = Saves.FindInt(objSave, 16);
-        max.exponent_little = Saves.FindInt(objSave, 20);
-        value.mantissa = Saves.FindFloat(objSave, 24);
-        value.exponent_big = Saves.FindInt(objSave, 28);
-        value.exponent_little = Saves.FindInt(objSave, 32);
+        string[] data = save.Split(',');
+        mult = int.Parse(data[0]);
+        increase = float.Parse(data[1]);
+        max.mantissa = float.Parse(data[2]);
+        max.exponent_big = int.Parse(data[3]);
+        max.exponent_little = int.Parse(data[4]);
+        value.mantissa = float.Parse(data[5]);
+        value.exponent_big = int.Parse(data[6]);
+        value.exponent_little = int.Parse(data[7]);
+    }
+
+    public override string saveData()
+    {
+        string data = "";
+        data += $"{mult},";
+        data += $"{increase},";
+        data += $"{max.mantissa},";
+        data += $"{max.exponent_big},";
+        data += $"{max.exponent_little},";
+        data += $"{value.mantissa},";
+        data += $"{value.exponent_big},";
+        data += $"{value.exponent_little}";
+        return data;
     }
 
     public override void SetupVars(int id, List<GameObject> sliders)
@@ -109,7 +124,6 @@ public class SliderController : GenericController
         {
             Destroy(plus_button);
             Destroy(auto_button);
-            gameObject.GetComponent<AutoController>().BtnsUpdate();
         }
         textName = name;
     }
@@ -179,4 +193,5 @@ public class SliderController : GenericController
     {
         return (int)Mathf.Floor(id * max.exponent_little * 2);
     }
+    public override string typeName => "slider";
 }

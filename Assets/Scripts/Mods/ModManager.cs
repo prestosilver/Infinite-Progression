@@ -29,8 +29,9 @@ namespace PyMods
             return result;
         }
 
-        public List<Mod> LoadMods(List<string> ToLoad)
+        public List<Mod> LoadMods(List<string> ToLoad, int stage = 0)
         {
+            if (stage > 5) return new List<Mod>();
             List<Mod> mods = GetModList();
             List<Mod> result = new List<Mod>();
 
@@ -40,6 +41,7 @@ namespace PyMods
                 {
                     result.Add(mod);
                     mod.Load();
+                    result.AddRange(LoadMods(mod.requires, stage + 1));
                 }
             }
 

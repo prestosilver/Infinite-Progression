@@ -1,7 +1,8 @@
 {
-  "name": "Discount Module",
-  "description": "Get Discounts on stuff",
+  "name": "Discount Modules",
+  "description": "Discounts for multipliers",
   "main_file": "main.py",
   "ui_file": "ui.json",
-  "chance": 2
+  "requires": ["Multiplier Modules"],
+  "chance": 0
 }

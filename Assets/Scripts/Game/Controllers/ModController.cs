@@ -85,4 +85,11 @@ public class ModController : GenericController
             btn.interactable = mod.GetFunc(data, btns[btn]);
         }
     }
+    public override string typeName => mod.name;
+
+    public override void LoadSave(string save)
+    {
+        data = mod.LoadSave(save, id);
+    }
+    public override string saveData() => mod.saveData(data);
 }

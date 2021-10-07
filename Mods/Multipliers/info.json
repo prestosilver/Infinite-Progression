@@ -3,5 +3,6 @@
   "description": "Multiplies currency gain at the cost of another currency",
   "main_file": "main.py",
   "ui_file": "ui.json",
-  "chance": 60
+  "requires": [],
+  "chance": 6
 }

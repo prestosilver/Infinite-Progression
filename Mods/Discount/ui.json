@@ -5,7 +5,8 @@
       "y": -3,
       "w": 50,
       "h": 25,
-      "onClick": ""
+      "onClick": "upgradeClick",
+      "enable": "upgradeAvail"
     }
   ],
   "sliders": [],

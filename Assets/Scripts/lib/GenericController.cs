@@ -55,7 +55,9 @@ public class GenericController : MonoBehaviour
         return Val();
     }
 
-    public virtual void LoadSave(byte[] objSave) { }
+    public virtual string typeName => "";
+    public virtual string saveData() => "";
+    public virtual void LoadSave(string save) { }
     public virtual void Start() { }
     public virtual bool BulkTick(BigNumber ticks) { return false; }
     public virtual void Tick() { }

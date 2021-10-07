@@ -61,13 +61,13 @@ public class MenuController : MonoBehaviour
 
     public void StartNewGame()
     {
-        Saves.Reset();
+        // Saves.Reset();
         ContinueGame();
     }
 
     public void Donate()
     {
-        Application.OpenURL("https://ko-fi.com/bob16795");
+        Application.OpenURL("https://ko-fi.com/prestosilver");
     }
 
     public void Discord()
@@ -75,8 +75,18 @@ public class MenuController : MonoBehaviour
         Application.OpenURL("https://discord.gg/vrVVXktmfV");
     }
 
+    public void Clone()
+    {
+        Application.OpenURL("https://github.com/bob16795/IP-Mod-Template/generate");
+    }
+
     public void ShowLeaderboards()
     {
         PlayGamesScript.ShowLeaderboardsUI();
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
