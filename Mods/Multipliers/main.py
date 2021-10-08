@@ -66,9 +66,9 @@ def betterUpgradeAvail(data):
 def buyDiscount(data):
     data.discount *= 0.9
     
-def prestige(data):
-    data.level = 0
+def onPrestige(data):
     data.discount = 1
+    data.level = 0
 
 def loadSave(save, id):
     data = createModule(id)

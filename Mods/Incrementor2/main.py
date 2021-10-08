@@ -44,8 +44,10 @@ def bulkTick(data, amount):
 def destroyModule(data):
     return data
 
-def prestige(data):
-    pass
+def onPrestige(data):
+    data.goal = 1000.0
+    data.current = BigNumber(0)
+    return data
 
 def loadSave(save, id):
     data = createModule(id)

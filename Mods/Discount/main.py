@@ -26,7 +26,7 @@ def bulkTick(data, amount):
 def destroyModule(data):
     return data
 
-def prestige(data):
+def onPrestige(data):
     pass
 
 def loadSave(save, id):
