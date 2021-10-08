@@ -27,7 +27,7 @@ def destroyModule(data):
     return data
 
 def onPrestige(data):
-    pass
+    return data
 
 def loadSave(save, id):
     data = createModule(id)

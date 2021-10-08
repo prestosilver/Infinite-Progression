@@ -69,6 +69,7 @@ def buyDiscount(data):
 def onPrestige(data):
     data.discount = 1
     data.level = 0
+    return data
 
 def loadSave(save, id):
     data = createModule(id)
