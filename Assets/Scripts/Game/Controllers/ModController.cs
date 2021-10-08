@@ -16,7 +16,7 @@ public class ModController : GenericController
     private Dictionary<Slider, string> sliders;
     private Dictionary<Text, string> dyntext;
     private Dictionary<Button, string> btns;
-    private dynamic data;
+    public dynamic data;
 
     public GameObject ConstructUI(ModUI ui)
     {
