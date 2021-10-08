@@ -1,7 +1,3 @@
-import clr
-clr.AddReference('IP.Lib')
-clr.AddReference('IP.Game')
-
 import BigNumber
 import SeededRand
 import GameController
