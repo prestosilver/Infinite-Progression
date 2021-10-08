@@ -32,6 +32,7 @@ namespace PyMods
         public int chance;
 
         public bool isEnabled;
+        public bool loaded;
 
         public ScriptEngine engine;
         public ScriptScope scope;
@@ -62,12 +63,14 @@ namespace PyMods
 
         public void Load()
         {
+            loaded = true;
             dynamic data = scope.GetVariable<Func<object>>("onLoad")();
             Debug.Log(data);
         }
 
         public void Unload()
         {
+            loaded = false;
             dynamic data = scope.GetVariable<Func<object>>("onUnload")();
             Debug.Log(data);
         }

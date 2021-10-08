@@ -1,0 +1,8 @@
+{
+  "name": "Incrementor Incrementor",
+  "description": "Incrementor Modules can boost Incrementor Modules",
+  "main_file": "main.py",
+  "ui_file": "ui.json",
+  "requires": [],
+  "chance": 2
+}

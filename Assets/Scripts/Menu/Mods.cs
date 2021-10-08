@@ -100,6 +100,7 @@ public class Mods : MonoBehaviour
             {
                 mod.Load();
                 GameController.mods.Add(mod);
+                GameController.mods.AddRange(modManager.LoadMods(mod.requires, 1));
             }
         }
 

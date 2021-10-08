@@ -1,3 +1,9 @@
+<size=68>Version Release-2.0.0</size>
+
+* <b>ALL SAVES ARE NOW BROKEN</b>
+* rewrote all modules
++ added mods
+
 <size=68>Version Beta-1.21.5</size>
 + Changed font in changelog to inconsolata
 

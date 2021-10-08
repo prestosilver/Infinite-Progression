@@ -37,10 +37,10 @@ namespace PyMods
 
             foreach (Mod mod in mods)
             {
-                if (ToLoad.Contains(mod.name))
+                if (ToLoad.Contains(mod.name) && !mod.loaded)
                 {
-                    result.Add(mod);
                     mod.Load();
+                    result.Add(mod);
                     result.AddRange(LoadMods(mod.requires, stage + 1));
                 }
             }
