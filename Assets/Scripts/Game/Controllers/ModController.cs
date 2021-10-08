@@ -92,4 +92,9 @@ public class ModController : GenericController
         data = mod.LoadSave(save, id);
     }
     public override string saveData() => mod.saveData(data);
+
+    public override void Prestige()
+    {
+        data = mod.onPrestige(data);
+    }
 }

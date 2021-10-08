@@ -16,9 +16,10 @@ public class ConsistantTPS : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (tps == new BigNumber(0)) {return; }
-		time += Time.deltaTime;
-        if (time < 0.01) {
+        if (tps == new BigNumber(0)) { return; }
+        time += Time.deltaTime;
+        if (time < 0.01)
+        {
             return;
         }
         BigNumber ticks = tps * time;

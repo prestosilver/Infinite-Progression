@@ -1,5 +1,27 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7107573810230948887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab85f23b640cc654dbcaff8ec59e443e, type: 3}
+  m_Name: ScriptRunner
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: ScriptRunner
+  note: 
+  actionEnabled: 1
+  configureEditor: 0
+  filter:
+    condition: 0
+    clauses: []
+  scriptPath: upload.sh
+  scriptArguments: $RELEASE_TYPE $VERSION
 --- !u!114 &-4188365499934776281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,14 +86,14 @@ MonoBehaviour:
     buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/
     openFolderPostBuild: 1
   _productParameters:
-    buildCounter: 12
-    buildVersion: 1.21.4-12
+    buildCounter: 13
+    buildVersion: 1.21.4-13
     versionTemplate: 1.21.4-$BUILD
     autoGenerate: 1
     syncWithPlayerSettings: 0
   _releaseTypeList:
     releaseTypes:
-    - typeName: Release
+    - typeName: Master
       bundleIdentifier: com.Prestosilver.IP
       companyName: Prestosilver
       productName: IP
@@ -81,9 +103,7 @@ MonoBehaviour:
         enabledScenes:
         - fileGUID: eb90dcdafdf72bf4ca6940f3008ed7ea
         - fileGUID: 2cda990e2423bbf4892e6590ba056729
-        - fileGUID: c8f67cd095418ae488313e87ab5d00c8
         - fileGUID: 7beb4a9117754653aa17854fdde67aad
-        - fileGUID: 74f74bba52ba35222a8b1d38c3b5f849
         - fileGUID: 5c5afca46dc7cda43a5b892f0f8826b6
         - fileGUID: 976017b3d2140881aa56e1167b1e0aaa
         - fileGUID: 38a22b7c46ae2e061acdd791521efa95
@@ -97,9 +117,7 @@ MonoBehaviour:
         enabledScenes:
         - fileGUID: eb90dcdafdf72bf4ca6940f3008ed7ea
         - fileGUID: 2cda990e2423bbf4892e6590ba056729
-        - fileGUID: c8f67cd095418ae488313e87ab5d00c8
         - fileGUID: 7beb4a9117754653aa17854fdde67aad
-        - fileGUID: 74f74bba52ba35222a8b1d38c3b5f849
         - fileGUID: 5c5afca46dc7cda43a5b892f0f8826b6
         - fileGUID: 976017b3d2140881aa56e1167b1e0aaa
         - fileGUID: 38a22b7c46ae2e061acdd791521efa95
@@ -109,19 +127,19 @@ MonoBehaviour:
     - {fileID: 2834666416053928921}
   _projectConfigurations:
     configSet:
-      _Buckets: ffffffffffffffffffffffff04000000ffffffff05000000ffffffffffffffffffffffff090000000600000000000000ffffffff07000000ffffffff08000000ffffffff
-      _HashCodes: 134e5c09fe37875677a7aa19510e9f592d6dfd4836e40a136f5a1a2670e6b676b892be05549a105f00000000000000000000000000000000000000000000000000000000
-      _Next: ffffffffffffffffffffffff010000000300000002000000ffffffffffffffffffffffffffffffff00000000000000000000000000000000000000000000000000000000
+      _Buckets: ffffffff02000000ffffffff01000000ffffffff05000000ffffffffffffffffffffffff0900000006000000ffffffffffffffff07000000ffffffff0800000004000000
+      _HashCodes: 2ef019058524615e141c7b11ac2c916ba839ef7136e40a136f5a1a2670e6b676b892be05549a105f00000000000000000000000000000000000000000000000000000000
+      _Next: ffffffffffffffffffffffffffffffffffffffffffffffff00000000ffffffffffffffff0300000000000000000000000000000000000000000000000000000000000000
       _Count: 10
       _Version: 10
       _FreeList: -1
       _FreeCount: 0
       _Keys:
-      - Release/Linux/Linux x64
-      - Release/Linux
-      - Release/PC/Windows x86
-      - Release/PC
-      - Release
+      - Master/Linux/Linux x64
+      - Master/Linux
+      - Master/PC/Windows x86
+      - Master/PC
+      - Master
       - Devel/Linux/Linux x64
       - Devel/Linux
       - Devel/PC/Windows x86
@@ -139,16 +157,16 @@ MonoBehaviour:
         childKeys: []
       - enabled: 1
         childKeys:
-        - Release/Linux/Linux x64
+        - Master/Linux/Linux x64
       - enabled: 1
         childKeys: []
       - enabled: 1
         childKeys:
-        - Release/PC/Windows x86
+        - Master/PC/Windows x86
       - enabled: 1
         childKeys:
-        - Release/Linux
-        - Release/PC
+        - Master/Linux
+        - Master/PC
       - enabled: 1
         childKeys: []
       - enabled: 1
@@ -182,9 +200,10 @@ MonoBehaviour:
     showBuildInfo: 0
     hideDisabled: 0
     treeView: 0
-    selectedKeyChain: Devel/Linux/Linux x64
+    selectedKeyChain: Release/PC/Windows x86
   _preBuildActions:
-    buildActions: []
+    buildActions:
+    - {fileID: -7107573810230948887}
   _postBuildActions:
     buildActions:
     - {fileID: -4188365499934776281}
@@ -239,7 +258,7 @@ MonoBehaviour:
     clauses:
     - type: 0
       comparison: 0
-      test: RELEASE
+      test: MASTER
   pathToButlerExe: /usr/bin/butler
   nameOfItchUser: prestosilver
   nameOfItchGame: infinite-progression

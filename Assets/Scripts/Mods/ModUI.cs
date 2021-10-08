@@ -47,4 +47,15 @@ namespace PyMods
         public string dynamic_text;
         public string static_text;
     }
+
+    [Serializable]
+    public class ModUIPopup
+    {
+        public int w;
+        public int h;
+
+        public List<ModUIButton> buttons;
+        public List<ModUISlider> sliders;
+        public List<ModUIText> text;
+    }
 }

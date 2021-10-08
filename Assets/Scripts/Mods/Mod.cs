@@ -75,6 +75,12 @@ namespace PyMods
             Debug.Log(data);
         }
 
+        public dynamic onPrestige(dynamic data)
+        {
+            data = scope.GetVariable<Func<object, object>>("onPrestige")(data);
+            return data;
+        }
+
         public dynamic Tick(dynamic data)
         {
             data = scope.GetVariable<Func<object, object>>("Tick")(data);
