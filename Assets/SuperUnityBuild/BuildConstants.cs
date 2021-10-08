@@ -31,8 +31,8 @@ public static class BuildConstants
     public static readonly System.DateTime buildDate = new System.DateTime(637693022070674900);
     public const string version = "1.21.4-17";
     public const ReleaseType releaseType = ReleaseType.Master;
-    public const Platform platform = Platform.Linux;
-    public const Architecture architecture = Architecture.Linux_x64;
+    public const Platform platform = Platform.PC;
+    public const Architecture architecture = Architecture.Windows_x86;
     public const Distribution distribution = Distribution.None;
 }
 
