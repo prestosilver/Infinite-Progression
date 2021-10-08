@@ -28,9 +28,9 @@ public static class BuildConstants
         None,
     }
 
-    public static readonly System.DateTime buildDate = new System.DateTime(637693019884841800);
-    public const string version = "1.21.4-16";
-    public const ReleaseType releaseType = ReleaseType.Devel;
+    public static readonly System.DateTime buildDate = new System.DateTime(637693022070674900);
+    public const string version = "1.21.4-17";
+    public const ReleaseType releaseType = ReleaseType.Master;
     public const Platform platform = Platform.Linux;
     public const Architecture architecture = Architecture.Linux_x64;
     public const Distribution distribution = Distribution.None;
