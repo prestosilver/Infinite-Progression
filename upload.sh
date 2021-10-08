@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ $1 == "Master" ]]; then
-  git checkout -b main
+  git checkout main
   git merge Devel
   git branch -d Devel
   git add .
@@ -8,6 +8,6 @@ if [[ $1 == "Master" ]]; then
   git push
   git checkout -b "Devel"
 else
-  git checkout -b Devel
+  git checkout Devel
 fi
 git push
