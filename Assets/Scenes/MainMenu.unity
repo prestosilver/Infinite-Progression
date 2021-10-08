@@ -246,7 +246,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Help
+  m_Text: 'Add Mods from
+
+    Github'
 --- !u!222 &87983113
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -613,7 +615,7 @@ GameObject:
   - component: {fileID: 361213802}
   - component: {fileID: 361213801}
   m_Layer: 5
-  m_Name: Tutorial
+  m_Name: Add Mods
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -684,8 +686,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 614092440}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Help
+        m_TargetAssemblyTypeName: MenuController, IP.Game
+        m_MethodName: ShowGHPopup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1096,6 +1098,8 @@ MonoBehaviour:
   transition: {fileID: 405463949}
   ChangeLog: {fileID: 8441206419659227168, guid: 5d3cfcbceed43d44db73d920fd53c244,
     type: 3}
+  GHPopup: {fileID: 7988605550383313535, guid: 4faaf754bb8560becadf5cffc5b14efa, type: 3}
+  Foreground: {fileID: 405463945}
 --- !u!4 &614092441
 Transform:
   m_ObjectHideFlags: 0

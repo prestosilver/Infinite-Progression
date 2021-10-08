@@ -11,6 +11,8 @@ public class MenuController : MonoBehaviour
     public MenuAnimation ma;
     public Animator transition;
     public GameObject ChangeLog;
+    public GameObject GHPopup;
+    public Transform Foreground;
 
     public void Start()
     {
@@ -88,5 +90,10 @@ public class MenuController : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void ShowGHPopup()
+    {
+        Instantiate(GHPopup, Foreground);
     }
 }
