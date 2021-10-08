@@ -86,9 +86,9 @@ MonoBehaviour:
     buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/
     openFolderPostBuild: 1
   _productParameters:
-    buildCounter: 13
-    buildVersion: 1.21.4-13
-    versionTemplate: 1.21.4-$BUILD
+    buildCounter: 17
+    buildVersion: 1.21.4-17
+    versionTemplate: 2.0.0-$BUILD
     autoGenerate: 1
     syncWithPlayerSettings: 0
   _releaseTypeList:
