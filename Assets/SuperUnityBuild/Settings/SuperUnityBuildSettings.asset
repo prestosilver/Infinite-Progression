@@ -88,7 +88,7 @@ MonoBehaviour:
   _productParameters:
     buildCounter: 17
     buildVersion: 1.21.4-17
-    versionTemplate: 2.0.0-$BUILD
+    versionTemplate: 2.0.0b$BUILD
     autoGenerate: 1
     syncWithPlayerSettings: 0
   _releaseTypeList:
