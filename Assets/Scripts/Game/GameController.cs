@@ -342,4 +342,9 @@ public class GameController : MonoBehaviour
         return instance.sliders[id].GetComponent<SliderController>();
     }
 
+    public static dynamic GetData(int id)
+    {
+        return instance.sliders[id].GetComponent<ModController>().data;
+    }
+
 }
