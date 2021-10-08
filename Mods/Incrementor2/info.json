@@ -4,5 +4,5 @@
   "main_file": "main.py",
   "ui_file": "ui.json",
   "requires": [],
-  "chance": 0
+  "chance": 2
 }

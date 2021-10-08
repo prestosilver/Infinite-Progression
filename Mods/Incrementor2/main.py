@@ -9,7 +9,9 @@ class Data:
         self.current = BigNumber(0)
         self.goal = 1000.0
         self.progress = BigNumber(0)
-        self.adds = GameController.GetRandOf("Incrementor Module", 0, id).id - 1
+        if SeededRand.Perlin(id * 100) > 0.5:
+            self.adds = GameController.GetRandOf("Incrementor Module", 0, id).id - 1
+        self.adds = GameController.GetRandOf("Incrementor Incrementor", 0, id).id - 1
 
     def updateProgress(self):
         self.progress = self.current / BigNumber(self.goal)
@@ -36,7 +38,7 @@ def tick(data):
 def bulkTick(data, amount):
     data.current += amount
     while (data.current > BigNumber(data.goal)):
-        GameController.GetSlider(data.adds).value += BigNumber.Pow(BigNumber(data.level), 2)
+        GameController.GetData(data.adds).current += BigNumber.Pow(BigNumber(data.level), 2)
         data.current -= BigNumber(data.goal)
     data.updateProgress()
     return data
