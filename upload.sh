@@ -1,5 +1,7 @@
 #!/bin/bash
 if [[ $1 == "Master" ]]; then
+  git add .
+  git commit -m "version $2 auto commit"
   git push
   git checkout main
   git fetch
