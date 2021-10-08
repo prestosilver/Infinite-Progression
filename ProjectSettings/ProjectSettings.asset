@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Prestosilver
-  productName: IP-Dev
+  productName: IP
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -136,7 +136,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.21.4-15
+  bundleVersion: 1.21.4-16
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -158,11 +158,11 @@ PlayerSettings:
     Android: com.IWontLose.InfiniteProgression
     Standalone: com.Prestosilver.IP
   buildNumber:
-    Standalone: 18
-    iPhone: 18
+    Standalone: 19
+    iPhone: 19
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
-  AndroidBundleVersionCode: 60
+  AndroidBundleVersionCode: 61
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -642,7 +642,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    1: BUILD_TYPE_DEVEL;BUILD_PLATFORM_PC;BUILD_ARCH_WINDOWSX86
+    1: BUILD_TYPE_MASTER;BUILD_PLATFORM_LINUX;BUILD_ARCH_LINUXX64
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
