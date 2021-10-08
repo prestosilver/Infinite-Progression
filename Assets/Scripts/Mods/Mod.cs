@@ -55,6 +55,7 @@ namespace PyMods
 
             engine = Python.CreateEngine();
             scope = engine.CreateScope();
+            engine.CreateScriptSourceFromString("import clr\nclr.AddReference(\'IP.Lib\')\nclr.AddReference('IP.Game')").Execute();
             source = engine.CreateScriptSourceFromFile(mainFile);
             source.Execute(scope);
         }
