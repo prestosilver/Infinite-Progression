@@ -29,19 +29,24 @@ namespace PyMods
             return result;
         }
 
-        public List<Mod> LoadMods(List<string> ToLoad, int stage = 0)
+        public List<Mod> LoadMods(List<string> ToLoad, int stage = 0, List<string> loaded = null)
         {
             if (stage > 5) return new List<Mod>();
+            if (loaded == null)
+            {
+                loaded = new List<string>();
+            }
             List<Mod> mods = GetModList();
             List<Mod> result = new List<Mod>();
 
             foreach (Mod mod in mods)
             {
-                if (ToLoad.Contains(mod.name) && !mod.loaded)
+                if (ToLoad.Contains(mod.name) && !loaded.Contains(mod.name))
                 {
                     mod.Load();
+                    loaded.Add(mod.name);
                     result.Add(mod);
-                    result.AddRange(LoadMods(mod.requires, stage + 1));
+                    result.AddRange(LoadMods(mod.requires, stage + 1, loaded));
                 }
             }
 

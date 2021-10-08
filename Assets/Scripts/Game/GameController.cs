@@ -64,6 +64,7 @@ public class GameController : MonoBehaviour
                         if (m.name == line.Split(';')[0])
                         {
                             AddMod(modid, i);
+                            break;
                         }
                         i++;
                     }
@@ -118,9 +119,7 @@ public class GameController : MonoBehaviour
 
     private void AddMod(int id, int type)
     {
-        bool gencont = false;
         int tmpid = 0;
-        int gen;
         foreach (GameObject g in sliders)
         {
             g.transform.localPosition -= new Vector3(0, (15 * (id - 1)), 0);
