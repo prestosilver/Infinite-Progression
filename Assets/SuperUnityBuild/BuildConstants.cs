@@ -5,7 +5,7 @@ public static class BuildConstants
     public enum ReleaseType
     {
         None,
-        Release,
+        Master,
         Devel,
     }
 
@@ -28,9 +28,9 @@ public static class BuildConstants
         None,
     }
 
-    public static readonly System.DateTime buildDate = new System.DateTime(637691531350892640);
-    public const string version = "1.21.4-8";
-    public const ReleaseType releaseType = ReleaseType.Release;
+    public static readonly System.DateTime buildDate = new System.DateTime(637693019884841800);
+    public const string version = "1.21.4-16";
+    public const ReleaseType releaseType = ReleaseType.Master;
     public const Platform platform = Platform.Linux;
     public const Architecture architecture = Architecture.Linux_x64;
     public const Distribution distribution = Distribution.None;

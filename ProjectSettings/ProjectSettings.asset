@@ -136,7 +136,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.21.4-14
+  bundleVersion: 1.21.4-15
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -158,11 +158,11 @@ PlayerSettings:
     Android: com.IWontLose.InfiniteProgression
     Standalone: com.Prestosilver.IP
   buildNumber:
-    Standalone: 17
-    iPhone: 17
+    Standalone: 18
+    iPhone: 18
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
-  AndroidBundleVersionCode: 59
+  AndroidBundleVersionCode: 60
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
