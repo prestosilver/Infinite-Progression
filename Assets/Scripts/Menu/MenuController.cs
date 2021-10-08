@@ -77,7 +77,7 @@ public class MenuController : MonoBehaviour
 
     public void Clone()
     {
-        Application.OpenURL("https://github.com/bob16795/IP-Mod-Template/generate");
+        Application.OpenURL("https://github.com/prestosilver/IP-Mod-Template/generate");
     }
 
     public void ShowLeaderboards()
