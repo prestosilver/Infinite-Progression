@@ -642,7 +642,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    1: BUILD_TYPE_MASTER;BUILD_PLATFORM_LINUX;BUILD_ARCH_LINUXX64
+    1: BUILD_TYPE_MASTER;BUILD_PLATFORM_PC;BUILD_ARCH_WINDOWSX86
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
