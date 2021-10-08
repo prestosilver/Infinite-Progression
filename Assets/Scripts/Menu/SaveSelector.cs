@@ -9,6 +9,7 @@ public class SaveSelector : MonoBehaviour
 {
     public Save save;
     public Text nameText;
+    public GameObject confirmPrefab;
 
     public void Load()
     {
@@ -21,5 +22,18 @@ public class SaveSelector : MonoBehaviour
     {
         this.save = save;
         nameText.text = save.name;
+    }
+
+    public void deleteSave()
+    {
+        Saves.saveName = save.name;
+        GameObject go = Instantiate(confirmPrefab);
+        GameObject confirm = GameObject.FindGameObjectsWithTag("ConfirmButton")[0];
+        confirm.GetComponent<Button>().onClick.AddListener(() =>
+        {
+            Saves.Delete();
+            Destroy(go);
+            SceneManager.LoadScene("MainMenu");
+        });
     }
 }

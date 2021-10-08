@@ -26,6 +26,15 @@ static class Saves
         }
         File.WriteAllText(fullSavePath, data);
     }
+
+    internal static void Delete()
+    {
+        if (!Directory.Exists(saveDir + "/" + saveName)) return;
+        foreach (string f in Directory.GetFiles(saveDir + "/" + saveName))
+            File.Delete(f);
+        Directory.Delete(saveDir + "/" + saveName);
+    }
+
     public static List<String> Read()
     {
         if (!File.Exists(fullSavePath)) { return new List<String>(); }
