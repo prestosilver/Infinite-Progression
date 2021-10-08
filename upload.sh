@@ -1,6 +1,7 @@
 #!/bin/bash
 if [[ $1 == "Master" ]]; then
-  git checkout main
+  git checkout
+  git fetch
   git merge Devel
   git branch -d Devel
   git add .
