@@ -346,4 +346,14 @@ public class GameController : MonoBehaviour
         return instance.sliders[id].GetComponent<ModController>().data;
     }
 
+    public static void SetChance(string name, int chance)
+    {
+        foreach (Mod mod in mods)
+        {
+            if (mod.name != name) continue;
+            instance.sum -= mod.chance;
+            instance.sum += chance;
+            mod.chance = chance;
+        }
+    }
 }
