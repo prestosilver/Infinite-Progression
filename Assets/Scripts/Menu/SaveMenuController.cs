@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using PyMods;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SaveMenuController : MonoBehaviour
 {
-    public GameObject itemPrefab;
+    public static SaveMenuController instance;
+    void Awake() => instance = this;
+
+    public GameObject itemPrefab, infoPrefab;
     public GameObject newPrefab;
     public Transform parentTransform;
     public Transform canvas;
@@ -31,5 +36,17 @@ public class SaveMenuController : MonoBehaviour
     public void Create()
     {
         Instantiate(newPrefab, canvas);
+    }
+
+    public void ShowInfo(Save s)
+    {
+        Transform t = Instantiate(infoPrefab).transform;
+        t.GetChild(0).GetChild(1).GetChild(1).GetComponent<Text>().text = "About: " + s.name;
+        t.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>().text = "Mods: ";
+        foreach (string m in s.mods)
+        {
+            if (m != s.mods[0]) t.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>().text += ", ";
+            t.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>().text += m;
+        }
     }
 }

@@ -45,6 +45,75 @@ MonoBehaviour:
   inputPath: Mods
   outputPath: $BUILDPATH/Mods
   operation: 1
+--- !u!114 &-1960416993050488900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89df54eebccd0704dbbe96915fbb9a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  distributionList:
+    distributions: []
+  architectures:
+  - target: 13
+    name: Android
+    enabled: 1
+    binaryNameFormat: '{0}.apk'
+  variants:
+  - variantName: Device Type
+    selectedIndex: 1
+    values:
+    - ARMv7
+    - ARM64
+    - X86
+    - X86_64
+    - All
+  - variantName: Texture Compression
+    selectedIndex: 0
+    values:
+    - Generic
+    - DXT
+    - PVRTC
+    - ATC
+    - ETC
+    - ETC2
+    - ASTC
+  - variantName: Build System
+    selectedIndex: 0
+    values:
+    - Gradle
+  - variantName: Split APKs
+    selectedIndex: 0
+    values:
+    - Disabled
+    - Enabled
+  - variantName: Min SDK Version
+    selectedIndex: 0
+    values:
+    - Auto
+    - 16
+    - 17
+    - 18
+    - 19
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    - 27
+    - 28
+    - 29
+    - 30
+  platformName: Android
+  dataDirNameFormat: '{0}_Data'
+  targetGroup: 7
 --- !u!114 &-432555192352403463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,13 +194,14 @@ MonoBehaviour:
     platforms:
     - {fileID: -432555192352403463}
     - {fileID: 2834666416053928921}
+    - {fileID: -1960416993050488900}
   _projectConfigurations:
     configSet:
-      _Buckets: ffffffff02000000ffffffff01000000ffffffff05000000ffffffffffffffffffffffff0900000006000000ffffffffffffffff07000000ffffffff0800000004000000
-      _HashCodes: 2ef019058524615e141c7b11ac2c916ba839ef7136e40a136f5a1a2670e6b676b892be05549a105f00000000000000000000000000000000000000000000000000000000
-      _Next: ffffffffffffffffffffffffffffffffffffffffffffffff00000000ffffffffffffffff0300000000000000000000000000000000000000000000000000000000000000
-      _Count: 10
-      _Version: 10
+      _Buckets: ffffffff020000000b00000001000000ffffffff07000000ffffffffffffffff050000000d00000008000000ffffffff0c00000009000000ffffffff0a00000006000000
+      _HashCodes: 2ef019058524615e141c7b11ac2c916b5e7f6d278015584da839ef7136e40a136f5a1a2670e6b676b892be05a63f2c23d0171223549a105f000000000000000000000000
+      _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000ffffffffffffffffffffffff0400000003000000000000000000000000000000
+      _Count: 14
+      _Version: 14
       _FreeList: -1
       _FreeCount: 0
       _Keys:
@@ -139,16 +209,16 @@ MonoBehaviour:
       - Master/Linux
       - Master/PC/Windows x86
       - Master/PC
+      - Master/Android/Android (ARM64,Generic,Gradle,Disabled,Auto)
+      - Master/Android
       - Master
       - Devel/Linux/Linux x64
       - Devel/Linux
       - Devel/PC/Windows x86
       - Devel/PC
+      - Devel/Android/Android (ARM64,Generic,Gradle,Disabled,Auto)
+      - Devel/Android
       - Devel
-      - 
-      - 
-      - 
-      - 
       - 
       - 
       - 
@@ -164,9 +234,15 @@ MonoBehaviour:
         childKeys:
         - Master/PC/Windows x86
       - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Master/Android/Android (ARM64,Generic,Gradle,Disabled,Auto)
+      - enabled: 1
         childKeys:
         - Master/Linux
         - Master/PC
+        - Master/Android
       - enabled: 1
         childKeys: []
       - enabled: 1
@@ -178,17 +254,15 @@ MonoBehaviour:
         childKeys:
         - Devel/PC/Windows x86
       - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Devel/Android/Android (ARM64,Generic,Gradle,Disabled,Auto)
+      - enabled: 1
         childKeys:
         - Devel/Linux
         - Devel/PC
-      - enabled: 1
-        childKeys: []
-      - enabled: 1
-        childKeys: []
-      - enabled: 1
-        childKeys: []
-      - enabled: 1
-        childKeys: []
+        - Devel/Android
       - enabled: 1
         childKeys: []
       - enabled: 1

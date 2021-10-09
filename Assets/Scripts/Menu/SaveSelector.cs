@@ -36,4 +36,9 @@ public class SaveSelector : MonoBehaviour
             SceneManager.LoadScene("MainMenu");
         });
     }
+
+    public void showInfo()
+    {
+        SaveMenuController.instance.ShowInfo(save);
+    }
 }
