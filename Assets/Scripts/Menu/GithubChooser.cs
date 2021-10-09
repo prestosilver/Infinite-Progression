@@ -29,9 +29,6 @@ public class GithubChooser : MonoBehaviour
         }
         Uri uri = GitControler.getDownloadUrl(nameField.text);
         Debug.Log($"Add Mod {uri.GetLeftPart(UriPartial.Path)}");
-        // if (!Directory.Exists())
-        // {
-
-        // }
+        GitControler.download(nameField.text);
     }
 }

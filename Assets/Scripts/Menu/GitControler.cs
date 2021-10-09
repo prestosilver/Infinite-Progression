@@ -1,7 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
 using System.Net;
+using Ionic.Zip;
 using UnityEngine;
 
 // example git url:
@@ -38,6 +41,20 @@ public static class GitControler
 
     public static Uri getDownloadUrl(string url)
     {
-        return new Uri(new Uri("http://" + url), "archive/refs/heads/main.zip");
+        return new Uri(new Uri("http://" + url + "/"), "archive/refs/heads/main.zip");
+    }
+
+    public static void download(string url)
+    {
+        if (!Directory.Exists(Application.persistentDataPath + "/Mods")) Directory.CreateDirectory(Application.persistentDataPath + "/Mods");
+        WebClient webClient = new WebClient();
+        webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed);
+        webClient.DownloadFileAsync(getDownloadUrl(url), Application.persistentDataPath + "/Mods/temp.zip");
+    }
+
+    private static void Completed(object sender, AsyncCompletedEventArgs e)
+    {
+        ZipUtil.Unzip(Application.persistentDataPath + "/Mods/temp.zip", Application.persistentDataPath + "/temp");
+        Debug.Log($"Added Mod");
     }
 }
