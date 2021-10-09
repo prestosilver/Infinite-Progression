@@ -12,6 +12,8 @@ public class GithubChooser : MonoBehaviour
     private Text reasonText;
     [SerializeField]
     private GameObject Popup;
+    [SerializeField]
+    private GameObject SuccessPopup;
 
     public void Cancel()
     {
@@ -30,5 +32,6 @@ public class GithubChooser : MonoBehaviour
         Uri uri = GitControler.getDownloadUrl(nameField.text);
         Debug.Log($"Add Mod {uri.GetLeftPart(UriPartial.Path)}");
         GitControler.download(nameField.text);
+        GitControler.SuccessPopup = SuccessPopup;
     }
 }

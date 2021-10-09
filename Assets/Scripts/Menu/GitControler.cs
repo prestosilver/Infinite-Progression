@@ -15,6 +15,7 @@ using UnityEngine;
 /// </summary>
 public static class GitControler
 {
+    public static GameObject SuccessPopup;
     private const string PREFIX = "github.com";
     public static bool CheckUrl(string url)
     {
@@ -54,7 +55,9 @@ public static class GitControler
 
     private static void Completed(object sender, AsyncCompletedEventArgs e)
     {
-        ZipUtil.Unzip(Application.persistentDataPath + "/Mods/temp.zip", Application.persistentDataPath + "/temp");
+        ZipUtil.Unzip(Application.persistentDataPath + "/Mods/temp.zip", Application.persistentDataPath + "/Mods");
+        File.Delete(Application.persistentDataPath + "/Mods/temp.zip");
         Debug.Log($"Added Mod");
+        SuccessPopup.SetActive(true);
     }
 }

@@ -2,9 +2,10 @@ using UnityEngine;
 using System.Collections;
 using System;
 using System.Runtime.InteropServices;
-using Ionic.Zip;
+using System.Globalization;
 using System.Text;
 using System.IO;
+using System.IO.Compression;
 
 public class ZipUtil
 {
@@ -22,48 +23,7 @@ public class ZipUtil
 
     public static void Unzip(string zipFilePath, string location)
     {
-#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX || UNITY_STANDALONE_LINUX
-        Directory.CreateDirectory(location);
-        Debug.Log("Unzipping " + zipFilePath);
-
-        using (ZipFile zip = ZipFile.Read(zipFilePath))
-        {
-            zip.ExtractAll(location, ExtractExistingFileAction.OverwriteSilently);
-        }
-#elif UNITY_ANDROID
-		using (AndroidJavaClass zipper = new AndroidJavaClass ("com.tsw.zipper")) {
-			zipper.CallStatic ("unzip", zipFilePath, location);
-		}
-#elif UNITY_IPHONE
-		unzip (zipFilePath, location);
-#endif
+        ZipFile.ExtractToDirectory(zipFilePath, location);
     }
 
-    public static void Zip(string zipFileName, params string[] files)
-    {
-#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX || UNITY_STANDALONE_LINUX
-        string path = Path.GetDirectoryName(zipFileName);
-        Directory.CreateDirectory(path);
-
-        using (ZipFile zip = new ZipFile())
-        {
-            foreach (string file in files)
-            {
-                zip.AddFile(file, "");
-            }
-            zip.Save(zipFileName);
-        }
-#elif UNITY_ANDROID
-		using (AndroidJavaClass zipper = new AndroidJavaClass ("com.tsw.zipper")) {
-			{
-				zipper.CallStatic ("zip", zipFileName, files);
-			}
-		}
-#elif UNITY_IPHONE
-		foreach (string file in files) {
-			addZipFile (file);
-		}
-		zip (zipFileName);
-#endif
-    }
 }
