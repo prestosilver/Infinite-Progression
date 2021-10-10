@@ -5,11 +5,13 @@ import GameController
 class Data:
     def __init__(self, id):
         self.id = id
+        self.inclevel = 0
         self.level = 0
         self.current = BigNumber(0)
         self.goal = 1000.0
         self.progress = BigNumber(0)
         self.adds = GameController.GetRandOf("slider", 0, id).id - 1
+        self.root = self.adds
 
     def updateProgress(self):
         self.progress = self.current / BigNumber(self.goal)

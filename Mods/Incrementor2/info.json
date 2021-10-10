@@ -3,6 +3,6 @@
   "description": "Incrementor Modules can boost Incrementor Modules",
   "main_file": "main.py",
   "ui_file": "ui.json",
-  "requires": [],
+  "requires": ["Incrementor Module"],
   "chance": 2
 }

@@ -9,15 +9,17 @@ class Data:
         self.current = BigNumber(0)
         self.goal = 1000.0
         self.progress = BigNumber(0)
-        if SeededRand.Perlin(id * 100) > 0.5:
-            self.adds = GameController.GetRandOf("Incrementor Module", 0, id).id - 1
         self.adds = GameController.GetRandOf("Incrementor Incrementor", 0, id).id - 1
+        if self.adds == 0:
+            self.adds = GameController.GetRandOf("Incrementor Module", 0, id).id - 1
+        self.inclevel = GameController.GetData(self.adds).inclevel + 1
+        self.root = GameController.GetData(self.adds).root
 
     def updateProgress(self):
         self.progress = self.current / BigNumber(self.goal)
         if (self.goal <= 50.0):
             self.progress = BigNumber(1)
-        self.nameText = GameController.GetSlider(self.adds).textName + " += " + str(BigNumber.Pow(BigNumber(self.level), 2))
+        self.nameText = GameController.GetData(self.adds).nameText + " += " + str(BigNumber.Pow(BigNumber(self.level), 2))
 
 def onLoad():
     return  "Success Loading"
@@ -77,4 +79,4 @@ def upgradeClick(data):
     return data
 
 def upgradeAvail(data):
-    return (10000 * data.level) < GameController.GetSlider(data.adds).value
+    return (10000 * data.level * data.inclevel) < GameController.GetSlider(data.root).value
