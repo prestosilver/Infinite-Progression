@@ -132,6 +132,26 @@ public class GameController : MonoBehaviour
         GameObject slider = Instantiate(modPrefab);
         slider.GetComponent<ModController>().id = id;
         slider.GetComponent<ModController>().mod = mods[type];
+        List<String> requires = mods[type].requires;
+        if (mods[type].requires.Count != 0)
+        {
+            foreach (GameObject o in sliders)
+            {
+                ModController m;
+                if (!(m = o.GetComponent<ModController>())) continue;
+                if (requires.Contains(m.mod.name))
+                {
+                    requires.Remove(m.mod.name);
+                    if (requires.Count == 0) break;
+                }
+            }
+            if (requires.Count != 0)
+            {
+                foreach (Mod m in mods)
+                    if (m.name == requires[0])
+                        slider.GetComponent<ModController>().mod = m;
+            }
+        }
         GenericController cont = (GenericController)slider.GetComponents(typeof(GenericController))[0];
         GameObject nprev = null;
         if (sliders.Count != 0)
@@ -271,16 +291,20 @@ public class GameController : MonoBehaviour
         }
         else
         {
+            string name = "null";
             do
             {
                 result = instance.sliders[(int)(SeededRand.Perlin(100 * before + 100 * defaultId + 1 + rid) * (before - 1))];
                 rid += 1;
+                name = "null";
+                if (result.GetComponent<ModController>())
+                    name = result.GetComponent<ModController>().mod.name;
                 if (rid > 100)
                 {
                     result = instance.sliders[defaultId];
                     break;
                 }
-            } while (result.GetComponent<ModController>().mod.name != kind);
+            } while (name != kind);
         }
         return result.GetComponent<GenericController>();
     }
