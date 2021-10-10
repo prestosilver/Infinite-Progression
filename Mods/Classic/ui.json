@@ -1,0 +1,13 @@
+{
+  "buttons": [],
+  "sliders": [],
+  "text": [
+    {
+      "x": 0,
+      "y": 0,
+      "w": 269,
+      "h": 30,
+      "static_text": "Classic Mode"
+    }
+  ]
+}

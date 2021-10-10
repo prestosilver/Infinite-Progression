@@ -62,12 +62,8 @@ def upgradeAvail(data):
 
 def betterUpgradeAvail(data):
     return (2500 * data.level * data.discount) < GameController.GetSlider(data.buys).value
-
-def buyDiscount(data):
-    data.discount *= 0.9
     
 def onPrestige(data):
-    data.discount = 1
     data.level = 0
     return data
 
