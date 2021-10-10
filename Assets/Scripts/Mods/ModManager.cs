@@ -20,14 +20,18 @@ namespace PyMods
 #endif
             foreach (string path in SearchPath)
             {
-                if (!Directory.Exists(path)) continue;
-                foreach (string dir in Directory.GetDirectories(path))
+                // if (!Directory.Exists(path)) continue;
+                try
                 {
-                    if (File.Exists(dir + "/info.json"))
+                    foreach (string dir in Directory.GetDirectories(path))
                     {
-                        result.Add(new Mod(dir));
+                        if (File.Exists(dir + "/info.json"))
+                        {
+                            result.Add(new Mod(dir));
+                        }
                     }
                 }
+                catch (IOException) { }
             }
             return result;
         }
