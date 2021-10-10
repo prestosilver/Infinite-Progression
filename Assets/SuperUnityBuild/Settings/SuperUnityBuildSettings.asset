@@ -155,8 +155,8 @@ MonoBehaviour:
     buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/
     openFolderPostBuild: 1
   _productParameters:
-    buildCounter: 23
-    buildVersion: 2.0.0b23
+    buildCounter: 24
+    buildVersion: 2.0.0b24
     versionTemplate: 2.0.0b$BUILD
     autoGenerate: 1
     syncWithPlayerSettings: 0
@@ -197,9 +197,9 @@ MonoBehaviour:
     - {fileID: -1960416993050488900}
   _projectConfigurations:
     configSet:
-      _Buckets: ffffffff020000000b00000001000000ffffffff07000000ffffffffffffffff050000000d00000008000000ffffffff0c00000009000000ffffffff0a00000006000000
-      _HashCodes: 2ef019058524615e141c7b11ac2c916b5e7f6d278015584da839ef7136e40a136f5a1a2670e6b676b892be05a63f2c23d0171223549a105f000000000000000000000000
-      _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000ffffffffffffffffffffffff0400000003000000000000000000000000000000
+      _Buckets: ffffffffffffffff0b00000001000000ffffffff07000000ffffffffffffffff050000000d00000008000000ffffffff0c000000ffffffffffffffff0a00000006000000
+      _HashCodes: 2ef019058524615e907ca376ac2c916b5e7f6d278015584da839ef7136e40a136f5a1a26a8cf053cb892be05a63f2c23d0171223549a105f000000000000000000000000
+      _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffff0200000000000000ffffffff09000000ffffffff0400000003000000000000000000000000000000
       _Count: 14
       _Version: 14
       _FreeList: -1
@@ -207,14 +207,14 @@ MonoBehaviour:
       _Keys:
       - Master/Linux/Linux x64
       - Master/Linux
-      - Master/PC/Windows x86
+      - Master/PC/Windows x64
       - Master/PC
       - Master/Android/Android (ARM64,Generic,Gradle,Disabled,Auto)
       - Master/Android
       - Master
       - Devel/Linux/Linux x64
       - Devel/Linux
-      - Devel/PC/Windows x86
+      - Devel/PC/Windows x64
       - Devel/PC
       - Devel/Android/Android (ARM64,Generic,Gradle,Disabled,Auto)
       - Devel/Android
@@ -232,7 +232,7 @@ MonoBehaviour:
         childKeys: []
       - enabled: 1
         childKeys:
-        - Master/PC/Windows x86
+        - Master/PC/Windows x64
       - enabled: 0
         childKeys: []
       - enabled: 1
@@ -252,7 +252,7 @@ MonoBehaviour:
         childKeys: []
       - enabled: 1
         childKeys:
-        - Devel/PC/Windows x86
+        - Devel/PC/Windows x64
       - enabled: 0
         childKeys: []
       - enabled: 1
@@ -274,7 +274,7 @@ MonoBehaviour:
     showBuildInfo: 0
     hideDisabled: 0
     treeView: 0
-    selectedKeyChain: Devel/PC/Windows x86
+    selectedKeyChain: Master/Android/Android (ARM64,Generic,Gradle,Disabled,Auto)
   _preBuildActions:
     buildActions:
     - {fileID: -7107573810230948887}
@@ -300,11 +300,11 @@ MonoBehaviour:
   architectures:
   - target: 5
     name: Windows x86
-    enabled: 1
+    enabled: 0
     binaryNameFormat: '{0}.exe'
   - target: 19
     name: Windows x64
-    enabled: 0
+    enabled: 1
     binaryNameFormat: '{0}.exe'
   variants: []
   platformName: PC
