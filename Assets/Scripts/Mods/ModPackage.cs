@@ -31,7 +31,7 @@ namespace PyMods
             // copy the contents
             foreach (ModInfo mod in data.contents)
             {
-                Directory.Move(path + "/" + mod.path, Application.persistentDataPath + "/Mods/" + mod.install_name);
+                Directory.Move(Path.Combine(path, mod.path), Path.Combine(new string[] { Application.persistentDataPath, "Mods", mod.install_name }));
             }
             Directory.Delete(path, true);
         }

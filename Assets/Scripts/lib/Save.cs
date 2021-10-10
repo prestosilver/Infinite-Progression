@@ -19,8 +19,8 @@ public class Save
 
     public void Create()
     {
-        infoFile = Application.persistentDataPath + $"/Saves/{name}/save.json";
-        var path = Application.persistentDataPath + $"/Saves/{name}";
+        infoFile = Path.Combine(Application.persistentDataPath + $"/Saves/{name}/save.json");
+        var path = Path.Combine(Application.persistentDataPath + $"/Saves/{name}");
         if (!Directory.Exists(path)) Directory.CreateDirectory(path);
         File.WriteAllText(infoFile, JsonUtility.ToJson(this));
         mods = new List<string>();

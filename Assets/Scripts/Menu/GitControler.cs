@@ -18,14 +18,18 @@ public static class GitControler
 {
     public static GameObject SuccessPopup;
     private const string PREFIX = "github.com";
+    private static string ModPath = Path.Combine(Application.persistentDataPath, "Mods");
+    private static string ListPath = Path.Combine(ModPath, "list.txt");
+    private static string TempPath = Path.Combine(ModPath, "temp");
+    private static string TempZip = Path.Combine(ModPath, "temp.zip");
 
     private static List<string> lines = new List<String>();
 
     public static void SetupLines()
     {
-        if (!Directory.Exists(Application.persistentDataPath + "/Mods")) Directory.CreateDirectory(Application.persistentDataPath + "/Mods");
-        if (!File.Exists(Application.persistentDataPath + "/Mods/list.txt")) File.Create(Application.persistentDataPath + "/Mods/list.txt").Close();
-        lines = new List<string>(File.ReadAllLines(Application.persistentDataPath + "/Mods/list.txt"));
+        if (!Directory.Exists(ModPath)) Directory.CreateDirectory(ModPath);
+        if (!File.Exists(ListPath)) File.Create(ListPath).Close();
+        lines = new List<string>(File.ReadAllLines(ListPath));
     }
 
     public static bool CheckUrl(string url)
@@ -51,7 +55,7 @@ public static class GitControler
     internal static string GetReason(string url)
     {
         SetupLines();
-        lines = new List<string>(File.ReadAllLines(Application.persistentDataPath + "/Mods/list.txt"));
+        lines = new List<string>(File.ReadAllLines(ListPath));
         if (lines.Contains(url)) return "You already have this mod";
         return "Its just bad!";
     }
@@ -66,22 +70,22 @@ public static class GitControler
         SetupLines();
         WebClient webClient = new WebClient();
         webClient.DownloadFileCompleted += new AsyncCompletedEventHandler((a, b) => Completed(url));
-        webClient.DownloadFileAsync(getDownloadUrl(url), Application.persistentDataPath + "/Mods/temp.zip");
+        webClient.DownloadFileAsync(getDownloadUrl(url), TempZip);
     }
 
     public static void downloadReq(string url)
     {
         WebClient webClient = new WebClient();
-        webClient.DownloadFile(getDownloadUrl(url), Application.persistentDataPath + "/Mods/temp.zip");
-        ZipUtil.Unzip(Application.persistentDataPath + "/Mods/temp.zip", Application.persistentDataPath + "/Mods/temp");
-        File.Delete(Application.persistentDataPath + "/Mods/temp.zip");
+        webClient.DownloadFile(getDownloadUrl(url), TempZip);
+        ZipUtil.Unzip(TempZip, TempPath);
+        File.Delete(TempZip);
     }
 
     private static void Completed(string url)
     {
         // unzip and delete the file downloaded
-        ZipUtil.Unzip(Application.persistentDataPath + "/Mods/temp.zip", Application.persistentDataPath + "/Mods/temp");
-        File.Delete(Application.persistentDataPath + "/Mods/temp.zip");
+        ZipUtil.Unzip(TempZip, TempPath);
+        File.Delete(TempZip);
         lines.Add(url);
 
         // do this until no more unsolved requirements
@@ -90,7 +94,7 @@ public static class GitControler
         {
             reqs = new List<String>();
             // install all mods downloaded
-            foreach (string folder in Directory.GetDirectories(Application.persistentDataPath + "/Mods/temp"))
+            foreach (string folder in Directory.GetDirectories(TempPath))
             {
                 reqs.AddRange(ModPackage.getReqs(folder));
                 ModPackage.install(folder);
@@ -105,10 +109,10 @@ public static class GitControler
         } while (reqs.Count > 0);
 
         // update installed
-        File.WriteAllLines(Application.persistentDataPath + "/Mods/list.txt", lines);
+        File.WriteAllLines(ListPath, lines);
 
         // cleanup
-        Directory.Delete(Application.persistentDataPath + "/Mods/temp");
+        Directory.Delete(TempPath);
 
         // show success
         SuccessPopup.SetActive(true);

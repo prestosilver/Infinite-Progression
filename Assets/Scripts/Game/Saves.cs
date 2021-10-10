@@ -7,10 +7,10 @@ using System.IO;
 
 static class Saves
 {
-    public static string saveDir = Application.persistentDataPath + "/Saves/";
+    public static string saveDir = Path.Combine(Application.persistentDataPath, "Saves");
     public static string saveName = "NewSave";
-    public static string savePath = "/save.dat";
-    public static string fullSavePath => saveDir + "/" + saveName + savePath;
+    public static string savePath = "save.dat";
+    public static string fullSavePath => Path.Combine(new string[] { saveDir, saveName, savePath });
     public static void Save()
     {
         String data = "";

@@ -14,10 +14,10 @@ namespace PyMods
         public List<Mod> GetModList()
         {
             List<Mod> result = new List<Mod>();
-            List<string> SearchPath = new List<string> { Application.persistentDataPath + "/Mods/" };
-#if !UNITY_ANDROID
-                SearchPath.Add(Application.dataPath + "/../Mods/");
-#endif
+            List<string> SearchPath = new List<string> { Path.Combine(Application.persistentDataPath, "Mods") };
+            // #if !UNITY_ANDROID
+            //                 SearchPath.Add(Application.dataPath + "/../Mods/");
+            // #endif
             foreach (string path in SearchPath)
             {
                 // if (!Directory.Exists(path)) continue;
