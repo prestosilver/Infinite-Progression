@@ -44,6 +44,19 @@ public class Mods : MonoBehaviour
             OnModFound(mod);
 
         Application.runInBackground = true;
+        StartCoroutine(UpdateMods());
+    }
+
+    public IEnumerator UpdateMods()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(5);
+            foreach (ModItem modItem in modItems.Values) Destroy(modItem.gameObject);
+            modItems = new Dictionary<Mod, ModItem>();
+            foreach (Mod mod in modManager.GetModList())
+                OnModFound(mod);
+        }
     }
 
     private void OnModFound(Mod mod)
