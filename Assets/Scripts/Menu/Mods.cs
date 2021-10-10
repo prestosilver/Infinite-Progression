@@ -145,7 +145,8 @@ public class Mods : MonoBehaviour
         NamePick.modPickSave.mods = new List<string>();
         foreach (Mod mod in modItems.Keys)
         {
-            NamePick.modPickSave.mods.Add(mod.name);
+            if (mod.isEnabled)
+                NamePick.modPickSave.mods.Add(mod.name);
         }
         NamePick.modPickSave.Create();
         SceneManager.LoadScene("MainGame");
