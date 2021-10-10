@@ -12,7 +12,14 @@ public class ZipUtil
 
     public static void Unzip(string zipFilePath, string location)
     {
-        ZipFile.ExtractToDirectory(zipFilePath, location);
+        try
+        {
+            ZipFile.ExtractToDirectory(zipFilePath, location);
+        }
+        catch (IOException)
+        {
+            return;
+        }
     }
 
 }

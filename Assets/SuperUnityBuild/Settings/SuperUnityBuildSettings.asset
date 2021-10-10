@@ -153,7 +153,7 @@ MonoBehaviour:
   _basicSettings:
     baseBuildFolder: Builds
     buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/
-    openFolderPostBuild: 1
+    openFolderPostBuild: 0
   _productParameters:
     buildCounter: 24
     buildVersion: 2.0.0b24
