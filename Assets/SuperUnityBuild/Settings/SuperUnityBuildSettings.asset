@@ -274,7 +274,7 @@ MonoBehaviour:
     showBuildInfo: 0
     hideDisabled: 0
     treeView: 0
-    selectedKeyChain: Devel/Linux/Linux x64
+    selectedKeyChain: Master/Android/Android (ARM64,Generic,Gradle,Disabled,Auto)
   _preBuildActions:
     buildActions:
     - {fileID: -7107573810230948887}
