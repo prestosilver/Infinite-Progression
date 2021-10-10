@@ -22,29 +22,6 @@ MonoBehaviour:
     clauses: []
   scriptPath: upload.sh
   scriptArguments: $RELEASE_TYPE $VERSION
---- !u!114 &-4188365499934776281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54626104f6c7de94f9976e1672abc45b, type: 3}
-  m_Name: FolderOperation
-  m_EditorClassIdentifier: 
-  actionType: 1
-  actionName: FolderOperation
-  note: 
-  actionEnabled: 1
-  configureEditor: 0
-  filter:
-    condition: 0
-    clauses: []
-  inputPath: Mods
-  outputPath: $BUILDPATH/Mods
-  operation: 1
 --- !u!114 &-1960416993050488900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,8 +132,8 @@ MonoBehaviour:
     buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/
     openFolderPostBuild: 0
   _productParameters:
-    buildCounter: 25
-    buildVersion: 2.0.0b24
+    buildCounter: 26
+    buildVersion: 2.0.0b26
     versionTemplate: 2.0.0b$BUILD
     autoGenerate: 1
     syncWithPlayerSettings: 0
@@ -280,7 +257,6 @@ MonoBehaviour:
     - {fileID: -7107573810230948887}
   _postBuildActions:
     buildActions:
-    - {fileID: -4188365499934776281}
     - {fileID: 4388923883098422228}
 --- !u!114 &2834666416053928921
 MonoBehaviour:
