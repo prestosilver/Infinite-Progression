@@ -37,13 +37,11 @@ public class Mods : MonoBehaviour
 
         modManager = ModManager.instance;
 
+        if (modManager.GetModList().Count == 0)
+            GitControler.download("github.com/prestosilver/IP-BaseMods");
+
         foreach (Mod mod in modManager.GetModList())
             OnModFound(mod);
-
-        // modManager.ModFound += OnModFound;
-        // modManager.ModRemoved += OnModRemoved;
-        // modManager.ModLoaded += OnModLoaded;
-        // modManager.ModUnloaded += OnModUnloaded;
 
         Application.runInBackground = true;
     }

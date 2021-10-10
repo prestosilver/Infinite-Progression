@@ -24,7 +24,7 @@ public class GithubChooser : MonoBehaviour
     {
         if (!GitControler.CheckUrl(nameField.text))
         {
-            string reason = GitControler.GetReason();
+            string reason = GitControler.GetReason(nameField.text);
             reasonText.text = "Invalid URL:\n" + reason;
             Popup.SetActive(true);
             return;
