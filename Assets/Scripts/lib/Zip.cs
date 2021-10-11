@@ -9,7 +9,11 @@ using System.IO.Compression;
 
 public class ZipUtil
 {
-
+    /// <summary>
+    /// unzips a zip file
+    /// </summary>
+    /// <param name="zipFilePath">the zip file</param>
+    /// <param name="location">where to unzip</param>
     public static void Unzip(string zipFilePath, string location)
     {
         try
