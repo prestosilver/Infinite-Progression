@@ -4,18 +4,31 @@ using PyMods;
 
 public class ModItem : MonoBehaviour
 {
+    /// <summary>
+    /// the name of the mod
+    /// </summary>
     public Text modName;
+
+    /// <summary>
+    /// the mod description
+    /// </summary>
     public Text modType;
 
+    /// <summary>
+    /// the mod enabled toggle
+    /// </summary>
     public Toggle toggle;
 
+    /// <summary>
+    /// the mod this represents
+    /// </summary>
     public Mod mod;
 
     /// <summary>
     /// Initialze this ModItem with a Mod and ModMenu.
     /// </summary>
-    /// <param name="mod"></param>
-    /// <param name="modMenu"></param>
+    /// <param name="mod">the mod</param>
+    /// <param name="modMenu">the mod menu object</param>
 	public void Initialize(Mod mod, Transform menuContentPanel)
     {
         this.mod = mod;
@@ -33,6 +46,7 @@ public class ModItem : MonoBehaviour
     /// <summary>
     /// Toggle whether the mod should be loaded
     /// </summary>
+    /// <param name="isEnabled">sets the mod enabled</param>
     public void Toggle(bool isEnabled)
     {
         mod.isEnabled = isEnabled;
@@ -41,7 +55,7 @@ public class ModItem : MonoBehaviour
     /// <summary>
     /// Enable or disable this ModItem's toggle.
     /// </summary>
-    /// <param name="interactable"></param>
+    /// <param name="interactable">the value</param>
     public void SetToggleInteractable(bool interactable)
     {
         toggle.interactable = interactable;
