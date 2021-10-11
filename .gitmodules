@@ -3,4 +3,4 @@
 	url = git@github.com:prestosilver/IP-Mod-Template
 [submodule "Mods"]
 	path = Mods
-	url = git@github.com:prestosilver/IP-Base-Mods
+	url = git@github.com:prestosilver/IP-BaseMods
