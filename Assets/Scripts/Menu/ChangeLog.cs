@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public class ChangeLog : MonoBehaviour
 {
+    // singleton class
     public TextAsset log;
-    // Start is called before the first frame update
+
+    /// <summary>
+    /// setup the changelog
+    /// </summary>
     public void Start()
     {
         gameObject.GetComponent<Text>().text = log.text;
