@@ -404,4 +404,17 @@ public class GameController : MonoBehaviour
 
         return result;
     }
+    public static int GetChance(string module)
+    {
+        if (module == "slider")
+        {
+            return instance.prefabs[0].GetComponent<ProbController>().chance;
+        }
+
+        foreach (Mod mod in mods)
+        {
+            if (mod.name == module) return mod.chance;
+        }
+        return -2;
+    }
 }

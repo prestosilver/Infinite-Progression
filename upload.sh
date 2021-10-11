@@ -14,4 +14,4 @@ if [[ $1 == "Master" ]]; then
 else
   git checkout Devel
 fi
-git push
+git push --set-upstream origin Devel
