@@ -1,8 +1,0 @@
-{
-  "name": "Multiplier Modules",
-  "description": "Multiplies currency gain at the cost of another currency",
-  "main_file": "main.py",
-  "ui_file": "ui.json",
-  "requires": [],
-  "chance": 6
-}

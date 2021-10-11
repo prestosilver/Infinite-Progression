@@ -1,8 +1,0 @@
-{
-  "name": "Incrementor Modules",
-  "description": "Generates currency passively",
-  "main_file": "main.py",
-  "ui_file": "ui.json",
-  "requires": [],
-  "chance": 2
-}
