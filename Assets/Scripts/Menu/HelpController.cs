@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class HelpController : MonoBehaviour
 {
-    public void Home() {
+    /// <summary>
+    /// this file probably is not used
+    /// </summary>
+    public void Home()
+    {
         SceneManager.LoadSceneAsync("MainMenu");
     }
 }
