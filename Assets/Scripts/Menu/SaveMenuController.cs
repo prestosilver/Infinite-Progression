@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using PyMods;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +14,6 @@ public class SaveMenuController : MonoBehaviour
     public Transform parentTransform;
     public Transform canvas;
 
-    // Start is called before the first frame update
     void Start()
     {
         List<Save> result = new List<Save>();

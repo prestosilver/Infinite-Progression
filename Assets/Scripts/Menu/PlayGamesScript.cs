@@ -5,7 +5,6 @@ using UnityEngine.SocialPlatforms;
 
 public class PlayGamesScript
 {
-    // Use this for initialization
     public static void Start()
     {
 #if UNITY_ANDROID
@@ -20,7 +19,7 @@ public class PlayGamesScript
     public static void SignIn()
     {
 #if UNITY_ANDROID
-        PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptOnce, (result) =>{ });
+        PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptOnce, (result) => { });
 #endif
     }
 
