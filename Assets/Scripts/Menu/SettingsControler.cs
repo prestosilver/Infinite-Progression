@@ -14,12 +14,17 @@ public class SettingsControler : MonoBehaviour
     /// <summary>
     /// the toggle that changes long notation
     /// </summary>
-    public Toggle LongNotation;
+    public Toggle LogNotation;
 
     /// <summary>
     /// the random names toggle
     /// </summary>
     public Toggle RandNames;
+
+    /// <summary>
+    /// the menu animation toggle
+    /// </summary>
+    public Toggle MenuAnimation;
 
     /// <summary>
     /// the changelog prefab
@@ -31,8 +36,9 @@ public class SettingsControler : MonoBehaviour
     /// </summary>
     public void Save()
     {
-        PlayerPrefs.SetString("LongNotation", "" + LongNotation.isOn);
+        PlayerPrefs.SetString("LogNotation", "" + LogNotation.isOn);
         PlayerPrefs.SetString("RandNames", "" + RandNames.isOn);
+        PlayerPrefs.SetString("MenuAnimation", "" + MenuAnimation.isOn);
     }
 
     /// <summary>
@@ -49,8 +55,9 @@ public class SettingsControler : MonoBehaviour
     public void Start()
     {
         ConsistantTPS.tps = new BigNumber(120);
-        LongNotation.isOn = (PlayerPrefs.GetString("LongNotation") == "True");
+        LogNotation.isOn = (PlayerPrefs.GetString("LogNotation") == "True");
         RandNames.isOn = (PlayerPrefs.GetString("RandNames") == "True");
+        MenuAnimation.isOn = (PlayerPrefs.GetString("MenuAnimation") == "True");
     }
 
     /// <summary>
@@ -66,7 +73,7 @@ public class SettingsControler : MonoBehaviour
     /// </summary>
     public static void Load()
     {
-        BigNumber.LongNotation = (PlayerPrefs.GetString("LongNotation") == "True");
+        BigNumber.LogNotation = (PlayerPrefs.GetString("LogNotation") == "True");
     }
 
     /// <summary>

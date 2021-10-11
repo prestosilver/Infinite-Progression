@@ -9,7 +9,7 @@ public class BigNumber
     public int exponent_little = 0, exponent_big = 0;
     public float mantissa = 0;
     public bool inverse = false;
-    public static bool LongNotation = false;
+    public static bool LogNotation = false;
 
     public static BigNumber Add(BigNumber a, BigNumber b)
     {
@@ -246,8 +246,12 @@ public class BigNumber
     public override string ToString()
     {
         Fix();
-        if (LongNotation)
-            return ("[" + mantissa + ", " + exponent_little + ", " + exponent_big + "]");
+        if (LogNotation)
+        {
+            if (mantissa < 1)
+                return "" + mantissa;
+            return ("e" + ((double)exponent_little + Mathf.Log10(mantissa)).ToString("F2"));
+        }
         string result = "";
         if (inverse)
             result = "1/";
