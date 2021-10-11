@@ -5,6 +5,16 @@ using PyMods;
 public class ModItem : MonoBehaviour
 {
     /// <summary>
+    /// the prefab that shows the error message
+    /// </summary>
+    public GameObject aboutPrefab;
+
+    /// <summary>
+    /// the prefab that shows the error message
+    /// </summary>
+    public GameObject confirmPrefab;
+
+    /// <summary>
     /// the name of the mod
     /// </summary>
     public Text modName;
@@ -59,5 +69,31 @@ public class ModItem : MonoBehaviour
     public void SetToggleInteractable(bool interactable)
     {
         toggle.interactable = interactable;
+    }
+
+    /// <summary>
+    /// removes a mod
+    /// </summary>
+    public void Remove()
+    {
+        // create confirm dialog
+        GameObject go = Instantiate(confirmPrefab);
+
+        // setup delete action
+        GameObject confirm = GameObject.FindGameObjectsWithTag("ConfirmButton")[0];
+        confirm.GetComponent<Button>().onClick.AddListener(() =>
+        {
+            string error = mod.Remove();
+            if (error != "")
+            {
+                // create the info object
+                Transform t = ModItem.Instantiate(aboutPrefab).transform;
+
+                // setup the info text
+                t.GetChild(0).GetChild(1).GetChild(1).GetComponent<Text>().text = "Error:";
+                t.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>().text = $"The mod {error} requires this mod.";
+            }
+            Destroy(go);
+        });
     }
 }

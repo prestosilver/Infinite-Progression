@@ -91,6 +91,7 @@ public static class SeededRand
     /// <returns>normailzed value</returns>
     private static double NormalInv(double q)
     {
+        return q;
         // I forgot how this works so no comments
         if (q == .5)
             return 0;

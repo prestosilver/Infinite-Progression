@@ -139,6 +139,11 @@ public class MenuController : MonoBehaviour
         PlayGamesScript.ShowLeaderboardsUI();
     }
 
+    public void Mods()
+    {
+        StartCoroutine(LoadScene("ModMenu"));
+    }
+
     /// <summary>
     /// closes the game
     /// </summary>

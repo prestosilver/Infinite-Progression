@@ -153,6 +153,7 @@ MonoBehaviour:
         - fileGUID: 5c5afca46dc7cda43a5b892f0f8826b6
         - fileGUID: 976017b3d2140881aa56e1167b1e0aaa
         - fileGUID: 38a22b7c46ae2e061acdd791521efa95
+        - fileGUID: 32f06c4eb15ac146a83c19eec97c5828
     - typeName: Devel
       bundleIdentifier: com.Prestosilver.IP
       companyName: Prestosilver
@@ -167,6 +168,7 @@ MonoBehaviour:
         - fileGUID: 5c5afca46dc7cda43a5b892f0f8826b6
         - fileGUID: 976017b3d2140881aa56e1167b1e0aaa
         - fileGUID: 38a22b7c46ae2e061acdd791521efa95
+        - fileGUID: 32f06c4eb15ac146a83c19eec97c5828
   _platformList:
     platforms:
     - {fileID: -432555192352403463}

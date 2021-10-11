@@ -45,6 +45,7 @@ public class MenuAnimation : MonoBehaviour
 
         // get the ammount of sliders
         int ammnt = (int)(canvas.rect.width * canvas.rect.height / 9500);
+        if (PlayerPrefs.GetString("MenuAnimation") == "True") ammnt = 0;
 
         // spawn all the sliders
         for (int x = 0; x < ammnt; x++)

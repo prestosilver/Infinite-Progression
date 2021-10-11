@@ -30,9 +30,24 @@ public class Mods : MonoBehaviour
     public ModItem modItemPrefab;
 
     /// <summary>
+    /// The prefab for the mod menu item
+    /// </summary>
+    public GameObject GHPopup;
+
+    /// <summary>
+    /// The canvas to spawn the popups on
+    /// </summary>
+    public Transform canvas;
+
+    /// <summary>
     /// Are the enabled mods loaded?
     /// </summary>
     private bool isLoaded;
+
+    /// <summary>
+    /// the current mod list
+    /// </summary>
+    private List<Mod> currentMods;
 
     /// <summary>
     /// saetup mod list
@@ -49,6 +64,7 @@ public class Mods : MonoBehaviour
         if (modManager.GetModList().Count == 0)
             GitControler.download("github.com/prestosilver/IP-BaseMods");
 
+        currentMods = modManager.GetModList();
         // get mod list
         foreach (Mod mod in modManager.GetModList())
             OnModFound(mod);
@@ -56,7 +72,7 @@ public class Mods : MonoBehaviour
         Application.runInBackground = true;
 
         // update mod list
-        // StartCoroutine(UpdateMods());
+        StartCoroutine(UpdateMods());
     }
 
     // update mod list in background
@@ -67,6 +83,8 @@ public class Mods : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
 
+            if (modManager.GetModList().Count == currentMods.Count) continue;
+            currentMods = modManager.GetModList();
             // clear mods
             foreach (ModItem modItem in modItems.Values) Destroy(modItem.gameObject);
             modItems = new Dictionary<Mod, ModItem>();
@@ -188,5 +206,13 @@ public class Mods : MonoBehaviour
 
         // play game
         SceneManager.LoadScene("MainGame");
+    }
+
+    /// <summary>
+    /// show the github add mod thing
+    /// </summary>
+    public void ShowGHPopup()
+    {
+        Instantiate(GHPopup, canvas);
     }
 }

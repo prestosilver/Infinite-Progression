@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine;
 using Microsoft.Scripting.Hosting;
 using IronPython.Hosting;
+using UnityEngine.UI;
 
 namespace PyMods
 {
@@ -28,6 +29,7 @@ namespace PyMods
     /// </summary>
     public class Mod
     {
+
         /// <summary>
         /// the mod name
         /// </summary>
@@ -94,6 +96,11 @@ namespace PyMods
         public ScriptSource source;
 
         /// <summary>
+        /// the path of the mod
+        /// </summary>
+        public string path;
+
+        /// <summary>
         /// mod constructor
         /// </summary>
         /// <param name="path">the name and path of the mod</param>
@@ -112,6 +119,7 @@ namespace PyMods
             description = info.description;
             requires = info.requires;
             chance = info.chance;
+            this.path = path;
 
             // read the ui file
             UI = JsonUtility.FromJson<ModUI>(File.ReadAllText(uiFile));
@@ -248,6 +256,23 @@ namespace PyMods
         {
             data = scope.GetVariable<Func<object, object>>("saveData")(data);
             return data;
+        }
+
+        /// <summary>
+        /// uninstalls the mod
+        /// </summary>
+        /// <returns>the error message</returns>
+        public string Remove()
+        {
+            foreach (Mod m in ModManager.instance.GetModList())
+            {
+                if (m.requires.Contains(name))
+                {
+                    return m.name;
+                }
+            }
+            Directory.Delete(path, true);
+            return "";
         }
     }
 }

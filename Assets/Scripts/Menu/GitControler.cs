@@ -58,10 +58,6 @@ public static class GitControler
     {
         // make sure the modlist exists
         if (!Directory.Exists(ModPath)) Directory.CreateDirectory(ModPath);
-        if (!File.Exists(ListPath)) File.Create(ListPath).Close();
-
-        // read the modlist
-        installedPackages = new List<string>(File.ReadAllLines(ListPath));
     }
 
     /// <summary>
@@ -179,14 +175,11 @@ public static class GitControler
             }
         } while (reqs.Count > 0);
 
-        // update installed
-        File.WriteAllLines(ListPath, installedPackages);
-
         // cleanup
         Directory.Delete(TempPath);
 
-        // show success
-        SuccessPopup.SetActive(true);
+        // show success if exists
+        if (SuccessPopup != null) SuccessPopup.SetActive(true);
     }
 
 }

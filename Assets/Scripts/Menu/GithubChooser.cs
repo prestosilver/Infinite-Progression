@@ -51,11 +51,11 @@ public class GithubChooser : MonoBehaviour
             FailPopup.SetActive(true);
             return;
         }
+        GitControler.SuccessPopup = SuccessPopup;
 
         // download and install the package
         Uri uri = GitControler.getDownloadUrl(nameField.text);
         Debug.Log($"Add Mod {uri.GetLeftPart(UriPartial.Path)}");
         GitControler.download(nameField.text);
-        GitControler.SuccessPopup = SuccessPopup;
     }
 }
