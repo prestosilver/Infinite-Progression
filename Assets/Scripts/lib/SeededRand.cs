@@ -6,27 +6,45 @@ using System;
 [System.Serializable]
 public static class SeededRand
 {
+    // the default seed, to reimplement
     public static int seed = 14321;
 
+    // data for random names
     private const string vowels = "aeiouy";
     private const string constonants = "bcdfghjklmnpqrstvwxyz";
     const string Symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+    /// <summary>
+    /// set the seed
+    /// </summary>
+    /// <param name="fseed">the seed to set</param>
     public static void SetSeed(int fseed)
     {
         seed = fseed;
     }
-    // Start is called before the first frame update
+
+    /// <summary>
+    /// perlin noise based 2d random
+    /// </summary>
+    /// <param name="at">the id of the random number</param>
+    /// <returns>a random number</returns>
     public static float Perlin(float at)
     {
         float rand = (float)NormalInv((double)Mathf.PerlinNoise(Mathf.PI / 20 * at, Mathf.PI / 3 * seed)); // pi is a Nothing up my sleeve number
         return rand;
     }
 
+    /// <summary>
+    /// gets a random word at postion num
+    /// </summary>
+    /// <param name="num">the word number</param>
+    /// <returns>a random word</returns>
     public static string Word(int num)
     {
+        // no random names
         if (PlayerPrefs.GetString("RandNames") != "True")
             return Base26((num / 100) - 1);
+
         int x = 0;
         string m = "";
         while (x < (Perlin(num) * 3 + 5))
@@ -44,6 +62,11 @@ public static class SeededRand
         return m;
     }
 
+    /// <summary>
+    /// non random word
+    /// </summary>
+    /// <param name="id">the number to convert</param>
+    /// <returns>a base 26 number</returns>
     static string Base26(int id)
     {
         int iter = id;
@@ -61,9 +84,14 @@ public static class SeededRand
         return result;
     }
 
+    /// <summary>
+    /// normalize the random function
+    /// </summary>
+    /// <param name="q">the random value</param>
+    /// <returns>normailzed value</returns>
     private static double NormalInv(double q)
     {
-        return q;
+        // I forgot how this works so no comments
         if (q == .5)
             return 0;
 

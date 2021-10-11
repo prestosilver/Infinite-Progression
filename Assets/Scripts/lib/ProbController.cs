@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class ProbController : MonoBehaviour
 {
+    /// <summary>
+    /// stores the change for sliders
+    /// </summary>
     public int chance = 0;
 }
