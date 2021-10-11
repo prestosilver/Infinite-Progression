@@ -6,23 +6,46 @@ using UnityEngine.UI;
 
 public class SettingsControler : MonoBehaviour
 {
-    public GameObject confirmPrefab, seedPrefab;
+    /// <summary>
+    /// the confirm dialog
+    /// </summary>
+    public GameObject confirmPrefab;
+
+    /// <summary>
+    /// the toggle that changes long notation
+    /// </summary>
     public Toggle LongNotation;
+
+    /// <summary>
+    /// the random names toggle
+    /// </summary>
     public Toggle RandNames;
-    public Text SeedText;
+
+    /// <summary>
+    /// the changelog prefab
+    /// </summary>
     public GameObject ChangeLog;
 
+    /// <summary>
+    /// saves settings
+    /// </summary>
     public void Save()
     {
         PlayerPrefs.SetString("LongNotation", "" + LongNotation.isOn);
         PlayerPrefs.SetString("RandNames", "" + RandNames.isOn);
     }
 
+    /// <summary>
+    /// shows the change log
+    /// </summary>
     public void ShowChangeLog()
     {
         Instantiate(ChangeLog);
     }
 
+    /// <summary>
+    /// setup the settings
+    /// </summary>
     public void Start()
     {
         ConsistantTPS.tps = new BigNumber(120);
@@ -30,51 +53,25 @@ public class SettingsControler : MonoBehaviour
         RandNames.isOn = (PlayerPrefs.GetString("RandNames") == "True");
     }
 
+    /// <summary>
+    /// signin gpgs
+    /// </summary>
     public void SignIn()
     {
         PlayGamesScript.SignIn();
     }
 
+    /// <summary>
+    /// load settings
+    /// </summary>
     public static void Load()
     {
         BigNumber.LongNotation = (PlayerPrefs.GetString("LongNotation") == "True");
     }
 
-    public void Reset()
-    {
-        Saves.savePath = Application.persistentDataPath + "/save.dat";
-        Instantiate(confirmPrefab);
-        GameObject confirm = GameObject.FindGameObjectsWithTag("ConfirmButton")[0];
-        confirm.GetComponent<Button>().onClick.AddListener(StartNewGame);
-    }
-
-    public void ResetSeed()
-    {
-        Saves.savePath = Application.persistentDataPath + "/save.dat";
-        Instantiate(seedPrefab);
-        GameObject confirm = GameObject.FindGameObjectsWithTag("ConfirmButton")[0];
-        confirm.GetComponent<Button>().onClick.AddListener(StartNewGame);
-    }
-
-    public void ResetSandbox()
-    {
-        Saves.savePath = Application.persistentDataPath + "/sandbox.dat";
-        Instantiate(confirmPrefab);
-        GameObject confirm = GameObject.FindGameObjectsWithTag("ConfirmButton")[0];
-        confirm.GetComponent<Button>().onClick.AddListener(StartNewGame);
-    }
-
-    public void StartNewGame()
-    {
-        // Saves.Reset();
-        // if (GameObject.FindGameObjectsWithTag("SeedBox").Length != 0)
-        // {
-        //     int.TryParse(GameObject.FindGameObjectsWithTag("SeedBox")[0].GetComponent<InputField>().text, out int seed);
-        //     Saves.Reset(0, true, seed);
-        // }
-        Home();
-    }
-
+    /// <summary>
+    /// go home
+    /// </summary>
     public void Home()
     {
         Save();
