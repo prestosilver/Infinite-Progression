@@ -201,7 +201,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Are You Sure
 
-    <size=24>You are aout to delete that save!</size>'
+    <size=24>You are aout to delete that mod!</size>'
 --- !u!1 &5851189372711704286
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +815,7 @@ GameObject:
   - component: {fileID: 6485838689732317087}
   - component: {fileID: 5492025581473529799}
   m_Layer: 0
-  m_Name: Confirm
+  m_Name: ModConfirm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

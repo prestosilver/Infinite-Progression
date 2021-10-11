@@ -194,8 +194,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 30}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 32.1958}
+  m_SizeDelta: {x: 160, y: 64.3916}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7276221906996768110
 CanvasRenderer:
@@ -238,9 +238,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Paste the Url
+  m_Text: '<size=22>Paste the github Url</size>
 
-    of the github repository'
+    example:
+
+    github.com/bob16795/IP-Plus'
 --- !u!1 &2493036474520945398
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +279,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: -30}
+  m_AnchoredPosition: {x: 40, y: -50}
   m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5942334303215353690
@@ -540,7 +542,7 @@ GameObject:
   - component: {fileID: 6719249118414243822}
   - component: {fileID: 2438605151467459500}
   m_Layer: 5
-  m_Name: Succes
+  m_Name: SuccessPopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -640,7 +642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -40, y: -30}
+  m_AnchoredPosition: {x: -40, y: -50}
   m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8268814787301620060
@@ -853,7 +855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &181051910250037884
@@ -971,7 +973,7 @@ GameObject:
   - component: {fileID: 9038813363431790514}
   - component: {fileID: 7541684239276136265}
   m_Layer: 5
-  m_Name: Popup
+  m_Name: FailPopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1498,7 +1500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameField: {fileID: 2425209101312834431}
   reasonText: {fileID: 8775866238351563673}
-  Popup: {fileID: 6263064174109891829}
+  FailPopup: {fileID: 6263064174109891829}
   SuccessPopup: {fileID: 3194190201162799923}
 --- !u!1 &7988605551507665632
 GameObject:
@@ -1539,7 +1541,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 100}
+  m_SizeDelta: {x: 200, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7988605551507665645
 CanvasRenderer:
@@ -1869,4 +1871,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: URL
+  m_Text: Url
