@@ -6,23 +6,36 @@ using UnityEngine;
 
 namespace PyMods
 {
+    /// <summary>
+    /// json information about a mod in a pack
+    /// </summary>
     [Serializable]
-    public class ModInfo
+    public struct ModInfo
     {
         public string install_name;
         public string path;
     }
 
+    /// <summary>
+    /// json information about a mod package
+    /// </summary>
     [Serializable]
-    public class ModPackageData
+    public struct ModPackageData
     {
         public string version;
         public List<string> git_requires;
         public List<ModInfo> contents;
     }
 
+    /// <summary>
+    /// the mod package manager
+    /// </summary>
     public static class ModPackage
     {
+        /// <summary>
+        /// installs a mod package
+        /// </summary>
+        /// <param name="path">the mod package path</param>
         public static void install(string path)
         {
             // get the data
@@ -36,6 +49,11 @@ namespace PyMods
             Directory.Delete(path, true);
         }
 
+        /// <summary>
+        /// gets the required packages for the mod package
+        /// </summary>
+        /// <param name="path">the mod package path</param>
+        /// <returns>the mod package required packages</returns>
         public static List<string> getReqs(string path)
         {
             return JsonUtility.FromJson<ModPackageData>(File.ReadAllText(path + "/package.json")).git_requires;
