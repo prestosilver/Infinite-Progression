@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
     public GameObject modPrefab;
 
     public static List<Mod> mods = new List<Mod>();
+    public Mod forceNext;
 
     private bool seeded;
     private int ver = 0;
@@ -34,7 +35,7 @@ public class GameController : MonoBehaviour
         pres_button.interactable = slider_ammnt >= 10 * (presLevel + 1);
     }
 
-    public virtual void SaveThing() { Saves.savePath = "/save.dat"; }
+    public virtual void SaveThing() { Saves.savePath = "save.dat"; }
 
     public void Start()
     {
@@ -151,6 +152,11 @@ public class GameController : MonoBehaviour
                     if (m.name == requires[0])
                         slider.GetComponent<ModController>().mod = m;
             }
+        }
+        if (forceNext != null)
+        {
+            slider.GetComponent<ModController>().mod = forceNext;
+            forceNext = null;
         }
         GenericController cont = (GenericController)slider.GetComponents(typeof(GenericController))[0];
         GameObject nprev = null;
@@ -375,9 +381,27 @@ public class GameController : MonoBehaviour
         foreach (Mod mod in mods)
         {
             if (mod.name != name) continue;
+            if (chance == -1)
+            {
+                instance.forceNext = mod;
+                break;
+            }
             instance.sum -= mod.chance;
             instance.sum += chance;
             mod.chance = chance;
+            break;
         }
+    }
+
+    public static List<String> GetModList()
+    {
+        List<string> result = new List<String>();
+
+        foreach (Mod mod in mods)
+        {
+            result.Add(mod.name);
+        }
+
+        return result;
     }
 }

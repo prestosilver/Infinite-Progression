@@ -56,7 +56,7 @@ public class Mods : MonoBehaviour
         Application.runInBackground = true;
 
         // update mod list
-        StartCoroutine(UpdateMods());
+        // StartCoroutine(UpdateMods());
     }
 
     // update mod list in background

@@ -108,7 +108,7 @@ namespace PyMods
             // copy info from the info file
             name = info.name;
             mainFile = Path.Combine(path, info.main_file);
-            mainFile = Path.Combine(path, info.ui_file);
+            uiFile = Path.Combine(path, info.ui_file);
             description = info.description;
             requires = info.requires;
             chance = info.chance;
