@@ -7,13 +7,16 @@ using System.Linq;
 using PyMods;
 using UnityEngine.SceneManagement;
 
-/// <summary>
-/// Example mod manager. This menu displays all mods and lets you enable/disable them.
-/// </summary>
 public class Mods : MonoBehaviour
 {
+    /// <summary>
+    /// the mod manager instance
+    /// </summary>
     private ModManager modManager;
 
+    /// <summary>
+    /// a dictionary of mods and items representing them
+    /// </summary>
     private Dictionary<Mod, ModItem> modItems;
 
     /// <summary>
@@ -31,34 +34,53 @@ public class Mods : MonoBehaviour
     /// </summary>
     private bool isLoaded;
 
+    /// <summary>
+    /// saetup mod list
+    /// </summary>
     void Start()
     {
+        // init items
         modItems = new Dictionary<Mod, ModItem>();
 
+        // get mod manager instance
         modManager = ModManager.instance;
 
+        // get base mods if not there
         if (modManager.GetModList().Count == 0)
             GitControler.download("github.com/prestosilver/IP-BaseMods");
 
+        // get mod list
         foreach (Mod mod in modManager.GetModList())
             OnModFound(mod);
 
         Application.runInBackground = true;
+
+        // update mod list
         StartCoroutine(UpdateMods());
     }
 
+    // update mod list in background
     public IEnumerator UpdateMods()
     {
+        // update mods every second
         while (true)
         {
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(1);
+
+            // clear mods
             foreach (ModItem modItem in modItems.Values) Destroy(modItem.gameObject);
             modItems = new Dictionary<Mod, ModItem>();
+
+            // add mods
             foreach (Mod mod in modManager.GetModList())
                 OnModFound(mod);
         }
     }
 
+    /// <summary>
+    /// adds a mod to the list
+    /// </summary>
+    /// <param name="mod"></param>
     private void OnModFound(Mod mod)
     {
         ModItem modItem = Instantiate(modItemPrefab);
@@ -67,6 +89,10 @@ public class Mods : MonoBehaviour
         modItems.Add(mod, modItem);
     }
 
+    /// <summary>
+    /// remove a mod from list
+    /// </summary>
+    /// <param name="mod"></param>
     private void OnModRemoved(Mod mod)
     {
         ModItem modItem;
@@ -75,14 +101,6 @@ public class Mods : MonoBehaviour
         {
             modItems.Remove(mod);
             Destroy(modItem.gameObject);
-        }
-    }
-
-    private void SetTogglesInteractable(bool interactable)
-    {
-        foreach (ModItem item in modItems.Values)
-        {
-            item.SetToggleInteractable(interactable);
         }
     }
 
@@ -101,9 +119,12 @@ public class Mods : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// load mods
+    /// </summary>
     private void Load()
     {
-        //load mods
+        // init modlist
         GameController.mods = new List<Mod>();
         foreach (Mod mod in modItems.Keys)
         {
@@ -115,11 +136,12 @@ public class Mods : MonoBehaviour
             }
         }
 
-        SetTogglesInteractable(false);
-
         isLoaded = true;
     }
 
+    /// <summary>
+    /// unload loaded mods
+    /// </summary>
     private void Unload()
     {
         //unload all mods - this will unload their scenes and destroy all their instantiated objects as well
@@ -129,37 +151,42 @@ public class Mods : MonoBehaviour
         }
         GameController.mods = new List<Mod>();
 
-        SetTogglesInteractable(true);
-
         isLoaded = false;
     }
 
-    private void OnModLoaded(Mod mod)
-    {
-        Debug.Log("Loaded Mod: " + mod.name);
-    }
-
-    private void OnModUnloaded(Mod mod)
-    {
-        Debug.Log("Unloaded Mod: " + mod.name);
-    }
-
+    /// <summary>
+    /// cancel button
+    /// </summary>
     public void Home()
     {
         Unload();
         SceneManager.LoadScene("MainMenu");
     }
 
+    /// <summary>
+    /// load the selected mods
+    /// </summary>
     public void Play()
     {
+        // load them
         Load();
+
+        // init mods in save
         NamePick.modPickSave.mods = new List<string>();
+
+        // add mods to the save
         foreach (Mod mod in modItems.Keys)
         {
             if (mod.isEnabled)
                 NamePick.modPickSave.mods.Add(mod.name);
         }
+        // create mod save
         NamePick.modPickSave.Create();
+
+        // stop run in bg bc done with mods
+        Application.runInBackground = false;
+
+        // play game
         SceneManager.LoadScene("MainGame");
     }
 }
