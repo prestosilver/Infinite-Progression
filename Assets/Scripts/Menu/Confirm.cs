@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Confirm : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /// <summary>
+    /// destroy this
+    /// </summary>
     public void Cancel()
     {
         Destroy(gameObject);
