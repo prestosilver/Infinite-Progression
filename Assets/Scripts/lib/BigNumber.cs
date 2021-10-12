@@ -15,6 +15,10 @@ public class BigNumber
     /// the mantissa
     /// </summary>
     public float mantissa = 0;
+
+    /// <summary>
+    /// 1/number
+    /// </summary>
     public bool inverse = false;
     public static bool LogNotation = false;
 
