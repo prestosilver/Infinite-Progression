@@ -234,7 +234,7 @@ public class SliderController : GenericController
     /// </summary>
     public void BuyMuls()
     {
-        mult += 1;
+        mult += 10;
     }
 
     /// <summary>
