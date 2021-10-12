@@ -55,7 +55,6 @@ public class GithubChooser : MonoBehaviour
 
         // download and install the package
         Uri uri = GitControler.getDownloadUrl(nameField.text);
-        Debug.Log($"Add Mod {uri.GetLeftPart(UriPartial.Path)}");
         GitControler.download(nameField.text);
     }
 }
