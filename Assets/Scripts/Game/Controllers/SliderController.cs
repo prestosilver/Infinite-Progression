@@ -234,7 +234,16 @@ public class SliderController : GenericController
     /// </summary>
     public void BuyMuls()
     {
-        mult += 10;
+        mult += 1;
+    }
+
+    /// <summary>
+    /// the > button
+    /// </summary>
+    public void UpgradeMult()
+    {
+        value -= mult_start + BigNumber.Pow(mult, mult_mult);
+        mult += 1;
     }
 
     /// <summary>

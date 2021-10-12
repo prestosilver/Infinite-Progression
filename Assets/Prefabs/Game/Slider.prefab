@@ -255,8 +255,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3749667632728602361}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: UpgradeMuls
+        m_TargetAssemblyTypeName: SliderController, IP.Game
+        m_MethodName: UpgradeMult
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
