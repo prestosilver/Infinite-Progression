@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public class BigNumber
 {
+    /// <summary>
+    /// the exponent of the number
+    /// </summary>
     public int exponent_little = 0, exponent_big = 0;
     public float mantissa = 0;
     public bool inverse = false;
