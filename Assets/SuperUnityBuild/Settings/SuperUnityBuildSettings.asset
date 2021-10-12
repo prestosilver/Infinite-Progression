@@ -132,8 +132,8 @@ MonoBehaviour:
     buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/
     openFolderPostBuild: 0
   _productParameters:
-    buildCounter: 36
-    buildVersion: 2.0.0b36
+    buildCounter: 39
+    buildVersion: 2.0.0b39
     versionTemplate: 2.0.0b$BUILD
     autoGenerate: 1
     syncWithPlayerSettings: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
     showBuildInfo: 0
     hideDisabled: 0
     treeView: 0
-    selectedKeyChain: Master/PC/Windows x64
+    selectedKeyChain: Master/Android/Android (ARM64,Generic,Gradle,Disabled,Auto)
   _preBuildActions:
     buildActions:
     - {fileID: -7107573810230948887}
