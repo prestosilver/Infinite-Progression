@@ -132,8 +132,8 @@ MonoBehaviour:
     buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/
     openFolderPostBuild: 0
   _productParameters:
-    buildCounter: 39
-    buildVersion: 2.0.0b39
+    buildCounter: 40
+    buildVersion: 2.0.0b40
     versionTemplate: 2.0.0b$BUILD
     autoGenerate: 1
     syncWithPlayerSettings: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
         - fileGUID: 38a22b7c46ae2e061acdd791521efa95
         - fileGUID: 32f06c4eb15ac146a83c19eec97c5828
     - typeName: Devel
-      bundleIdentifier: com.Prestosilver.IP
+      bundleIdentifier: com.Prestosilver.IP-Dev
       companyName: Prestosilver
       productName: IP-Dev
       buildOptions: 513

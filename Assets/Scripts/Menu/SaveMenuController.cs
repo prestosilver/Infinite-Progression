@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SaveMenuController : MonoBehaviour
@@ -92,5 +93,10 @@ public class SaveMenuController : MonoBehaviour
             if (m != s.mods[0]) t.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>().text += ", ";
             t.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>().text += m;
         }
+    }
+
+    public void Back()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
