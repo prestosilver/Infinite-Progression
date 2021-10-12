@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     public int slider_ammnt;
     public int presLevel;
     public GameObject modPrefab;
+    public GameObject dataPrefab;
 
     public static List<Mod> mods = new List<Mod>();
     public Mod forceNext;
@@ -67,6 +68,10 @@ public class GameController : MonoBehaviour
                             break;
                         }
                         i++;
+                    }
+                    if (i == mods.Count)
+                    {
+                        AddMissing(modid, line.Split(';')[0]);
                     }
                 }
                 sliders[modid - 1].GetComponent<GenericController>().LoadSave(line.Split(';')[1]);
@@ -157,6 +162,72 @@ public class GameController : MonoBehaviour
             slider.GetComponent<ModController>().mod = forceNext;
             forceNext = null;
         }
+        GenericController cont = (GenericController)slider.GetComponents(typeof(GenericController))[0];
+        GameObject nprev = null;
+        if (sliders.Count != 0)
+            nprev = sliders[sliders.Count - 1];
+        cont.Setup(id, sliders, SeededRand.Word(100 * id + 1), nprev);
+        slider.transform.parent = parent.transform;
+        slider.transform.localScale = new Vector3(1, 1, 1);
+        slider.transform.localPosition = new Vector3(0, -10 + (-30 * (id - 1)), 0);
+        sliders.Add(slider);
+        GameObject prev = null, last = null;
+        int mult = 2;
+        int amult = 10;
+        int cost_mul = 1;
+        int rows = 0;
+        foreach (GameObject g in sliders)
+        {
+            g.transform.localPosition += new Vector3(0, (15 * (id)), 0);
+            if (g.GetComponent<SliderController>() != null)
+            {
+                g.GetComponent<SliderController>().prevSlider = prev;
+                g.GetComponent<SliderController>().mult_mult = mult;
+                g.GetComponent<SliderController>().auto_mult = amult;
+                mult += 1;
+                amult += 10;
+                prev = g;
+                cost_mul = 0;
+            }
+            if (g.GetComponent<SliderController>() != null)
+            {
+                last = g;
+            }
+            rows += 1;
+            cost_mul += 1;
+        }
+        if (last.GetComponent<SliderController>() != null)
+        {
+            more_button_text.GetComponent<Text>().text = "Unlock Next";
+            more_button_text.GetComponent<Text>().text += " - " + new BigNumber(cost_mul * 10000).ToString() + " ";
+            more_button_text.GetComponent<Text>().text += last.GetComponent<SliderController>().textName;
+            last.GetComponent<SliderController>().price = Mathf.Max(cost_mul * 10000, 5000);
+            last.GetComponent<SliderController>().next_button = next_button;
+        }
+        var rectTransform = parent.GetComponent<RectTransform>();
+        rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, 110 + (30 * (rows)));
+    }
+
+    /// <summary>
+    /// adds a DataController
+    /// </summary>
+    /// <param name="id">the id of the module</param>
+    /// <param name="type">the type of the module</param>
+    private void AddMissing(int id, string type)
+    {
+        int tmpid = 0;
+        foreach (GameObject g in sliders)
+        {
+            g.transform.localPosition -= new Vector3(0, (15 * (id - 1)), 0);
+            if (g.GetComponent<SliderController>() != null)
+            {
+                g.GetComponent<SliderController>().next_button = null;
+            }
+            tmpid++;
+        }
+        GameObject slider = Instantiate(dataPrefab);
+        slider.GetComponent<DataController>().id = id;
+        slider.GetComponent<DataController>().modName = type;
         GenericController cont = (GenericController)slider.GetComponents(typeof(GenericController))[0];
         GameObject nprev = null;
         if (sliders.Count != 0)
