@@ -212,7 +212,7 @@ MonoBehaviour:
       - enabled: 1
         childKeys:
         - Master/PC/Windows x64
-      - enabled: 0
+      - enabled: 1
         childKeys: []
       - enabled: 1
         childKeys:
