@@ -10,6 +10,10 @@ public class BigNumber
     /// the exponent of the number
     /// </summary>
     public int exponent_little = 0, exponent_big = 0;
+
+    /// <summary>
+    /// the mantissa
+    /// </summary>
     public float mantissa = 0;
     public bool inverse = false;
     public static bool LogNotation = false;
