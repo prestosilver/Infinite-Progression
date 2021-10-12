@@ -40,7 +40,6 @@ public class PlayGamesScript
     public static void ShowAchievementsUI()
     {
 #if UNITY_ANDROID
-        Debug.Log("Achivements");
         Social.ShowAchievementsUI();
 #endif
     }
@@ -55,7 +54,6 @@ public class PlayGamesScript
     public static void ShowLeaderboardsUI()
     {
 #if UNITY_ANDROID
-        Debug.Log("Leaderboard");
         PlayGamesPlatform.Instance.ShowLeaderboardUI();
 #endif
     }

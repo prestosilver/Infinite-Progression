@@ -139,7 +139,6 @@ public class BigNumber
         }
         if (b.mantissa == 0 && b.exponent_little == 0 && b.exponent_big == 0)
         {
-            Debug.Log(a);
             throw new DivideByZeroException("Lol you divided by zero");
         }
 
@@ -330,7 +329,6 @@ public class BigNumber
         exponent_big = 0;
         mantissa = a;
         Fix();
-        //Debug.Log("" + a + "=>" + toString());
     }
 
     /// <summary>
@@ -342,7 +340,6 @@ public class BigNumber
         exponent_big = a.exponent_big;
         mantissa = a.mantissa;
         Fix();
-        //Debug.Log("" + a + "=>" + toString());
     }
 
     // make operations easier

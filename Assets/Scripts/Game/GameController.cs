@@ -44,7 +44,6 @@ public class GameController : MonoBehaviour
             sum += i.GetComponent<ProbController>().chance;
         foreach (Mod m in mods)
         {
-            Debug.Log("" + m.name + ": " + m.chance);
             sum += m.chance;
         }
         List<string> save = Saves.Read();

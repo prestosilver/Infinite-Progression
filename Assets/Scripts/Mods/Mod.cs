@@ -151,7 +151,6 @@ namespace PyMods
         {
             loaded = false;
             dynamic data = scope.GetVariable<Func<object>>("onUnload")();
-            Debug.Log(data);
         }
 
         /// <summary>
@@ -173,7 +172,6 @@ namespace PyMods
         public dynamic Tick(dynamic data)
         {
             data = scope.GetVariable<Func<object, object>>("Tick")(data);
-            Debug.Log(engine.Operations.GetMember(data, "result"));
             return data;
         }
 
