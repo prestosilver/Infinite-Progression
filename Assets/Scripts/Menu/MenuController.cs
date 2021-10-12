@@ -124,14 +124,6 @@ public class MenuController : MonoBehaviour
     }
 
     /// <summary>
-    /// clone the github template thing
-    /// </summary>
-    public void Clone()
-    {
-        Application.OpenURL("https://github.com/prestosilver/IP-Mod-Template/generate");
-    }
-
-    /// <summary>
     /// shows the gpgs leaderboards
     /// </summary>
     public void ShowLeaderboards()
