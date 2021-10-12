@@ -1,8 +1,12 @@
 <size=68>R-2.0.0</size>
 
-* <b>ALL SAVES ARE NOW BROKEN</b>
-* rewrote all modules
+* changed version naming
++ now on itch
 + added mods
+* rewrote base modules as mods
++ you can now enable / disable mods
+* fixed a ton of bugs
+- <b>ALL PREEXISTING PC SAVES ARE BROKEN :(</b>
 
 <size=68>B-1.21.5</size>
 + Changed font in changelog to inconsolata
