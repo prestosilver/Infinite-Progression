@@ -132,8 +132,8 @@ MonoBehaviour:
     buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/
     openFolderPostBuild: 0
   _productParameters:
-    buildCounter: 46
-    buildVersion: 2.0.1b46
+    buildCounter: 47
+    buildVersion: 2.0.1b47
     versionTemplate: 2.0.1b$BUILD
     autoGenerate: 1
     syncWithPlayerSettings: 0
@@ -212,7 +212,7 @@ MonoBehaviour:
       - enabled: 1
         childKeys:
         - Master/PC/Windows x64
-      - enabled: 1
+      - enabled: 0
         childKeys: []
       - enabled: 1
         childKeys:
@@ -232,7 +232,7 @@ MonoBehaviour:
       - enabled: 1
         childKeys:
         - Devel/PC/Windows x64
-      - enabled: 1
+      - enabled: 0
         childKeys: []
       - enabled: 1
         childKeys:
@@ -253,7 +253,7 @@ MonoBehaviour:
     showBuildInfo: 0
     hideDisabled: 0
     treeView: 0
-    selectedKeyChain: Devel/Android/Android (ARM64,Generic,Gradle,Disabled,Auto)
+    selectedKeyChain: Master/Android/Android (ARM64,Generic,Gradle,Disabled,Auto)
   _preBuildActions:
     buildActions:
     - {fileID: -7107573810230948887}
