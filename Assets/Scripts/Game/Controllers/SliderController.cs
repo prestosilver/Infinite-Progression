@@ -230,11 +230,20 @@ public class SliderController : GenericController
     }
 
     /// <summary>
+    /// upgrade when button is pressed
+    /// </summary>
+    public void UpgradeMuls()
+    {
+        mult += 10;
+    }
+
+
+    /// <summary>
     /// buys a multiplier
     /// </summary>
     public void BuyMuls()
     {
-        mult += 1;
+        mult += 10;
     }
 
     /// <summary>

@@ -1,3 +1,12 @@
+<size=68>R-2.0.1b48</size>
++ added get all of function for mods
+* fixed android build?
+
+<size=68>R-2.0.1b42</size>
+* fixed slider mult button making the game playable lol
+* fixed missing mods
++ added missing mod indicator
+
 <size=68>R-2.0.0</size>
 
 * changed version naming
