@@ -474,6 +474,17 @@ public class GameController : MonoBehaviour
 
         return result;
     }
+
+    public static List<GenericController> GetAllOf(string name)
+    {
+        List<GenericController> result = new List<GenericController>();
+        foreach (GameObject obj in instance.sliders)
+        {
+            if (obj.GetComponent<GenericController>().name == name) result.Add(obj.GetComponent<GenericController>());
+        }
+        return result;
+    }
+
     public static int GetChance(string module)
     {
         if (module == "slider")
