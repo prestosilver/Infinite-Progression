@@ -42,7 +42,7 @@ public class DataController : GenericController
     /// </summary>
     public override void UpdateDisplay()
     {
-        nameText.text = "Mod: " + name;
+        nameText.text = "Mod: " + modName;
     }
 
     /// <summary>
