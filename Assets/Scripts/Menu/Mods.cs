@@ -140,7 +140,7 @@ public class Mods : MonoBehaviour
     /// <summary>
     /// load mods
     /// </summary>
-    private void Load()
+    private IEnumerator Load()
     {
         // init modlist
         GameController.mods = new List<Mod>();
@@ -152,9 +152,11 @@ public class Mods : MonoBehaviour
                 GameController.mods.Add(mod);
                 GameController.mods.AddRange(modManager.LoadMods(mod.requires, 1));
             }
+            yield return null;
         }
 
         isLoaded = true;
+        yield return null;
     }
 
     /// <summary>
@@ -187,7 +189,7 @@ public class Mods : MonoBehaviour
     public void Play()
     {
         // load them
-        Load();
+        StartCoroutine(Load());
 
         // init mods in save
         NamePick.modPickSave.mods = new List<string>();
