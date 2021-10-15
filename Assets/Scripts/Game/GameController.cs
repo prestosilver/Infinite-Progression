@@ -122,7 +122,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void AddMod(int id, int type)
+    public void AddMod(int id, int type)
     {
         int tmpid = 0;
         foreach (GameObject g in sliders)
