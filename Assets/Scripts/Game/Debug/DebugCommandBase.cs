@@ -39,6 +39,21 @@ namespace IP.Debug
         }
     }
 
+    public class DebugCommand<T1> : DebugCommandBase
+    {
+        private Action<T1> command;
+
+        public DebugCommand(string commandId, string commandDescription, string commandFormat, Action<T1> command) : base(commandId, commandDescription, commandFormat)
+        {
+            this.command = command;
+        }
+
+        public void Invoke(T1 value)
+        {
+            command.Invoke(value);
+        }
+    }
+
     public class DebugCommand<T1, T2> : DebugCommandBase
     {
         private Action<T1, T2> command;
