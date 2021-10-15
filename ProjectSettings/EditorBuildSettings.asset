@@ -26,4 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SaveSelect.unity
     guid: 38a22b7c46ae2e061acdd791521efa95
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 6ab94bab38e2d752b9a98a6ec32cbe2e,
+      type: 2}

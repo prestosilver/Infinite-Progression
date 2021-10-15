@@ -73,10 +73,4 @@ AssetBundles
 Recordings
 Assets/SuperUnityBuild/BuildConstants.cs
 ProjectSettings/ProjectSettings.asset
-Assets/Scripts/Mods/Blocks/ConditionBlock.cs
-Assets/Scripts/Mods/Blocks/ConditionBlock.cs.meta
-Assets/Scripts/Mods/Blocks/ModBlock.cs
-Assets/Scripts/Mods/Blocks/ModBlock.cs.meta
-Assets/Scripts/Mods/Blocks/PyMods.ModBlocks.asmdef
-Assets/Scripts/Mods/Blocks/PyMods.ModBlocks.asmdef.meta
-Assets/Scripts/Mods/Blocks.meta
+Assets/Scripts/Mods/Blocks*

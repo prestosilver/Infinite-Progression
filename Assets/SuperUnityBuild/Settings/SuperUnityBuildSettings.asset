@@ -44,7 +44,7 @@ MonoBehaviour:
     binaryNameFormat: '{0}.apk'
   variants:
   - variantName: Device Type
-    selectedIndex: 1
+    selectedIndex: 0
     values:
     - ARMv7
     - ARM64
@@ -132,8 +132,8 @@ MonoBehaviour:
     buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/
     openFolderPostBuild: 0
   _productParameters:
-    buildCounter: 47
-    buildVersion: 2.0.1b47
+    buildCounter: 51
+    buildVersion: 2.0.1b51
     versionTemplate: 2.0.1b$BUILD
     autoGenerate: 1
     syncWithPlayerSettings: 0
@@ -176,9 +176,9 @@ MonoBehaviour:
     - {fileID: -1960416993050488900}
   _projectConfigurations:
     configSet:
-      _Buckets: ffffffffffffffff0b00000001000000ffffffff07000000ffffffffffffffff050000000d00000008000000ffffffff0c000000ffffffffffffffff0a00000006000000
-      _HashCodes: 2ef019058524615e907ca376ac2c916b5e7f6d278015584da839ef7136e40a136f5a1a26a8cf053cb892be05a63f2c23d0171223549a105f000000000000000000000000
-      _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffff0200000000000000ffffffff09000000ffffffff0400000003000000000000000000000000000000
+      _Buckets: ffffffffffffffffffffffff0b000000ffffffff07000000ffffffffffffffff050000000d00000008000000040000000c000000ffffffffffffffff0a00000006000000
+      _HashCodes: 2ef019058524615e907ca376ac2c916bc15847328015584da839ef7136e40a136f5a1a26a8cf053cb892be059700fa4ed0171223549a105f000000000000000000000000
+      _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffff0200000000000000ffffffff0900000001000000ffffffff03000000000000000000000000000000
       _Count: 14
       _Version: 14
       _FreeList: -1
@@ -188,14 +188,14 @@ MonoBehaviour:
       - Master/Linux
       - Master/PC/Windows x64
       - Master/PC
-      - Master/Android/Android (ARM64,Generic,Gradle,Disabled,Auto)
+      - Master/Android/Android (ARMv7,Generic,Gradle,Disabled,Auto)
       - Master/Android
       - Master
       - Devel/Linux/Linux x64
       - Devel/Linux
       - Devel/PC/Windows x64
       - Devel/PC
-      - Devel/Android/Android (ARM64,Generic,Gradle,Disabled,Auto)
+      - Devel/Android/Android (ARMv7,Generic,Gradle,Disabled,Auto)
       - Devel/Android
       - Devel
       - 
@@ -216,7 +216,7 @@ MonoBehaviour:
         childKeys: []
       - enabled: 1
         childKeys:
-        - Master/Android/Android (ARM64,Generic,Gradle,Disabled,Auto)
+        - Master/Android/Android (ARMv7,Generic,Gradle,Disabled,Auto)
       - enabled: 1
         childKeys:
         - Master/Linux
@@ -236,7 +236,7 @@ MonoBehaviour:
         childKeys: []
       - enabled: 1
         childKeys:
-        - Devel/Android/Android (ARM64,Generic,Gradle,Disabled,Auto)
+        - Devel/Android/Android (ARMv7,Generic,Gradle,Disabled,Auto)
       - enabled: 1
         childKeys:
         - Devel/Linux
@@ -253,7 +253,7 @@ MonoBehaviour:
     showBuildInfo: 0
     hideDisabled: 0
     treeView: 0
-    selectedKeyChain: Master/Android/Android (ARM64,Generic,Gradle,Disabled,Auto)
+    selectedKeyChain: Devel/Android/Android (ARMv7,Generic,Gradle,Disabled,Auto)
   _preBuildActions:
     buildActions:
     - {fileID: -7107573810230948887}

@@ -165,4 +165,9 @@ public class ModController : GenericController
     {
         data = mod.onPrestige(data);
     }
+
+    public void SetVar<T>(string name, T value)
+    {
+        mod.SetVar<T>(data, name, value);
+    }
 }

@@ -1,0 +1,18 @@
+{
+    "name": "IP.Debug",
+    "rootNamespace": "IP.Debug",
+    "references": [
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:47cad7e7f574ae74ea749e52c000cad5",
+        "GUID:3a8ffcc4b830f994f8f93d19b6a46b2c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

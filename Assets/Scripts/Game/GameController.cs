@@ -480,7 +480,7 @@ public class GameController : MonoBehaviour
         List<GenericController> result = new List<GenericController>();
         foreach (GameObject obj in instance.sliders)
         {
-            if (obj.GetComponent<GenericController>().name == name) result.Add(obj.GetComponent<GenericController>());
+            if (obj.GetComponent<GenericController>().typeName == name) result.Add(obj.GetComponent<GenericController>());
         }
         return result;
     }
@@ -497,5 +497,20 @@ public class GameController : MonoBehaviour
             if (mod.name == module) return mod.chance;
         }
         return -2;
+    }
+
+    public static void SwapType(int id, string type)
+    {
+        if (type == "Slider")
+        {
+            return;
+        }
+        ModController cont = instance.sliders[id].GetComponent<ModController>();
+        foreach (Mod mod in mods)
+        {
+            if (mod.name == type)
+                cont.mod = mod;
+            cont.Setup(id, instance.sliders, SeededRand.Word(100 * id + 1), instance.sliders[id - 1]);
+        }
     }
 }

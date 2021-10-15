@@ -30,6 +30,10 @@ namespace PyMods
     /// </summary>
     public class Mod
     {
+        /// <summary>
+        /// the python engine
+        /// </summary>
+        public static ScriptEngine engine = Python.CreateEngine();
 
         /// <summary>
         /// the mod name
@@ -82,11 +86,6 @@ namespace PyMods
         public bool loaded;
 
         /// <summary>
-        /// the python engine
-        /// </summary>
-        public ScriptEngine engine;
-
-        /// <summary>
         /// the python scope
         /// </summary>
         public ScriptScope scope;
@@ -129,7 +128,6 @@ namespace PyMods
             isEnabled = false;
 
             // setup python scope & engine
-            engine = Python.CreateEngine();
             scope = engine.CreateScope();
             engine.CreateScriptSourceFromString("import clr\nclr.AddReference(\'IP.Lib\')\nclr.AddReference('IP.Game')").Execute();
             source = engine.CreateScriptSourceFromFile(mainFile);
@@ -141,8 +139,17 @@ namespace PyMods
         /// </summary>
         public void Load()
         {
-            loaded = true;
-            dynamic data = scope.GetVariable<Func<object>>("onLoad")();
+            try
+            {
+                loaded = true;
+                dynamic data = scope.GetVariable<Func<object>>("onLoad")();
+            }
+            catch (Exception e)
+            {
+                ExceptionOperations eo = engine.GetService<ExceptionOperations>();
+                string error = eo.FormatException(e);
+                Debug.LogError(error);
+            }
         }
 
         /// <summary>
@@ -150,8 +157,17 @@ namespace PyMods
         /// </summary>
         public void Unload()
         {
-            loaded = false;
-            dynamic data = scope.GetVariable<Func<object>>("onUnload")();
+            try
+            {
+                loaded = false;
+                dynamic data = scope.GetVariable<Func<object>>("onUnload")();
+            }
+            catch (Exception e)
+            {
+                ExceptionOperations eo = engine.GetService<ExceptionOperations>();
+                string error = eo.FormatException(e);
+                Debug.LogError(error);
+            }
         }
 
         /// <summary>
@@ -161,7 +177,16 @@ namespace PyMods
         /// <returns>the new module data</returns>
         public dynamic onPrestige(dynamic data)
         {
-            data = scope.GetVariable<Func<object, object>>("onPrestige")(data);
+            try
+            {
+                data = scope.GetVariable<Func<object, object>>("onPrestige")(data);
+            }
+            catch (Exception e)
+            {
+                ExceptionOperations eo = engine.GetService<ExceptionOperations>();
+                string error = eo.FormatException(e);
+                Debug.LogError(error);
+            }
             return data;
         }
 
@@ -172,7 +197,16 @@ namespace PyMods
         /// <returns>the new module data</returns>
         public dynamic Tick(dynamic data)
         {
-            data = scope.GetVariable<Func<object, object>>("Tick")(data);
+            try
+            {
+                data = scope.GetVariable<Func<object, object>>("Tick")(data);
+            }
+            catch (Exception e)
+            {
+                ExceptionOperations eo = engine.GetService<ExceptionOperations>();
+                string error = eo.FormatException(e);
+                Debug.LogError(error);
+            }
             return data;
         }
 
@@ -184,7 +218,16 @@ namespace PyMods
         /// <returns>the new module data</returns>
         public dynamic BulkTick(dynamic data, BigNumber ticks)
         {
-            data = scope.GetVariable<Func<object, object, object>>("bulkTick")(data, ticks);
+            try
+            {
+                data = scope.GetVariable<Func<object, object, object>>("bulkTick")(data, ticks);
+            }
+            catch (Exception e)
+            {
+                ExceptionOperations eo = engine.GetService<ExceptionOperations>();
+                string error = eo.FormatException(e);
+                Debug.LogError(error);
+            }
             return data;
         }
 
@@ -196,8 +239,37 @@ namespace PyMods
         /// <returns>the new module data</return>returns>
         public dynamic GetVar(dynamic data, string name)
         {
-            data = engine.Operations.GetMember(data, name);
+            try
+            {
+                data = engine.Operations.GetMember(data, name);
+            }
+            catch (Exception e)
+            {
+                ExceptionOperations eo = engine.GetService<ExceptionOperations>();
+                string error = eo.FormatException(e);
+                Debug.LogError(error);
+            }
             return data;
+        }
+
+        /// <summary>
+        /// gets a variable from the scope, for bars and stuff
+        /// </summary>
+        /// <param name="data">the module data</param>
+        /// <param name="name">the variable name</param>
+        /// <returns>the new module data</return>returns>
+        public void SetVar<T>(dynamic data, string name, T value)
+        {
+            try
+            {
+                engine.Operations.SetMember<T>(data, name, value);
+            }
+            catch (Exception e)
+            {
+                ExceptionOperations eo = engine.GetService<ExceptionOperations>();
+                string error = eo.FormatException(e);
+                Debug.LogError(error);
+            }
         }
 
         /// <summary>
@@ -208,7 +280,16 @@ namespace PyMods
         /// <returns>the new module data</returns>
         public dynamic GetFunc(dynamic data, string name)
         {
-            data = scope.GetVariable<Func<object, object>>(name)(data);
+            try
+            {
+                data = scope.GetVariable<Func<object, object>>(name)(data);
+            }
+            catch (Exception e)
+            {
+                ExceptionOperations eo = engine.GetService<ExceptionOperations>();
+                string error = eo.FormatException(e);
+                Debug.LogError(error);
+            }
             return data;
         }
 
@@ -220,7 +301,16 @@ namespace PyMods
         /// <returns>the new module data</returns>
         public dynamic onClick(dynamic data, string button)
         {
-            data = scope.GetVariable<Func<object, object>>(button)(data);
+            try
+            {
+                data = scope.GetVariable<Func<object, object>>(button)(data);
+            }
+            catch (Exception e)
+            {
+                ExceptionOperations eo = engine.GetService<ExceptionOperations>();
+                string error = eo.FormatException(e);
+                Debug.LogError(error);
+            }
             return data;
         }
 
@@ -231,7 +321,17 @@ namespace PyMods
         /// <returns>the module data</returns>
         public dynamic createModule(int id)
         {
-            return scope.GetVariable<Func<object, object>>("createModule")(id);
+            try
+            {
+                return scope.GetVariable<Func<object, object>>("createModule")(id);
+            }
+            catch (Exception e)
+            {
+                ExceptionOperations eo = engine.GetService<ExceptionOperations>();
+                string error = eo.FormatException(e);
+                Debug.LogError(error);
+            }
+            return null;
         }
 
         /// <summary>
@@ -242,8 +342,18 @@ namespace PyMods
         /// <returns>the module data</returns>
         public dynamic LoadSave(string save, int id)
         {
-            dynamic data = scope.GetVariable<Func<object, object, object>>("loadSave")(save, id);
-            return data;
+            try
+            {
+                dynamic data = scope.GetVariable<Func<object, object, object>>("loadSave")(save, id);
+                return data;
+            }
+            catch (Exception e)
+            {
+                ExceptionOperations eo = engine.GetService<ExceptionOperations>();
+                string error = eo.FormatException(e);
+                Debug.LogError(error);
+            }
+            return null;
         }
 
         /// <summary>
@@ -253,7 +363,16 @@ namespace PyMods
         /// <returns>the save data</returns>
         public dynamic saveData(dynamic data)
         {
-            data = scope.GetVariable<Func<object, object>>("saveData")(data);
+            try
+            {
+                data = scope.GetVariable<Func<object, object>>("saveData")(data);
+            }
+            catch (Exception e)
+            {
+                ExceptionOperations eo = engine.GetService<ExceptionOperations>();
+                string error = eo.FormatException(e);
+                Debug.LogError(error);
+            }
             return data;
         }
 
