@@ -201,6 +201,11 @@ public class BigNumber
         return false;
     }
 
+    public static BigNumber Parse(string v)
+    {
+        return new BigNumber(float.Parse(v));
+    }
+
     /// <summary>
     /// exponents, i found this alg online so idk how it works
     /// </summary>
