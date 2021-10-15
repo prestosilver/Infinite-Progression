@@ -70,12 +70,12 @@ namespace IP.Debug
             });
             ADD_MOD = new DebugCommand<string>("addmod", "adds the mod with the specified id, only matches first word in mod name", "addmod name", (name) =>
             {
-                GameController.instance.slider_ammnt += 1;
                 int id = 0;
                 foreach (Mod mod in GameController.mods)
                 {
                     if (mod.name.Split(' ')[0].ToLower() == name.ToLower())
                     {
+                        GameController.instance.slider_ammnt += 1;
                         GameController.instance.AddMod(GameController.instance.slider_ammnt, id);
                         UnityEngine.Debug.LogError($"Added '{name}' module");
                         return;
@@ -144,7 +144,7 @@ namespace IP.Debug
 
             float y = 100f;
 
-            GUI.Box(new Rect(0f, y, Screen.width, 30), "");
+            GUI.Box(new Rect(0f, 0f, Screen.width, y + 30f), "");
 
             GUI.Label(new Rect(2.5f, 2.5f, Screen.width - 5, y - 5), logs.TrimStart('\n'));
 
