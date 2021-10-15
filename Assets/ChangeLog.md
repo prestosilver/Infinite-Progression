@@ -1,3 +1,8 @@
+<size=68>R-2.1.0b52</size>
++ started switch module type function for mods
++ added debug console
+* a few bug fixes
+
 <size=68>R-2.0.1b48</size>
 + added get all of function for mods
 * fixed android build?
