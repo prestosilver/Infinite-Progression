@@ -27,8 +27,12 @@ namespace IP.Debug
 
         public void OnToggleDebug(InputValue value)
         {
-            showConsole = !showConsole;
-            input = "";
+            if (PlayerPrefs.GetString("Debug") == "True")
+            {
+                showConsole = !showConsole;
+                input = "";
+
+            }
         }
 
         public void OnReturn()

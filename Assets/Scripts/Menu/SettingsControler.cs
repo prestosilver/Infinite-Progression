@@ -22,6 +22,11 @@ public class SettingsControler : MonoBehaviour
     public Toggle RandNames;
 
     /// <summary>
+    /// the debug toggle
+    /// </summary>
+    public Toggle EnableDebug;
+
+    /// <summary>
     /// the menu animation toggle
     /// </summary>
     public Toggle MenuAnimation;
@@ -39,6 +44,7 @@ public class SettingsControler : MonoBehaviour
         PlayerPrefs.SetString("LogNotation", "" + LogNotation.isOn);
         PlayerPrefs.SetString("RandNames", "" + RandNames.isOn);
         PlayerPrefs.SetString("MenuAnimation", "" + MenuAnimation.isOn);
+        PlayerPrefs.SetString("Debug", "" + EnableDebug.isOn);
     }
 
     /// <summary>
@@ -58,6 +64,7 @@ public class SettingsControler : MonoBehaviour
         LogNotation.isOn = (PlayerPrefs.GetString("LogNotation") == "True");
         RandNames.isOn = (PlayerPrefs.GetString("RandNames") == "True");
         MenuAnimation.isOn = (PlayerPrefs.GetString("MenuAnimation") == "True");
+        EnableDebug.isOn = (PlayerPrefs.GetString("Debug") == "True");
     }
 
     /// <summary>
