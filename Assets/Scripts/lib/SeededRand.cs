@@ -91,7 +91,7 @@ public static class SeededRand
     /// <returns>normailzed value</returns>
     private static double NormalInv(double q)
     {
-        return q;
+        // return q;
         // I forgot how this works so no comments
         if (q == .5)
             return 0;
@@ -115,7 +115,7 @@ public static class SeededRand
         if (q > .5)
             x *= -1.0;
 
-        return Math.Abs((x + 3) * 0.1666667f);
+        return Mathf.Clamp01((float)Math.Abs((x + 3) * 0.1666667f));
     }
 }
 
