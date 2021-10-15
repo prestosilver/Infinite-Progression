@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using PyMods;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,6 +15,7 @@ public class GameController : MonoBehaviour
     public GameObject parent, more_button_text, confirmPrefab, conf;
     public Text presText, TpsText;
     public Slider presBar;
+    public Slider loadProgressBar;
     public List<GameObject> prefabs;
     public List<GameObject> sliders;
     public Button next_button, pres_button;
@@ -28,6 +30,8 @@ public class GameController : MonoBehaviour
     private bool seeded;
     private int ver = 0;
     private int sum = 0;
+    private float totalLoadProgress;
+    private float stepProgress;
 
     public void Update()
     {
@@ -38,8 +42,45 @@ public class GameController : MonoBehaviour
 
     public virtual void SaveThing() { Saves.savePath = "save.dat"; }
 
+    private Task CreateTaskTask(Task t)
+    {
+        return new Task<Task>(async () =>
+        {
+            await t;
+        }, TaskCreationOptions.DenyChildAttach);
+    }
+
+    public GameObject loadingScreen;
+
+    public List<Task> load = new List<Task>();
+
     public void Start()
     {
+        loadingScreen.SetActive(true);
+        load.Add(LoadData());
+        load.Add(LoadSave());
+
+        StartCoroutine(GetLoadProgress());
+    }
+
+    public IEnumerator GetLoadProgress()
+    {
+        for (int i = 0; i < load.Count; i++)
+        {
+            stepProgress = 0;
+            while (!load[i].IsCompleted)
+            {
+                loadProgressBar.value = totalLoadProgress + stepProgress;
+                yield return null;
+            }
+            totalLoadProgress += 1;
+        }
+        loadingScreen.SetActive(false);
+    }
+
+    public async Task LoadData()
+    {
+        stepProgress = 0.0f;
         SaveThing();
         foreach (GameObject i in prefabs)
             sum += i.GetComponent<ProbController>().chance;
@@ -47,9 +88,15 @@ public class GameController : MonoBehaviour
         {
             sum += m.chance;
         }
+        stepProgress = 1f;
+    }
+
+    public async Task LoadSave()
+    {
         List<string> save = Saves.Read();
         if (save.Count > 0)
         {
+            int steps = save.Count;
             string[] misc = save[0].Split(';');
             presLevel = int.Parse(misc[0]);
             int modid = 1;
@@ -76,6 +123,7 @@ public class GameController : MonoBehaviour
                 }
                 sliders[modid - 1].GetComponent<GenericController>().LoadSave(line.Split(';')[1]);
                 modid++;
+                stepProgress = (float)(modid - 1) / steps;
             }
             slider_ammnt = sliders.Count;
             ConsistantTPS.tps = new BigNumber(120);

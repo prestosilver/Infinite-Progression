@@ -81,7 +81,7 @@ namespace IP.Debug
                     {
                         GameController.instance.slider_ammnt += 1;
                         GameController.instance.AddMod(GameController.instance.slider_ammnt, id);
-                        UnityEngine.Debug.LogError($"Added '{name}' module");
+                        UnityEngine.Debug.Log($"Added '{name}' module");
                         return;
                     }
                     id++;
@@ -102,7 +102,7 @@ namespace IP.Debug
             SET_SLIDER = new DebugCommand<int, BigNumber>("setslider", "sets the value of a slider", "setslider id value", (id, value) =>
             {
                 GameController.instance.sliders[id].GetComponent<SliderController>().value = value;
-                UnityEngine.Debug.Log($"Set '{value}' to {value}");
+                UnityEngine.Debug.Log($"Set 'value' to {value}");
             });
 
             CommandList = new List<object>
