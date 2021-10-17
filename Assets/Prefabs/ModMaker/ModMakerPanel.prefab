@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6653236047691680324}
   - component: {fileID: 9196495274490128139}
   m_Layer: 0
-  m_Name: ModPanel
+  m_Name: ModMakerPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

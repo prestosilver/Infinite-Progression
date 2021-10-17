@@ -223,6 +223,7 @@ public class Mods : MonoBehaviour
     /// </summary>
     public void Clone()
     {
-        Application.OpenURL("https://github.com/prestosilver/IP-Mod-Template/generate");
+        Unload();
+        SceneManager.LoadScene("ModMaker");
     }
 }
