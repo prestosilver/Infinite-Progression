@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ToolBox : MonoBehaviour
 {
@@ -12,9 +13,15 @@ public class ToolBox : MonoBehaviour
 
     [SerializeField]
     private Transform fieldParent;
+    [SerializeField]
+    private Transform objectParent;
 
     [SerializeField]
     private GameObject fieldPrefab;
+    [SerializeField]
+    private Dropdown prefabSelect;
+    [SerializeField]
+    private List<GameObject> prefabs;
 
     public void Start()
     {
@@ -39,6 +46,10 @@ public class ToolBox : MonoBehaviour
                 AddField("onClick", "onClick");
                 AddField("enable", "isEnabled");
                 break;
+            case 3:
+                AddField("dynamic_text", "");
+                AddField("static_text", "Text");
+                break;
             default:
                 break;
         }
@@ -53,5 +64,10 @@ public class ToolBox : MonoBehaviour
             Selection.instance.selectedData.data[name] = value;
         obj.GetComponent<FieldEdit>().Setup(name, value);
         Fields.Add(obj);
+    }
+
+    public void Add()
+    {
+        Instantiate(prefabs[prefabSelect.value], objectParent);
     }
 }
