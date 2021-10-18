@@ -19,7 +19,7 @@ public class Falling : GenericController
     /// </summary>
     public void Update()
     {
-        transform.localPosition += Vector3.down * v;
+        transform.localPosition += Vector3.down * v * Time.deltaTime * 60;
         if (transform.localPosition.y < ((-canvas.rect.height / 2) - 150))
             transform.localPosition += Vector3.up * (canvas.rect.height + 300);
     }
