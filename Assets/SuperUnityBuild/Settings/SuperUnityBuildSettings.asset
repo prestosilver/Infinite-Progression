@@ -132,8 +132,8 @@ MonoBehaviour:
     buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/
     openFolderPostBuild: 0
   _productParameters:
-    buildCounter: 54
-    buildVersion: 2.1.0b54
+    buildCounter: 57
+    buildVersion: 2.1.0b57
     versionTemplate: 2.1.0b$BUILD
     autoGenerate: 1
     syncWithPlayerSettings: 0
@@ -179,9 +179,9 @@ MonoBehaviour:
     - {fileID: 8848932971037499292}
   _projectConfigurations:
     configSet:
-      _Buckets: 10000000ffffffffffffffffffffffffffffffffffffffff070000000b000000000000000f000000030000000a000000ffffffff1100000002000000ffffffffffffffffffffffffffffffffffffffff09000000ffffffff0e000000ffffffffffffffff010000000c000000ffffffffffffffffffffffffffffffffffffffff04000000ffffffffffffffffffffffff0d000000
-      _HashCodes: 2ef019058524615e907ca376ac2c916bc15847328015584d80048d41da3c5755a839ef7136e40a136f5a1a26a8cf053cb892be059700fa4ed0171223005c1d209ae27d19549a105f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-      _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0500000008000000ffffffff06000000ffffffff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      _Buckets: 10000000ffffffffffffffffffffffffffffffffffffffff070000000b00000000000000ffffffff030000000a000000ffffffff1100000002000000ffffffffffffffffffffffffffffffffffffffff09000000ffffffff0e000000ffffffffffffffff010000000f000000ffffffffffffffffffffffffffffffffffffffff04000000ffffffffffffffffffffffff0d000000
+      _HashCodes: 2ef019058524615e907ca376ac2c916bc15847328015584db1feb805da3c5755a839ef7136e40a136f5a1a26a8cf053cb892be059700fa4ed01712234bde84669ae27d19549a105f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff06000000ffffffffffffffff05000000080000000c000000ffffffffffffffff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
       _Count: 18
       _Version: 18
       _FreeList: -1
@@ -193,7 +193,7 @@ MonoBehaviour:
       - Master/PC
       - Master/Android/Android (ARMv7,Generic,Gradle,Disabled,Auto)
       - Master/Android
-      - Master/macOS/macOS (Universal)
+      - Master/macOS/macOS (Intelx64)
       - Master/macOS
       - Master
       - Devel/Linux/Linux x64
@@ -202,7 +202,7 @@ MonoBehaviour:
       - Devel/PC
       - Devel/Android/Android (ARMv7,Generic,Gradle,Disabled,Auto)
       - Devel/Android
-      - Devel/macOS/macOS (Universal)
+      - Devel/macOS/macOS (Intelx64)
       - Devel/macOS
       - Devel
       - 
@@ -244,7 +244,7 @@ MonoBehaviour:
         childKeys: []
       - enabled: 1
         childKeys:
-        - Master/macOS/macOS (Universal)
+        - Master/macOS/macOS (Intelx64)
       - enabled: 1
         childKeys:
         - Master/Linux
@@ -266,11 +266,11 @@ MonoBehaviour:
       - enabled: 1
         childKeys:
         - Devel/Android/Android (ARMv7,Generic,Gradle,Disabled,Auto)
-      - enabled: 1
+      - enabled: 0
         childKeys: []
       - enabled: 1
         childKeys:
-        - Devel/macOS/macOS (Universal)
+        - Devel/macOS/macOS (Intelx64)
       - enabled: 1
         childKeys:
         - Devel/Linux
@@ -320,7 +320,7 @@ MonoBehaviour:
     showBuildInfo: 0
     hideDisabled: 0
     treeView: 0
-    selectedKeyChain: Master/macOS/macOS (Universal)
+    selectedKeyChain: Master/macOS/macOS (Intelx64)
   _preBuildActions:
     buildActions:
     - {fileID: -7107573810230948887}
@@ -407,7 +407,7 @@ MonoBehaviour:
     binaryNameFormat: '{0}.app'
   variants:
   - variantName: macOS Architecture
-    selectedIndex: 2
+    selectedIndex: 0
     values:
     - Intelx64
     - Apple Silicon
