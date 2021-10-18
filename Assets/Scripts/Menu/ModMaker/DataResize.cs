@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 class DataResize : MonoBehaviour
@@ -7,10 +8,13 @@ class DataResize : MonoBehaviour
     void Start()
     {
         data = GetComponent<SelectedData>();
+        Update();
     }
 
-    void Update()
+    public void Update()
     {
+        if (data == null) return;
+        if (data.data == null) data.data = new Dictionary<string, string>();
         if (!data.data.ContainsKey("X"))
         {
             data.data.Add("X", "0");

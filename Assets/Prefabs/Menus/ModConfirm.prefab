@@ -201,7 +201,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Are You Sure
 
-    <size=24>You are aout to delete that mod!</size>'
+    <size=24>You are about to delete that mod!</size>'
 --- !u!1 &5851189372711704286
 GameObject:
   m_ObjectHideFlags: 0

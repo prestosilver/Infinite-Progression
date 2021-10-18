@@ -312,7 +312,7 @@ MonoBehaviour:
     clauses:
     - type: 0
       comparison: 0
-      test: MASTER
+      test: jkfdsafdsa
   pathToButlerExe: /usr/bin/butler
   nameOfItchUser: prestosilver
   nameOfItchGame: infinite-progression

@@ -8,7 +8,6 @@ public class AntiSelect : MonoBehaviour, IPointerDownHandler, IPointerClickHandl
     public void OnPointerClick(PointerEventData eventData)
     {
         Selection.instance.ResetSelection();
-        Debug.Log("deselect");
     }
 
     public void OnPointerDown(PointerEventData eventData) { }

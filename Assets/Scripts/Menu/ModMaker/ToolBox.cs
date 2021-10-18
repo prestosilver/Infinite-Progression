@@ -37,14 +37,18 @@ public class ToolBox : MonoBehaviour
 
         AddField("X", "0");
         AddField("Y", "0");
-        AddField("Width", "0");
-        AddField("Height", "0");
+        AddField("Width", "30");
+        AddField("Height", "30");
+        Selection.instance.selected.GetComponent<DataResize>().Update();
 
         switch (Selection.instance.selectionKind)
         {
             case 1:
                 AddField("onClick", "onClick");
                 AddField("enable", "isEnabled");
+                break;
+            case 2:
+                AddField("Variable", "progress");
                 break;
             case 3:
                 AddField("dynamic_text", "");
@@ -68,6 +72,15 @@ public class ToolBox : MonoBehaviour
 
     public void Add()
     {
-        Instantiate(prefabs[prefabSelect.value], objectParent);
+        GameObject go = Instantiate(prefabs[prefabSelect.value], objectParent);
+        Selection.instance.selected = go;
+        Selection.instance.selectedData = go.GetComponent<SelectedData>();
+        UpdateFields();
+    }
+
+    public void Remove()
+    {
+        Destroy(Selection.instance.selected);
+        Selection.instance.ResetSelection();
     }
 }

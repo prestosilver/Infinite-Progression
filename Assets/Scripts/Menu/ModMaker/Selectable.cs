@@ -12,7 +12,6 @@ public class Selectable : MonoBehaviour, IPointerDownHandler, IPointerClickHandl
         Selection.instance.selectionKind = kind;
         Selection.instance.selectedData = GetComponent<SelectedData>();
         Selection.instance.SetSelection(GetComponent<RectTransform>(), gameObject);
-        Debug.Log("select");
     }
 
     public void OnPointerDown(PointerEventData eventData) { }
