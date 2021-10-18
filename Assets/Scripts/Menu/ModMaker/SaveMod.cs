@@ -75,6 +75,11 @@ public class SaveMod : MonoBehaviour
         savePopup.SetActive(false);
     }
 
+    public void Upload()
+    {
+        UploadSteam(nameField.text, descField.text, int.Parse(chanceField.text));
+    }
+
     public void Save(string name, string description = "", int chance = 1)
     {
         Directory.CreateDirectory(Application.persistentDataPath + $"/Mods/{name}/");
@@ -89,6 +94,12 @@ public class SaveMod : MonoBehaviour
         data.chance = chance;
         File.WriteAllText(Application.persistentDataPath + $"/Mods/{name}/info.json", JsonUtility.ToJson(data, true));
         File.WriteAllText(Application.persistentDataPath + $"/Mods/{name}/main.py", textEditor.Text);
+    }
+
+    public void UploadSteam(string name, string description = "", int chance = 1)
+    {
+        Save(name, description, chance);
+        GetComponent<SteamWorkshop>().UploadContent(name, description, Application.persistentDataPath + $"/Mods/{name}", new string[1] { "Mods" }, "");
     }
 
     public void Home()
