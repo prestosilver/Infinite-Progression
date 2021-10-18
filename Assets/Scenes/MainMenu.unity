@@ -1815,7 +1815,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 614092440}
         m_TargetAssemblyTypeName: MenuController, IP.Game
-        m_MethodName: Donate
+        m_MethodName: ShowGHPopup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2010,7 +2010,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Donate
+  m_Text: ModMaker
 --- !u!222 &1896889204
 CanvasRenderer:
   m_ObjectHideFlags: 0
