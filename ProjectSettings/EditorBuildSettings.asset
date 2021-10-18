@@ -18,14 +18,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Help.unity
     guid: 5c5afca46dc7cda43a5b892f0f8826b6
   - enabled: 1
-    path: Assets/Scenes/ModMenu.unity
-    guid: 32f06c4eb15ac146a83c19eec97c5828
-  - enabled: 1
     path: Assets/Scenes/ModPick.unity
     guid: 976017b3d2140881aa56e1167b1e0aaa
   - enabled: 1
     path: Assets/Scenes/SaveSelect.unity
     guid: 38a22b7c46ae2e061acdd791521efa95
+  - enabled: 1
+    path: Assets/Scenes/ModMenu.unity
+    guid: 32f06c4eb15ac146a83c19eec97c5828
   - enabled: 1
     path: Assets/Scenes/ModMaker.unity
     guid: 5b3dea4389b80eaf9b9e03c83e5a5abf
