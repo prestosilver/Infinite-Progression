@@ -132,8 +132,8 @@ MonoBehaviour:
     buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/
     openFolderPostBuild: 0
   _productParameters:
-    buildCounter: 53
-    buildVersion: 2.1.0b53
+    buildCounter: 54
+    buildVersion: 2.1.0b54
     versionTemplate: 2.1.0b$BUILD
     autoGenerate: 1
     syncWithPlayerSettings: 0
@@ -179,11 +179,11 @@ MonoBehaviour:
     - {fileID: 8848932971037499292}
   _projectConfigurations:
     configSet:
-      _Buckets: ffffffffffffffffffffffff0b000000ffffffff07000000ffffffffffffffff050000000d00000008000000040000000c000000ffffffffffffffff0a00000006000000
-      _HashCodes: 2ef019058524615e907ca376ac2c916bc15847328015584da839ef7136e40a136f5a1a26a8cf053cb892be059700fa4ed0171223549a105f000000000000000000000000
-      _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffff0200000000000000ffffffff0900000001000000ffffffff03000000000000000000000000000000
-      _Count: 14
-      _Version: 14
+      _Buckets: 10000000ffffffffffffffffffffffffffffffffffffffff070000000b000000000000000f000000030000000a000000ffffffff1100000002000000ffffffffffffffffffffffffffffffffffffffff09000000ffffffff0e000000ffffffffffffffff010000000c000000ffffffffffffffffffffffffffffffffffffffff04000000ffffffffffffffffffffffff0d000000
+      _HashCodes: 2ef019058524615e907ca376ac2c916bc15847328015584d80048d41da3c5755a839ef7136e40a136f5a1a26a8cf053cb892be059700fa4ed0171223005c1d209ae27d19549a105f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0500000008000000ffffffff06000000ffffffff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      _Count: 18
+      _Version: 18
       _FreeList: -1
       _FreeCount: 0
       _Keys:
@@ -193,6 +193,8 @@ MonoBehaviour:
       - Master/PC
       - Master/Android/Android (ARMv7,Generic,Gradle,Disabled,Auto)
       - Master/Android
+      - Master/macOS/macOS (Universal)
+      - Master/macOS
       - Master
       - Devel/Linux/Linux x64
       - Devel/Linux
@@ -200,7 +202,25 @@ MonoBehaviour:
       - Devel/PC
       - Devel/Android/Android (ARMv7,Generic,Gradle,Disabled,Auto)
       - Devel/Android
+      - Devel/macOS/macOS (Universal)
+      - Devel/macOS
       - Devel
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       - 
       - 
       - 
@@ -221,10 +241,16 @@ MonoBehaviour:
         childKeys:
         - Master/Android/Android (ARMv7,Generic,Gradle,Disabled,Auto)
       - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Master/macOS/macOS (Universal)
+      - enabled: 1
         childKeys:
         - Master/Linux
         - Master/PC
         - Master/Android
+        - Master/macOS
       - enabled: 0
         childKeys: []
       - enabled: 1
@@ -240,11 +266,49 @@ MonoBehaviour:
       - enabled: 1
         childKeys:
         - Devel/Android/Android (ARMv7,Generic,Gradle,Disabled,Auto)
+      - enabled: 0
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Devel/macOS/macOS (Universal)
       - enabled: 1
         childKeys:
         - Devel/Linux
         - Devel/PC
         - Devel/Android
+        - Devel/macOS
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
       - enabled: 1
         childKeys: []
       - enabled: 1
@@ -333,7 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d962d142a259c394da2bdb301b72eeb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enabled: 0
+  enabled: 1
   distributionList:
     distributions: []
   architectures:
@@ -343,7 +407,7 @@ MonoBehaviour:
     binaryNameFormat: '{0}.app'
   variants:
   - variantName: macOS Architecture
-    selectedIndex: 0
+    selectedIndex: 2
     values:
     - Intelx64
     - Apple Silicon
