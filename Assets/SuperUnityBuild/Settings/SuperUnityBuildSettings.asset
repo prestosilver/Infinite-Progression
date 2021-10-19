@@ -144,7 +144,23 @@ MonoBehaviour:
       companyName: Prestosilver
       productName: IP
       buildOptions: 0
-      customDefines: 
+      customDefines: STEAMWORKS_WIN
+      sceneList:
+        enabledScenes:
+        - fileGUID: eb90dcdafdf72bf4ca6940f3008ed7ea
+        - fileGUID: 2cda990e2423bbf4892e6590ba056729
+        - fileGUID: 7beb4a9117754653aa17854fdde67aad
+        - fileGUID: 5c5afca46dc7cda43a5b892f0f8826b6
+        - fileGUID: 976017b3d2140881aa56e1167b1e0aaa
+        - fileGUID: 38a22b7c46ae2e061acdd791521efa95
+        - fileGUID: 32f06c4eb15ac146a83c19eec97c5828
+        - fileGUID: 5b3dea4389b80eaf9b9e03c83e5a5abf
+    - typeName: Master
+      bundleIdentifier: com.Prestosilver.IP
+      companyName: Prestosilver
+      productName: IP
+      buildOptions: 0
+      customDefines: STEAMWORKS_WIN
       sceneList:
         enabledScenes:
         - fileGUID: eb90dcdafdf72bf4ca6940f3008ed7ea
@@ -235,7 +251,7 @@ MonoBehaviour:
       - enabled: 1
         childKeys:
         - Master/PC/Windows x64
-      - enabled: 0
+      - enabled: 1
         childKeys: []
       - enabled: 1
         childKeys:
