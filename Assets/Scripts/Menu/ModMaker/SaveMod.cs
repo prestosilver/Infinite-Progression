@@ -16,6 +16,7 @@ public class SaveMod : MonoBehaviour
     public InputField chanceField;
 
     public GameObject savePopup;
+    public GameObject editCanvas;
 
     public ModUI GetModUI()
     {
@@ -66,7 +67,6 @@ public class SaveMod : MonoBehaviour
 
     public void SaveClick()
     {
-        ScreenCapture.CaptureScreenshot(Application.persistentDataPath + $"/Mods/image.png");
         textEditor.disableInput = true;
         savePopup.SetActive(true);
     }
@@ -103,12 +103,16 @@ public class SaveMod : MonoBehaviour
         data.chance = chance;
         File.WriteAllText(Application.persistentDataPath + $"/Mods/{name}/info.json", JsonUtility.ToJson(data, true));
         File.WriteAllText(Application.persistentDataPath + $"/Mods/{name}/main.py", textEditor.Text);
+        SnapshotCamera sc = SnapshotCamera.MakeSnapshotCamera();
+        GameObject go = Instantiate(ObjectParent.gameObject, editCanvas.transform);
+        Texture2D texture = sc.TakeObjectSnapshot(editCanvas);
+        File.WriteAllBytes(Application.persistentDataPath + $"/Mods/{name}/image.png", texture.EncodeToPNG());
     }
 
     public void UploadSteam(string name, string description = "", int chance = 1)
     {
         Save(name, description, chance);
-        SteamWorkshop.Instance.UploadContent(name, description, Application.persistentDataPath + $"/Mods/{name}", new string[1] { "Mods" }, Application.persistentDataPath + $"/Mods/image.png");
+        SteamWorkshop.Instance.UploadContent(name, description, Application.persistentDataPath + $"/Mods/{name}", new string[1] { "Mods" }, Application.persistentDataPath + $"/Mods/{name}/image.png");
     }
 
     public void Home()
