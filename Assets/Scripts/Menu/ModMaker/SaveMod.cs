@@ -66,6 +66,7 @@ public class SaveMod : MonoBehaviour
 
     public void SaveClick()
     {
+        ScreenCapture.CaptureScreenshot(Application.persistentDataPath + $"/Mods/image.png");
         textEditor.disableInput = true;
         savePopup.SetActive(true);
     }
@@ -107,7 +108,7 @@ public class SaveMod : MonoBehaviour
     public void UploadSteam(string name, string description = "", int chance = 1)
     {
         Save(name, description, chance);
-        GetComponent<SteamWorkshop>().UploadContent(name, description, Application.persistentDataPath + $"/Mods/{name}", new string[1] { "Mods" }, "");
+        SteamWorkshop.Instance.UploadContent(name, description, Application.persistentDataPath + $"/Mods/{name}", new string[1] { "Mods" }, Application.persistentDataPath + $"/Mods/image.png");
     }
 
     public void Home()

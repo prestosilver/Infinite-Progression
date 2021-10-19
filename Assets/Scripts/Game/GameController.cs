@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
     public static GameController instance;
     void Awake() => instance = this;
 
+    public bool isPreview;
+
     public GameObject parent, more_button_text, confirmPrefab, conf;
     public Text presText, TpsText;
     public Slider presBar;
@@ -80,6 +82,7 @@ public class GameController : MonoBehaviour
 
     public async Task LoadData()
     {
+        if (isPreview) return;
         stepProgress = 0.0f;
         SaveThing();
         foreach (GameObject i in prefabs)
@@ -93,6 +96,7 @@ public class GameController : MonoBehaviour
 
     public async Task LoadSave()
     {
+        if (isPreview) return;
         List<string> save = Saves.Read();
         if (save.Count > 0)
         {
@@ -468,6 +472,7 @@ public class GameController : MonoBehaviour
 
     public void Save()
     {
+        if (isPreview) return;
         SaveThing();
         Saves.Save();
     }

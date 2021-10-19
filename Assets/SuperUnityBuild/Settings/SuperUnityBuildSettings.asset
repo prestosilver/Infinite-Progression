@@ -132,8 +132,8 @@ MonoBehaviour:
     buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/
     openFolderPostBuild: 0
   _productParameters:
-    buildCounter: 63
-    buildVersion: 2.1.0b63
+    buildCounter: 64
+    buildVersion: 2.1.0b64
     versionTemplate: 2.1.0b$BUILD
     autoGenerate: 1
     syncWithPlayerSettings: 0
@@ -150,7 +150,6 @@ MonoBehaviour:
         - fileGUID: eb90dcdafdf72bf4ca6940f3008ed7ea
         - fileGUID: 2cda990e2423bbf4892e6590ba056729
         - fileGUID: 7beb4a9117754653aa17854fdde67aad
-        - fileGUID: 5c5afca46dc7cda43a5b892f0f8826b6
         - fileGUID: 976017b3d2140881aa56e1167b1e0aaa
         - fileGUID: 38a22b7c46ae2e061acdd791521efa95
         - fileGUID: 32f06c4eb15ac146a83c19eec97c5828
@@ -166,7 +165,6 @@ MonoBehaviour:
         - fileGUID: eb90dcdafdf72bf4ca6940f3008ed7ea
         - fileGUID: 2cda990e2423bbf4892e6590ba056729
         - fileGUID: 7beb4a9117754653aa17854fdde67aad
-        - fileGUID: 5c5afca46dc7cda43a5b892f0f8826b6
         - fileGUID: 976017b3d2140881aa56e1167b1e0aaa
         - fileGUID: 38a22b7c46ae2e061acdd791521efa95
         - fileGUID: 32f06c4eb15ac146a83c19eec97c5828

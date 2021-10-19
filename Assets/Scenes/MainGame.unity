@@ -766,7 +766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -240}
+  m_AnchoredPosition: {x: 0, y: -239.99998}
   m_SizeDelta: {x: 300, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &766010694
@@ -818,6 +818,7 @@ GameObject:
   - component: {fileID: 815980033}
   - component: {fileID: 815980032}
   - component: {fileID: 815980034}
+  - component: {fileID: 815980035}
   m_Layer: 0
   m_Name: DebugControl
   m_TagString: Untagged
@@ -882,6 +883,20 @@ MonoBehaviour:
   m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 519420031}
+--- !u!114 &815980035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815980031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44321a56221e23108bef1da6eed0442d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Details: Playing
+  State: In the game.
 --- !u!1 &857932802
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,6 +947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48a7291f615dfb45b87746c9bc48096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPreview: 0
   parent: {fileID: 766010692}
   more_button_text: {fileID: 1872228063}
   confirmPrefab: {fileID: 8441206419659227168, guid: 28ce19063f171924081fc222b2c8fc5a,

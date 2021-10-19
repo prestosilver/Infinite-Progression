@@ -27,7 +27,7 @@ namespace IP.Debug
 
         public void OnToggleDebug(InputValue value)
         {
-            if (PlayerPrefs.GetString("Debug") == "True")
+            if (PlayerPrefs.GetString("Debug") == "True" || GameController.instance.isPreview)
             {
                 showConsole = !showConsole;
                 input = "";
