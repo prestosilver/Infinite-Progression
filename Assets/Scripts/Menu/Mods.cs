@@ -61,8 +61,8 @@ public class Mods : MonoBehaviour
         modManager = ModManager.instance;
 
         // get base mods if not there
-        if (modManager.GetModList().Count == 0)
-            GitControler.download("github.com/prestosilver/IP-BaseMods");
+        // if (modManager.GetModList().Count == 0)
+        //     GitControler.download("github.com/prestosilver/IP-BaseMods");
 
         currentMods = modManager.GetModList();
         // get mod list

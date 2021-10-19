@@ -26,9 +26,7 @@ namespace PyMods
         {
             List<Mod> result = new List<Mod>();
             List<string> SearchPath = new List<string> { Path.Combine(Application.persistentDataPath, "Mods") };
-#if !UNITY_EDITOR
-            SearchPath.Add(Application.dataPath + "/../Mods/");
-#endif
+            SearchPath.Add(Application.dataPath + "/DLC/");
             foreach (string path in SearchPath)
             {
                 // make sure directory exists

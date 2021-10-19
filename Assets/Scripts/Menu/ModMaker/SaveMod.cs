@@ -66,12 +66,20 @@ public class SaveMod : MonoBehaviour
 
     public void SaveClick()
     {
+        textEditor.disableInput = true;
         savePopup.SetActive(true);
+    }
+
+    public void SaveBack()
+    {
+        textEditor.disableInput = false;
+        savePopup.SetActive(false);
     }
 
     public void SaveFinish()
     {
         Save(nameField.text, descField.text, int.Parse(chanceField.text));
+        textEditor.disableInput = false;
         savePopup.SetActive(false);
     }
 

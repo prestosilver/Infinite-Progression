@@ -1871,7 +1871,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 614092440}
         m_TargetAssemblyTypeName: MenuController, IP.Game
-        m_MethodName: ShowGHPopup
+        m_MethodName: ModMaker
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

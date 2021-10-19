@@ -141,6 +141,9 @@ public class MenuController : MonoBehaviour
     /// </summary>
     public void Quit()
     {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
         Application.Quit();
     }
 
@@ -150,5 +153,13 @@ public class MenuController : MonoBehaviour
     public void ShowGHPopup()
     {
         Instantiate(GHPopup, Foreground);
+    }
+
+    /// <summary>
+    /// show the github add mod thing
+    /// </summary>
+    public void ModMaker()
+    {
+        StartCoroutine(LoadScene("ModMaker"));
     }
 }
