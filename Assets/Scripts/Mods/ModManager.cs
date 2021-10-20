@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Steamworks;
 using UnityEngine;
 
 namespace PyMods
@@ -27,6 +28,7 @@ namespace PyMods
             List<Mod> result = new List<Mod>();
             List<string> SearchPath = new List<string> { Path.Combine(Application.persistentDataPath, "Mods") };
             SearchPath.Add(Application.dataPath + "/DLC/");
+            SearchPath.AddRange(SteamWorkshop.Instance.GetListOfSubscribedItemsPaths());
             foreach (string path in SearchPath)
             {
                 // make sure directory exists

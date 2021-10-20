@@ -132,7 +132,7 @@ MonoBehaviour:
     buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/
     openFolderPostBuild: 0
   _productParameters:
-    buildCounter: 68
+    buildCounter: 69
     buildVersion: 2.1.0b67
     versionTemplate: 2.1.0b$BUILD
     autoGenerate: 1
