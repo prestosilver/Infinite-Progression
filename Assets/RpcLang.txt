@@ -1,0 +1,9 @@
+"lang"
+{
+	"Language"	"english"
+	"Tokens"
+	{
+		"#StatusWithoutScore"	"{#Status_Empty}%DESC% - %STATE%"
+        "#StatusEmpty"	" "
+	}
+}

@@ -141,6 +141,7 @@ public class MenuController : MonoBehaviour
     /// </summary>
     public void Quit()
     {
+        GetComponent<DiscordController>().OnApplicationQuit();
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
