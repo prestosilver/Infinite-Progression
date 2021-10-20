@@ -25,6 +25,26 @@ namespace PyMods
         public int chance;
     }
 
+    public struct ModError
+    {
+        public delegate string ErrorFix(string current);
+        public string text;
+        public bool suggestFix;
+        public ErrorFix fix;
+    }
+
+    public struct RequiredFunction
+    {
+        public enum Type
+        {
+            TWO
+        }
+
+        public Type functionType;
+        public string name;
+    }
+
+
     /// <summary>
     /// the mod class, runs and stores python code
     /// </summary>
@@ -132,6 +152,59 @@ namespace PyMods
             engine.CreateScriptSourceFromString("import clr\nclr.AddReference(\'IP.Lib\')\nclr.AddReference('IP.Game')").Execute();
             source = engine.CreateScriptSourceFromFile(mainFile);
             source.Execute(scope);
+        }
+
+        /// <summary>
+        /// checks mod python code for an error
+        /// </summary>
+        /// <param name="code">the code to check</param>
+        /// <returns>an error string</returns>
+        public static List<ModError> CheckError(string code, List<RequiredFunction> fns)
+        {
+            List<ModError> errors = new List<ModError>();
+            try
+            {
+                ScriptScope scope = engine.CreateScope();
+                engine.CreateScriptSourceFromString("import clr\nclr.AddReference(\'IP.Lib\')\nclr.AddReference('IP.Game')").Execute();
+                ScriptSource source = engine.CreateScriptSourceFromString(code);
+                source.Execute(scope);
+                foreach (RequiredFunction f in fns)
+                {
+                    try
+                    {
+                        scope.GetVariable<Func<object, object>>(f.name);
+                    }
+                    catch (Exception e)
+                    {
+                        ExceptionOperations eo = engine.GetService<ExceptionOperations>();
+                        string error = eo.FormatException(e);
+                        string adds = $"\n\ndef {f.name}(data):\n  return data\n";
+                        ModError modError = new ModError
+                        {
+                            text = error,
+                            suggestFix = true,
+                            fix = (t) =>
+                            {
+                                return t + adds;
+                            }
+                        };
+                        errors.Add(modError);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                ExceptionOperations eo = engine.GetService<ExceptionOperations>();
+                string error = eo.FormatException(e);
+                ModError modError = new ModError
+                {
+                    text = error,
+                    suggestFix = false,
+                    fix = (t) => t
+                };
+                errors.Add(modError);
+            }
+            return errors;
         }
 
         /// <summary>

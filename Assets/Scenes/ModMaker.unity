@@ -1090,14 +1090,15 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1436418997}
   m_Father: {fileID: 306113117}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 3, y: 0}
-  m_SizeDelta: {x: -6, y: 0}
+  m_SizeDelta: {x: -6, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &229744776
 MonoBehaviour:
@@ -2975,7 +2976,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 350666631}
   m_HandleRect: {fileID: 350666630}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -6308,18 +6309,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1316085830}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16371936a8d015e8aa478c6a95a62fcf, type: 3}
+  m_Script: {fileID: 11500000, guid: 32c19a92dae826db48ed8ad24e062b6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldParent: {fileID: 0}
-  objectParent: {fileID: 0}
-  fieldPrefab: {fileID: 9023672483872424748, guid: 420f7f25e39418caf864ee21fec623eb,
+  textEditor: {fileID: 1736405341}
+  errorPrefab: {fileID: 7113056785354257713, guid: 09982207332124f5f897f9a4de6898c5,
     type: 3}
-  prefabSelect: {fileID: 0}
-  prefabs:
-  - {fileID: 433945244429323128, guid: 3792ccad62aea642ebdebfec40e0895d, type: 3}
-  - {fileID: 4040114443510533762, guid: 4a652db62b3e00962bee34e316147d5b, type: 3}
-  - {fileID: 4040114443510533762, guid: 8047205c408409084b4b1badc27d6adb, type: 3}
+  errorParent: {fileID: 229744775}
+  objectParent: {fileID: 1328924792}
 --- !u!114 &1316085833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7210,6 +7207,139 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1436418996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1436418997}
+  - component: {fileID: 1436419000}
+  - component: {fileID: 1436418999}
+  - component: {fileID: 1436418998}
+  m_Layer: 5
+  m_Name: Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1436418997
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436418996}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1988613823}
+  m_Father: {fileID: 229744775}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 138.5, y: -25}
+  m_SizeDelta: {x: 277, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1436418998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436418996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1436418999}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1316085832}
+        m_TargetAssemblyTypeName: ErrorBox, IP.Game
+        m_MethodName: CheckError
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1436418999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436418996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1436419000
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436418996}
+  m_CullTransparentMesh: 1
 --- !u!1 &1443887943
 GameObject:
   m_ObjectHideFlags: 0
@@ -8183,6 +8313,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2126102733}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1316085830}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1616424667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8414,6 +8568,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2126102733}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1316085830}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1637332162
 MonoBehaviour:
@@ -8918,34 +9096,32 @@ PrefabInstance:
         type: 3}
       propertyPath: defaultText
       value: "import BigNumber\nimport SeededRand\nimport GameController\n\nclass
-        Data:\n    \"\"\"\n    This is a class for storing data, this is required\n\n   
-        Attributes:\n        id (int): the id of the module\n    \"\"\"\n    def
-        __init__(self, id):\n        \"\"\"\n        The constructor for the Data
-        class\n        Parameters:\n            id (int): the id\n        \"\"\"\n       
-        self.id = id\n\ndef onLoad():\n    \"\"\"\n    loads the mod, only ran when
-        the game is started\n    \"\"\"\n    return  \"Success Loading\"\n\ndef onUnload():\n   
-        \"\"\"\n    unloads the mod, only ran when the home button is pressed\n   
-        \"\"\"\n    return \"Success Unloading\"\n\ndef createModule(id):\n    \"\"\"\n   
-        creates a module\n\n    Parameters:\n        id (int): the id\n\n    Returns:\n       
-        data: the new data variable\n    \"\"\"\n    data = Data(id)\n    data.result
-        = \"Created Template\"\n    return data\n\ndef tick(data):\n    \"\"\"\n   
-        processes one tick\n\n    Parameters:\n        data (Data): the data variable\n\n   
-        Returns:\n        data: the new data variable\n    \"\"\"\n    return data\n\ndef
-        bulkTick(data, amount):\n    \"\"\"\n    processes multiple ticks\n\n   
-        Parameters:\n        data (Data): the data variable\n        amount (BigNumber):
-        the amount of ticks to run\n\n    Returns:\n        data: the new data variable\n   
-        \"\"\"\n    return data\n\ndef destroyModule(data):\n    \"\"\"\n    destroys
-        the module currently not run\n\n    Parameters:\n        data (Data): the
-        data variable\n\n    Returns:\n        data: the new data variable\n    \"\"\"\n   
-        return data\n\ndef onPrestige(data):\n    \"\"\"\n    processes prestige\n\n   
-        Parameters:\n        data (Data): the data variable\n\n    Returns:\n       
-        data: the new data variable\n    \"\"\"\n    return data\n\ndef loadSave(save,
-        id):\n    \"\"\"\n    loads a save\n\n    Parameters:\n        save (string):
-        the save Data\n        id (int): the id of the module\n\n    Returns:\n       
-        data: the new data variable\n    \"\"\"\n    data = createModule(id)\n   
-        return data\n\ndef saveData(data):\n    \"\"\"\n    gets save data\n\n   
-        Parameters:\n        data (Data): the data variable\n\n    Returns:\n       
-        string: the save Data\n    \"\"\"\n    result = \"\"\n    return result"
+        Data:\n  \"\"\"\n  This is a class for storing data, this is required\n\n 
+        Attributes:\n    id (int): the id of the module\n  \"\"\"\n  def __init__(self,
+        id):\n    \"\"\"\n    The constructor for the Data class\n    Parameters:\n     
+        id (int): the id\n    \"\"\"\n    self.id = id\n\ndef onLoad():\n  \"\"\"\n 
+        loads the mod, only ran when the game is started\n  \"\"\"\n  return  \"Success
+        Loading\"\n\ndef onUnload():\n  \"\"\"\n  unloads the mod, only ran when
+        the home button is pressed\n  \"\"\"\n  return \"Success Unloading\"\n\ndef
+        createModule(id):\n  \"\"\"\n  creates a module\n\n  Parameters:\n    id
+        (int): the id\n\n  Returns:\n    data: the new data variable\n  \"\"\"\n 
+        data = Data(id)\n  data.result = \"Created Template\"\n  return data\n\ndef
+        tick(data):\n  \"\"\"\n  processes one tick\n\n  Parameters:\n    data (Data):
+        the data variable\n\n  Returns:\n    data: the new data variable\n  \"\"\"\n 
+        return data\n\ndef bulkTick(data, amount):\n  \"\"\"\n  processes multiple
+        ticks\n\n  Parameters:\n    data (Data): the data variable\n    amount (BigNumber):
+        the amount of ticks to run\n\n  Returns:\n    data: the new data variable\n 
+        \"\"\"\n  return data\n\ndef destroyModule(data):\n  \"\"\"\n  destroys the
+        module currently not run\n\n  Parameters:\n    data (Data): the data variable\n\n 
+        Returns:\n    data: the new data variable\n  \"\"\"\n  return data\n\ndef
+        onPrestige(data):\n  \"\"\"\n  processes prestige\n\n  Parameters:\n    data
+        (Data): the data variable\n\n  Returns:\n    data: the new data variable\n 
+        \"\"\"\n  return data\n\ndef loadSave(save, id):\n  \"\"\"\n  loads a save\n\n 
+        Parameters:\n    save (string): the save Data\n    id (int): the id of the
+        module\n\n  Returns:\n    data: the new data variable\n  \"\"\"\n  data =
+        createModule(id)\n  return data\n\ndef saveData(data):\n  \"\"\"\n  gets
+        save data\n\n  Parameters:\n    data (Data): the data variable\n\n  Returns:\n   
+        string: the save Data\n  \"\"\"\n  result = \"\"\n  return result"
       objectReference: {fileID: 0}
     - target: {fileID: 114662724014931294, guid: d53fd87b7d86a40469735ea1ab29f85c,
         type: 3}
@@ -8970,12 +9146,12 @@ PrefabInstance:
     - target: {fileID: 114662724014931294, guid: d53fd87b7d86a40469735ea1ab29f85c,
         type: 3}
       propertyPath: characterWidth
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114662724014931294, guid: d53fd87b7d86a40469735ea1ab29f85c,
         type: 3}
       propertyPath: characterHeight
-      value: 12.999
+      value: 9.001
       objectReference: {fileID: 0}
     - target: {fileID: 114662724014931294, guid: d53fd87b7d86a40469735ea1ab29f85c,
         type: 3}
@@ -8995,7 +9171,7 @@ PrefabInstance:
     - target: {fileID: 114662724014931294, guid: d53fd87b7d86a40469735ea1ab29f85c,
         type: 3}
       propertyPath: replaceTabsBySpaces
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114662724014931294, guid: d53fd87b7d86a40469735ea1ab29f85c,
         type: 3}
@@ -9641,6 +9817,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982266245}
   m_CullTransparentMesh: 0
+--- !u!1 &1988613822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1988613823}
+  - component: {fileID: 1988613825}
+  - component: {fileID: 1988613824}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1988613823
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988613822}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1436418997}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1988613824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988613822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 518cb5ea38c5d3241843bd8bf7c7c649, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Check
+--- !u!222 &1988613825
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988613822}
+  m_CullTransparentMesh: 1
 --- !u!1 &2004444698
 GameObject:
   m_ObjectHideFlags: 0
@@ -10031,6 +10286,30 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1025979488}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2126102733}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1316085830}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6

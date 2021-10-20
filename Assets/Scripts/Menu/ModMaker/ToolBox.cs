@@ -75,6 +75,7 @@ public class ToolBox : MonoBehaviour
         GameObject go = Instantiate(prefabs[prefabSelect.value], objectParent);
         Selection.instance.selected = go;
         Selection.instance.selectedData = go.GetComponent<SelectedData>();
+        Selection.instance.selectionKind = prefabs[prefabSelect.value].GetComponent<Selectable>().kind;
         UpdateFields();
     }
 
