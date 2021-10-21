@@ -1,80 +1,20 @@
-[2021-10-21 18:50:47]: Starting build for depot 1794711, content path is "/home/prestosilver/doc/rep/unity/IP/Builds/Latest/", build flags 0x0
-[2021-10-21 18:50:47]: Building file listing for depot 1794711 ...
-[2021-10-21 18:50:47]: Found 660 files for mapping: /home/prestosilver/doc/rep/unity/IP/Builds/Latest * -> .
-[2021-10-21 18:50:47]: Found 660 files (290 MB) for depot 1794711
-[2021-10-21 18:50:47]: Building depot 1794711, baseline manifest 9100439399676393623 (663 files)
-[2021-10-21 18:50:50]: Found 527 chunks ( 528 used previously ) for depot 1794711, took 0 minutes, 2 seconds
-[2021-10-21 18:50:50]: Changes to baseline manifest 9100439399676393623 :
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\globalgamemanagers" 66 kB size, 66 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\globalgamemanagers.assets" 120 kB size, 120 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\level0" 13 kB size, 13 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\level1" 15 kB size, 15 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\level2" 17 kB size, 17 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\level3" 10 kB size, 10 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\level4" 10 kB size, 10 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\level5" 10 kB size, 10 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\level6" 84 kB size, 84 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\Managed\Assembly-CSharp.dll" 4 kB size, 4 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\Managed\IP.Debug.dll" 11 kB size, 11 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\Managed\IP.Game.dll" 59 kB size, 59 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\Managed\PyMods.dll" 19 kB size, 19 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\resources.assets" 418 kB size, 418 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\sharedassets0.assets" 149 kB size, 149 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\sharedassets1.assets" 15 kB size, 15 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\sharedassets2.assets" 10 kB size, 10 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\sharedassets3.assets" 21 kB size, 21 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\sharedassets4.assets" 15 kB size, 15 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\sharedassets5.assets" 8 kB size, 8 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\Linux\IP_Data\sharedassets6.assets" 151 kB size, 151 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Info.plist" 2 kB size, 2 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\MacOS\IP" 33 kB size, 33 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\globalgamemanagers" 66 kB size, 66 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\globalgamemanagers.assets" 120 kB size, 120 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\level0" 13 kB size, 13 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\level1" 15 kB size, 15 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\level2" 17 kB size, 17 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\level3" 10 kB size, 10 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\level4" 10 kB size, 10 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\level5" 10 kB size, 10 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\level6" 84 kB size, 84 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\Managed\Assembly-CSharp.dll" 4 kB size, 4 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\Managed\IP.Debug.dll" 11 kB size, 11 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\Managed\IP.Game.dll" 59 kB size, 59 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\Managed\PyMods.dll" 19 kB size, 19 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\resources.assets" 407 kB size, 407 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\sharedassets0.assets" 144 kB size, 144 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\sharedassets1.assets" 15 kB size, 15 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\sharedassets2.assets" 10 kB size, 10 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\sharedassets3.assets" 21 kB size, 21 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\sharedassets4.assets" 15 kB size, 15 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\sharedassets5.assets" 8 kB size, 8 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\sharedassets6.assets" 151 kB size, 151 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\macOS\IP.app\Contents\_CodeSignature\CodeResources" 55 kB size, 55 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\globalgamemanagers" 66 kB size, 66 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\globalgamemanagers.assets" 120 kB size, 120 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\level0" 13 kB size, 13 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\level1" 15 kB size, 15 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\level2" 17 kB size, 17 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\level3" 10 kB size, 10 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\level4" 10 kB size, 10 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\level5" 10 kB size, 10 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\level6" 84 kB size, 84 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\Managed\Assembly-CSharp.dll" 4 kB size, 4 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\Managed\IP.Debug.dll" 11 kB size, 11 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\Managed\IP.Game.dll" 59 kB size, 59 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\Managed\PyMods.dll" 19 kB size, 19 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\resources.assets" 406 kB size, 406 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\sharedassets0.assets" 143 kB size, 143 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\sharedassets1.assets" 15 kB size, 15 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\sharedassets2.assets" 10 kB size, 10 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\sharedassets3.assets" 21 kB size, 21 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\sharedassets4.assets" 15 kB size, 15 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\sharedassets5.assets" 8 kB size, 8 kB changed 
-[2021-10-21 18:50:50]: Changed: "Master\PC\IP_Data\sharedassets6.assets" 151 kB size, 151 kB changed 
-[2021-10-21 18:50:50]: Removed: Master\Linux\IP_Data\level0.resS (129 kB)
-[2021-10-21 18:50:50]: Removed: Master\Linux\IP_Data\level2.resS (129 kB)
-[2021-10-21 18:50:50]: Removed: Master\Linux\IP_Data\level6.resS (129 kB)
-[2021-10-21 18:50:50]: Summary: 0 files added, 66 files changed, 3 files removed
-[2021-10-21 18:50:50]: Uploading new manifest to 208.64.201.204:80 (handle 12532947791007783841, 109414 bytes).
-[2021-10-21 18:50:51]: Uploading 60 out of 60 missing chunks.
-[2021-10-21 18:50:54]: Success! New manifestID 118474060938862516 created and 60 new chunks uploaded.
+[2021-10-21 18:59:35]: Starting build for depot 1794711, content path is "/home/prestosilver/doc/rep/unity/IP/Builds/Latest/", build flags 0x0
+[2021-10-21 18:59:35]: Building file listing for depot 1794711 ...
+[2021-10-21 18:59:35]: Found 660 files for mapping: /home/prestosilver/doc/rep/unity/IP/Builds/Latest * -> .
+[2021-10-21 18:59:35]: Found 660 files (290 MB) for depot 1794711
+[2021-10-21 18:59:36]: Building depot 1794711, baseline manifest 118474060938862516 (660 files)
+[2021-10-21 18:59:37]: Found 527 chunks ( 527 used previously ) for depot 1794711, took 0 minutes, 1 seconds
+[2021-10-21 18:59:37]: Changes to baseline manifest 118474060938862516 :
+[2021-10-21 18:59:37]: Changed: "Master\Linux\IP_Data\globalgamemanagers" 66 kB size, 66 kB changed 
+[2021-10-21 18:59:37]: Changed: "Master\Linux\IP_Data\Managed\Assembly-CSharp.dll" 4 kB size, 4 kB changed 
+[2021-10-21 18:59:37]: Changed: "Master\macOS\IP.app\Contents\Info.plist" 2 kB size, 2 kB changed 
+[2021-10-21 18:59:37]: Changed: "Master\macOS\IP.app\Contents\MacOS\IP" 33 kB size, 33 kB changed 
+[2021-10-21 18:59:37]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\globalgamemanagers" 66 kB size, 66 kB changed 
+[2021-10-21 18:59:37]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\Managed\Assembly-CSharp.dll" 4 kB size, 4 kB changed 
+[2021-10-21 18:59:37]: Changed: "Master\macOS\IP.app\Contents\_CodeSignature\CodeResources" 55 kB size, 55 kB changed 
+[2021-10-21 18:59:37]: Changed: "Master\PC\IP_Data\globalgamemanagers" 66 kB size, 66 kB changed 
+[2021-10-21 18:59:37]: Changed: "Master\PC\IP_Data\Managed\Assembly-CSharp.dll" 4 kB size, 4 kB changed 
+[2021-10-21 18:59:37]: Summary: 0 files added, 9 files changed, 0 files removed
+[2021-10-21 18:59:37]: Uploading new manifest to 208.64.201.204:80 (handle 8850522898976404088, 109603 bytes).
+[2021-10-21 18:59:38]: Uploading 9 out of 9 missing chunks.
+[2021-10-21 18:59:39]: Success! New manifestID 6301352626010327937 created and 9 new chunks uploaded.
