@@ -112,7 +112,7 @@ MonoBehaviour:
     condition: 0
     clauses: []
   inputPath: $BUILDPATH
-  outputPath: Builds/Latest
+  outputPath: $BASEPATH/Builds/Latest
   operation: 1
 --- !u!114 &-432555192352403463
 MonoBehaviour:
