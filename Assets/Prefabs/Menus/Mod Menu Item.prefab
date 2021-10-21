@@ -174,8 +174,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 306.5, y: 0}
-  m_SizeDelta: {x: 306.5, y: 0}
+  m_AnchoredPosition: {x: 446.5, y: 0}
+  m_SizeDelta: {x: 446.5, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &22215106
 CanvasRenderer:
@@ -345,7 +345,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 306.5, y: 0}
+  m_SizeDelta: {x: 446.5, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &22205730
 CanvasRenderer:
@@ -414,6 +414,7 @@ GameObject:
   - component: {fileID: 22466050}
   - component: {fileID: 11436972}
   - component: {fileID: 7660200834904557950}
+  - component: {fileID: 3178703551325295155}
   m_Layer: 5
   m_Name: Toggle
   m_TagString: Untagged
@@ -509,6 +510,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 100
+--- !u!114 &3178703551325295155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b4cdc22bdc26c5184b2a8e674710b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: ModPick
 --- !u!1 &196940
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,8 +856,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 158.25, y: 0}
-  m_SizeDelta: {x: 306.5, y: 0}
+  m_AnchoredPosition: {x: 228.25, y: 0}
+  m_SizeDelta: {x: 446.5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &119154405932481309
 MonoBehaviour:
@@ -1052,8 +1066,9 @@ GameObject:
   - component: {fileID: 6385378665903309952}
   - component: {fileID: 4345288529976221333}
   - component: {fileID: 1241289993417236867}
+  - component: {fileID: 3912502611460239344}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Delete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1193,6 +1208,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &3912502611460239344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8042819852202312730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b4cdc22bdc26c5184b2a8e674710b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: ModMenu
 --- !u!1 &8582352740153968320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,6 +1234,7 @@ GameObject:
   - component: {fileID: 448860630223393027}
   - component: {fileID: 8526276629832125531}
   - component: {fileID: 7120409235691259049}
+  - component: {fileID: 6869238831091020860}
   m_Layer: 5
   m_Name: Edit
   m_TagString: Untagged
@@ -1317,7 +1346,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11484330}
         m_TargetAssemblyTypeName: ModItem, IP.Game
-        m_MethodName: Remove
+        m_MethodName: Edit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1347,6 +1376,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &6869238831091020860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8582352740153968320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b4cdc22bdc26c5184b2a8e674710b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: ModMenu
 --- !u!1 &8683439328767000516
 GameObject:
   m_ObjectHideFlags: 0

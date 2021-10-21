@@ -105,6 +105,7 @@ public class Mods : MonoBehaviour
         modItem.Initialize(mod, menuContentPanel);
         modItem.SetToggleInteractable(!isLoaded);
         modItems.Add(mod, modItem);
+        StartCoroutine(UpdateLayout());
     }
 
     /// <summary>
@@ -225,5 +226,18 @@ public class Mods : MonoBehaviour
     {
         Unload();
         SceneManager.LoadScene("ModMaker");
+    }
+
+    /// <summary>
+    /// update the layout of the mod
+    /// </summary>
+    /// <param name="go"></param>
+    /// <returns></returns>
+    public IEnumerator UpdateLayout()
+    {
+        VerticalLayoutGroup layout = menuContentPanel.GetComponent<VerticalLayoutGroup>();
+        layout.enabled = false;
+        yield return null;
+        layout.enabled = true;
     }
 }

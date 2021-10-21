@@ -465,6 +465,35 @@ namespace PyMods
             Directory.Delete(path, true);
             return "";
         }
+
+        public void Reload()
+        {
+            // setup the info file
+            infoFile = Path.Combine(path, "info.json");
+
+            // read the info file
+            JSONModData info = JsonUtility.FromJson<JSONModData>(File.ReadAllText(infoFile));
+
+            // copy info from the info file
+            name = info.name;
+            mainFile = Path.Combine(path, info.main_file);
+            uiFile = Path.Combine(path, info.ui_file);
+            description = info.description;
+            requires = info.requires;
+            chance = info.chance;
+
+            // read the ui file
+            UI = JsonUtility.FromJson<ModUI>(File.ReadAllText(uiFile));
+
+            // make sure the module isnt falsly loaded
+            isEnabled = false;
+
+            // setup python scope & engine
+            scope = engine.CreateScope();
+            engine.CreateScriptSourceFromString("import clr\nclr.AddReference(\'IP.Lib\')\nclr.AddReference('IP.Game')").Execute();
+            source = engine.CreateScriptSourceFromFile(mainFile);
+            source.Execute(scope);
+        }
     }
 }
 

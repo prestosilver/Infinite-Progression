@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using PyMods;
 using UnityEngine;
@@ -9,6 +10,12 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    public Dictionary<int, T> Enumerate<T>(List<T> list)
+    {
+        return list.Select((x, i) => new { x, i })
+            .ToDictionary(a => a.i, a => a.x);
+    }
+
     public static GameController instance;
     void Awake() => instance = this;
 
@@ -41,8 +48,6 @@ public class GameController : MonoBehaviour
         TpsText.text = ConsistantTPS.tps.ToString() + "\nTPS";
         pres_button.interactable = slider_ammnt >= 10 * (presLevel + 1);
     }
-
-    public virtual void SaveThing() { Saves.savePath = "save.dat"; }
 
     private Task CreateTaskTask(Task t)
     {
@@ -82,20 +87,31 @@ public class GameController : MonoBehaviour
 
     public async Task LoadData()
     {
-        if (isPreview) return;
+        // the loading step is at 0%
         stepProgress = 0.0f;
-        SaveThing();
-        foreach (GameObject i in prefabs)
-            sum += i.GetComponent<ProbController>().chance;
-        foreach (Mod m in mods)
+
+        // get the chance of anything spawninng (100%)
+        sum = prefabs.Sum(o => o.GetComponent<ProbController>().chance);
+        sum += mods.Sum(m => m.chance);
+
+        // the loading step is at 10%
+        stepProgress = 0.1f;
+        foreach (KeyValuePair<int, Mod> mod in Enumerate(mods))
         {
-            sum += m.chance;
+            // reload the mod
+            mod.Value.Reload();
+
+            // the loading step is at 10% + this mods progress
+            stepProgress = 0.1f + 0.9f * (mod.Key / mods.Count);
         }
+
+        // done loading
         stepProgress = 1f;
     }
 
     public async Task LoadSave()
     {
+        // never load if in preview mode
         if (isPreview) return;
         List<string> save = Saves.Read();
         if (save.Count > 0)
@@ -174,7 +190,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void AddMod(int id, int type)
+    public void ResetNextButton(int id)
     {
         int tmpid = 0;
         foreach (GameObject g in sliders)
@@ -186,35 +202,53 @@ public class GameController : MonoBehaviour
             }
             tmpid++;
         }
+    }
+
+    public void AddMod(int id, int type)
+    {
+        ResetNextButton(id);
         GameObject slider = Instantiate(modPrefab);
         slider.GetComponent<ModController>().id = id;
-        slider.GetComponent<ModController>().mod = mods[type];
-        List<String> requires = mods[type].requires;
-        if (mods[type].requires.Count != 0)
+
+        //set the target to the next
+        Mod targetMod = mods[type] = forceNext != null ? forceNext : mods[type];
+        forceNext = null;
+
+        // if there is any requirements
+        if (targetMod.requires.Count != 0)
         {
+            // set the required mods
+            List<String> requires = targetMod.requires;
+
+            // go through each slider to check if it fufills a requirement
             foreach (GameObject o in sliders)
             {
-                ModController m;
-                if (!(m = o.GetComponent<ModController>())) continue;
+                // get the sliders controller to get name later
+                ModController m = o.GetComponent<ModController>();
+                if (o == null) continue;
+
+                // get the name & check if it is a requirement
                 if (requires.Contains(m.mod.name))
                 {
                     requires.Remove(m.mod.name);
+
+                    // done checking this speeds up alot
                     if (requires.Count == 0) break;
                 }
             }
+
+            // if theres still a requiremnet force it
             if (requires.Count != 0)
-            {
-                foreach (Mod m in mods)
-                    if (m.name == requires[0])
-                        slider.GetComponent<ModController>().mod = m;
-            }
+                mods.ForEach((m) => targetMod = (m.name == requires[0]) ? m : targetMod);
         }
-        if (forceNext != null)
-        {
-            slider.GetComponent<ModController>().mod = forceNext;
-            forceNext = null;
-        }
+
+        // set the mod to the target
+        slider.GetComponent<ModController>().mod = targetMod;
+
+        // get the controller as a generic controller
         GenericController cont = (GenericController)slider.GetComponents(typeof(GenericController))[0];
+
+        // get the previous controller
         GameObject nprev = null;
         if (sliders.Count != 0)
             nprev = sliders[sliders.Count - 1];
@@ -267,16 +301,7 @@ public class GameController : MonoBehaviour
     /// <param name="type">the type of the module</param>
     private void AddMissing(int id, string type)
     {
-        int tmpid = 0;
-        foreach (GameObject g in sliders)
-        {
-            g.transform.localPosition -= new Vector3(0, (15 * (id - 1)), 0);
-            if (g.GetComponent<SliderController>() != null)
-            {
-                g.GetComponent<SliderController>().next_button = null;
-            }
-            tmpid++;
-        }
+        ResetNextButton(id);
         GameObject slider = Instantiate(dataPrefab);
         slider.GetComponent<DataController>().id = id;
         slider.GetComponent<DataController>().modName = type;
@@ -328,22 +353,9 @@ public class GameController : MonoBehaviour
 
     public void AddType(int id, int type)
     {
-        bool gencont = false;
-        int tmpid = 0;
-        int gen;
-        foreach (GameObject g in sliders)
-        {
-            g.transform.localPosition -= new Vector3(0, (15 * (id - 1)), 0);
-            if (g.GetComponent<SliderController>() != null)
-            {
-                g.GetComponent<SliderController>().next_button = null;
-            }
-            tmpid++;
-        }
+        ResetNextButton(id);
         if (id <= 2)
             type = 0;
-        if (!gencont && type == 4)
-            type = 2;
         GameObject slider = Instantiate(prefabs[type]);
         GenericController cont = (GenericController)slider.GetComponents(typeof(GenericController))[0];
         GameObject nprev = null;
@@ -470,10 +482,24 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void Reset()
+    {
+        if (!isPreview) return;
+        sliders.ForEach((g) => Destroy(g));
+        sliders.Clear();
+        slider_ammnt = 0;
+    }
+
+    public void Reload()
+    {
+        Reset();
+        mods.ForEach((m) => m.Reload());
+    }
+
+
     public void Save()
     {
         if (isPreview) return;
-        SaveThing();
         Saves.Save();
     }
 

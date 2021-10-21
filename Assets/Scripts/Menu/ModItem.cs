@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using PyMods;
+using UnityEngine.SceneManagement;
 
 public class ModItem : MonoBehaviour
 {
@@ -95,5 +96,11 @@ public class ModItem : MonoBehaviour
             }
             Destroy(go);
         });
+    }
+
+    public void Edit()
+    {
+        OpenMod.mod = mod;
+        SceneManager.LoadScene("ModMaker");
     }
 }

@@ -52,6 +52,22 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ToggleDebug",
+                    "type": "Button",
+                    "id": "84dccd59-1332-4228-b90c-37798597c58c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Return",
+                    "type": "Button",
+                    "id": "ec2b91fb-35aa-4bc2-a99f-0d776b0055c3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -175,34 +191,10 @@
                     "action": "ScrollWheel",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Debug",
-            "id": "5b06784d-f9f8-482f-9cdd-bbfe2c6c0327",
-            "actions": [
-                {
-                    "name": "ToggleDebug",
-                    "type": "Button",
-                    "id": "4b2c533c-513d-4757-ac06-dbf763db7acd",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
                 },
                 {
-                    "name": "Return",
-                    "type": "Button",
-                    "id": "2bfe4c00-2182-45d5-8e79-bbe2d9d00663",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                }
-            ],
-            "bindings": [
-                {
                     "name": "",
-                    "id": "530ee5cd-27b9-494f-bf3b-5dd3d12a30e5",
+                    "id": "a0c09322-3c06-4c44-9efa-f707c4742b2e",
                     "path": "<Keyboard>/backquote",
                     "interactions": "",
                     "processors": "",
@@ -213,7 +205,7 @@
                 },
                 {
                     "name": "",
-                    "id": "d876ca71-71c7-4bb3-bc26-021ee8c374fa",
+                    "id": "f2818d85-7797-486c-b3df-8f63df1f67ae",
                     "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
@@ -224,7 +216,7 @@
                 },
                 {
                     "name": "",
-                    "id": "43ed8868-d966-40eb-aa40-7c145f8a4404",
+                    "id": "fa415caa-a183-4383-8e38-4b5138687a29",
                     "path": "<Keyboard>/numpadEnter",
                     "interactions": "",
                     "processors": "",

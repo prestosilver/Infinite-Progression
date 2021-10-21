@@ -160,7 +160,7 @@ namespace IP.Debug
             GUI.FocusControl("textfield");
         }
 
-        private void HandleInput(string input)
+        public void HandleInput(string input)
         {
             string[] properties = input.Split(' ');
 

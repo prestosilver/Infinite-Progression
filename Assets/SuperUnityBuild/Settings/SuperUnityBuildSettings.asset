@@ -91,6 +91,29 @@ MonoBehaviour:
   platformName: Android
   dataDirNameFormat: '{0}_Data'
   targetGroup: 7
+--- !u!114 &-1587597607972403443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54626104f6c7de94f9976e1672abc45b, type: 3}
+  m_Name: FolderOperation
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: FolderOperation
+  note: 
+  actionEnabled: 1
+  configureEditor: 0
+  filter:
+    condition: 0
+    clauses: []
+  inputPath: 
+  outputPath: 
+  operation: 0
 --- !u!114 &-432555192352403463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +348,7 @@ MonoBehaviour:
   _postBuildActions:
     buildActions:
     - {fileID: 4388923883098422228}
+    - {fileID: -1587597607972403443}
 --- !u!114 &2834666416053928921
 MonoBehaviour:
   m_ObjectHideFlags: 0
