@@ -112,7 +112,7 @@ MonoBehaviour:
     condition: 0
     clauses: []
   inputPath: $BUILDPATH
-  outputPath: $BASEPATH/Builds/Latest
+  outputPath: $BASEPATH/Latest
   operation: 1
 --- !u!114 &-432555192352403463
 MonoBehaviour:
@@ -155,8 +155,8 @@ MonoBehaviour:
     buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/
     openFolderPostBuild: 0
   _productParameters:
-    buildCounter: 75
-    buildVersion: 2.1.0b75
+    buildCounter: 76
+    buildVersion: 2.1.0b76
     versionTemplate: 2.1.0b$BUILD
     autoGenerate: 1
     syncWithPlayerSettings: 0
@@ -341,7 +341,7 @@ MonoBehaviour:
     showBuildInfo: 0
     hideDisabled: 0
     treeView: 0
-    selectedKeyChain: Devel/Linux/Linux x64
+    selectedKeyChain: Master/Linux/Linux x64
   _preBuildActions:
     buildActions:
     - {fileID: -7107573810230948887}
