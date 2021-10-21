@@ -91,29 +91,6 @@ MonoBehaviour:
   platformName: Android
   dataDirNameFormat: '{0}_Data'
   targetGroup: 7
---- !u!114 &-1587597607972403443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54626104f6c7de94f9976e1672abc45b, type: 3}
-  m_Name: FolderOperation
-  m_EditorClassIdentifier: 
-  actionType: 0
-  actionName: FolderOperation
-  note: 
-  actionEnabled: 1
-  configureEditor: 0
-  filter:
-    condition: 0
-    clauses: []
-  inputPath: $BUILDPATH
-  outputPath: $BASEPATH/Latest
-  operation: 1
 --- !u!114 &-432555192352403463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,8 +132,8 @@ MonoBehaviour:
     buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/
     openFolderPostBuild: 0
   _productParameters:
-    buildCounter: 76
-    buildVersion: 2.1.0b76
+    buildCounter: 77
+    buildVersion: 2.1.0b77
     versionTemplate: 2.1.0b$BUILD
     autoGenerate: 1
     syncWithPlayerSettings: 0
@@ -348,7 +325,7 @@ MonoBehaviour:
   _postBuildActions:
     buildActions:
     - {fileID: 4388923883098422228}
-    - {fileID: -1587597607972403443}
+    - {fileID: 5859605565836280038}
 --- !u!114 &2834666416053928921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +384,28 @@ MonoBehaviour:
   channelName: $PLATFORM-$ARCHITECTURE
   showUploadProgress: 1
   itchChannelOverride: 
+--- !u!114 &5859605565836280038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab85f23b640cc654dbcaff8ec59e443e, type: 3}
+  m_Name: ScriptRunner
+  m_EditorClassIdentifier: 
+  actionType: 0
+  actionName: ScriptRunner
+  note: 
+  actionEnabled: 1
+  configureEditor: 0
+  filter:
+    condition: 0
+    clauses: []
+  scriptPath: steambuild.sh
+  scriptArguments: $VERSION
 --- !u!114 &8848932971037499292
 MonoBehaviour:
   m_ObjectHideFlags: 0
