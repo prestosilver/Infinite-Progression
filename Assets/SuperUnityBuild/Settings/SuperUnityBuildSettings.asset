@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54626104f6c7de94f9976e1672abc45b, type: 3}
   m_Name: FolderOperation
   m_EditorClassIdentifier: 
-  actionType: 1
+  actionType: 0
   actionName: FolderOperation
   note: 
   actionEnabled: 1
@@ -111,9 +111,9 @@ MonoBehaviour:
   filter:
     condition: 0
     clauses: []
-  inputPath: 
-  outputPath: 
-  operation: 0
+  inputPath: $BUILDPATH
+  outputPath: Builds/Latest
+  operation: 1
 --- !u!114 &-432555192352403463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,8 +155,8 @@ MonoBehaviour:
     buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/
     openFolderPostBuild: 0
   _productParameters:
-    buildCounter: 74
-    buildVersion: 2.1.0b72
+    buildCounter: 75
+    buildVersion: 2.1.0b75
     versionTemplate: 2.1.0b$BUILD
     autoGenerate: 1
     syncWithPlayerSettings: 0
