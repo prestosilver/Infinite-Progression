@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour
 
     public bool isPreview;
 
-    public GameObject parent, more_button_text, confirmPrefab, conf;
+    public GameObject parent, more_button_text;
     public Text presText, TpsText;
     public Slider presBar;
     public Slider loadProgressBar;
@@ -463,14 +463,32 @@ public class GameController : MonoBehaviour
 
     public void PrestigePrompt()
     {
-        conf = Instantiate(confirmPrefab);
-        GameObject confirm = GameObject.FindGameObjectsWithTag("ConfirmButton")[0];
-        confirm.GetComponent<Button>().onClick.AddListener(Prestige);
+        ModalWindowSpawner.instance.Spawn(new ModalWindow
+        {
+            isScroll = false,
+            canClose = true,
+            title = "Are You Sure",
+            content = new string[1] {
+                "This will reset your progress"
+            },
+            buttons = new List<ModalWindowButton>
+            {
+                new ModalWindowButton{
+                    onClick = Prestige,
+                    text = "Confirm",
+                    destroys = true
+    },
+                new ModalWindowButton{
+                    onClick = ()=>{},
+                    text = "Cancel",
+                    destroys = true
+                }
+            }
+        });
     }
 
     void Prestige()
     {
-        Destroy(conf);
         sliders[sliders.Count - 1].GetComponent<GenericController>().DoPrestige();
         presLevel += 1;
         // more_button_text.GetComponent<Text>().text = "Unlock";

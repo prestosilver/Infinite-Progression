@@ -1,20 +1,23 @@
-[2021-10-21 18:59:35]: Starting build for depot 1794711, content path is "/home/prestosilver/doc/rep/unity/IP/Builds/Latest/", build flags 0x0
-[2021-10-21 18:59:35]: Building file listing for depot 1794711 ...
-[2021-10-21 18:59:35]: Found 660 files for mapping: /home/prestosilver/doc/rep/unity/IP/Builds/Latest * -> .
-[2021-10-21 18:59:35]: Found 660 files (290 MB) for depot 1794711
-[2021-10-21 18:59:36]: Building depot 1794711, baseline manifest 118474060938862516 (660 files)
-[2021-10-21 18:59:37]: Found 527 chunks ( 527 used previously ) for depot 1794711, took 0 minutes, 1 seconds
-[2021-10-21 18:59:37]: Changes to baseline manifest 118474060938862516 :
-[2021-10-21 18:59:37]: Changed: "Master\Linux\IP_Data\globalgamemanagers" 66 kB size, 66 kB changed 
-[2021-10-21 18:59:37]: Changed: "Master\Linux\IP_Data\Managed\Assembly-CSharp.dll" 4 kB size, 4 kB changed 
-[2021-10-21 18:59:37]: Changed: "Master\macOS\IP.app\Contents\Info.plist" 2 kB size, 2 kB changed 
-[2021-10-21 18:59:37]: Changed: "Master\macOS\IP.app\Contents\MacOS\IP" 33 kB size, 33 kB changed 
-[2021-10-21 18:59:37]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\globalgamemanagers" 66 kB size, 66 kB changed 
-[2021-10-21 18:59:37]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\Managed\Assembly-CSharp.dll" 4 kB size, 4 kB changed 
-[2021-10-21 18:59:37]: Changed: "Master\macOS\IP.app\Contents\_CodeSignature\CodeResources" 55 kB size, 55 kB changed 
-[2021-10-21 18:59:37]: Changed: "Master\PC\IP_Data\globalgamemanagers" 66 kB size, 66 kB changed 
-[2021-10-21 18:59:37]: Changed: "Master\PC\IP_Data\Managed\Assembly-CSharp.dll" 4 kB size, 4 kB changed 
-[2021-10-21 18:59:37]: Summary: 0 files added, 9 files changed, 0 files removed
-[2021-10-21 18:59:37]: Uploading new manifest to 208.64.201.204:80 (handle 8850522898976404088, 109603 bytes).
-[2021-10-21 18:59:38]: Uploading 9 out of 9 missing chunks.
-[2021-10-21 18:59:39]: Success! New manifestID 6301352626010327937 created and 9 new chunks uploaded.
+[2021-10-21 19:27:32]: Starting build for depot 1794711, content path is "/home/prestosilver/doc/rep/unity/IP/Builds/Latest/", build flags 0x0
+[2021-10-21 19:27:32]: Building file listing for depot 1794711 ...
+[2021-10-21 19:27:32]: Found 660 files for mapping: /home/prestosilver/doc/rep/unity/IP/Builds/Latest * -> .
+[2021-10-21 19:27:32]: Found 660 files (290 MB) for depot 1794711
+[2021-10-21 19:27:33]: Building depot 1794711, baseline manifest 6301352626010327937 (660 files)
+[2021-10-21 19:27:35]: Found 527 chunks ( 527 used previously ) for depot 1794711, took 0 minutes, 1 seconds
+[2021-10-21 19:27:35]: Changes to baseline manifest 6301352626010327937 :
+[2021-10-21 19:27:35]: Changed: "Master\Linux\IP_Data\globalgamemanagers" 66 kB size, 66 kB changed 
+[2021-10-21 19:27:35]: Changed: "Master\Linux\IP_Data\Managed\Assembly-CSharp.dll" 4 kB size, 4 kB changed 
+[2021-10-21 19:27:35]: Changed: "Master\Linux\IP_Data\Managed\IP.Game.dll" 59 kB size, 59 kB changed 
+[2021-10-21 19:27:35]: Changed: "Master\macOS\IP.app\Contents\Info.plist" 2 kB size, 2 kB changed 
+[2021-10-21 19:27:35]: Changed: "Master\macOS\IP.app\Contents\MacOS\IP" 33 kB size, 33 kB changed 
+[2021-10-21 19:27:35]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\globalgamemanagers" 66 kB size, 66 kB changed 
+[2021-10-21 19:27:35]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\Managed\Assembly-CSharp.dll" 4 kB size, 4 kB changed 
+[2021-10-21 19:27:35]: Changed: "Master\macOS\IP.app\Contents\Resources\Data\Managed\IP.Game.dll" 59 kB size, 59 kB changed 
+[2021-10-21 19:27:35]: Changed: "Master\macOS\IP.app\Contents\_CodeSignature\CodeResources" 55 kB size, 55 kB changed 
+[2021-10-21 19:27:35]: Changed: "Master\PC\IP_Data\globalgamemanagers" 66 kB size, 66 kB changed 
+[2021-10-21 19:27:35]: Changed: "Master\PC\IP_Data\Managed\Assembly-CSharp.dll" 4 kB size, 4 kB changed 
+[2021-10-21 19:27:35]: Changed: "Master\PC\IP_Data\Managed\IP.Game.dll" 59 kB size, 59 kB changed 
+[2021-10-21 19:27:35]: Summary: 0 files added, 12 files changed, 0 files removed
+[2021-10-21 19:27:35]: Uploading new manifest to 208.64.201.204:80 (handle 11324395421640731008, 108438 bytes).
+[2021-10-21 19:27:35]: Uploading 10 out of 10 missing chunks.
+[2021-10-21 19:27:37]: Success! New manifestID 7871537467380301848 created and 10 new chunks uploaded.

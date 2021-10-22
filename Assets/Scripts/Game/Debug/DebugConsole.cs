@@ -25,8 +25,9 @@ namespace IP.Debug
 
         public List<object> CommandList;
 
-        public void OnToggleDebug(InputValue value)
+        public void OnToggleDebug(InputAction.CallbackContext context)
         {
+            if (!context.started) return;
             if (PlayerPrefs.GetString("Debug") == "True" || GameController.instance.isPreview)
             {
                 showConsole = !showConsole;
@@ -35,8 +36,9 @@ namespace IP.Debug
             }
         }
 
-        public void OnReturn()
+        public void OnReturn(InputAction.CallbackContext context)
         {
+            if (!context.started) return;
             if (showConsole)
             {
                 HandleInput(input);

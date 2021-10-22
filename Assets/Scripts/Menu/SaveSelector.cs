@@ -52,19 +52,32 @@ public class SaveSelector : MonoBehaviour
     /// </summary>
     public void deleteSave()
     {
-        // the name of the save
-        Saves.saveName = save.name;
-
-        // create confirm dialog
-        GameObject go = Instantiate(confirmPrefab);
-
-        // setup delete action
-        GameObject confirm = GameObject.FindGameObjectsWithTag("ConfirmButton")[0];
-        confirm.GetComponent<Button>().onClick.AddListener(() =>
+        ModalWindowSpawner.instance.Spawn(new ModalWindow
         {
-            Saves.Delete();
-            Destroy(go);
-            SceneManager.LoadScene("MainMenu");
+            isScroll = false,
+            canClose = true,
+            title = "Are You Sure",
+            content = new string[1] {
+                $"This will delete the save '{save.name}'!"
+            },
+            buttons = new List<ModalWindowButton>
+            {
+                new ModalWindowButton{
+                    onClick = ()=>{
+                        // the name of the save
+                        Saves.saveName = save.name;
+                        Saves.Delete();
+                        SceneManager.LoadScene("MainMenu");
+                    },
+                    text = "Confirm",
+                    destroys = true
+                },
+                new ModalWindowButton{
+                    onClick = ()=>{},
+                    text = "Cancel",
+                    destroys = true
+                }
+            }
         });
     }
 

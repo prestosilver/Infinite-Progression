@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 54053932}
   - component: {fileID: 54053931}
   - component: {fileID: 54053930}
+  - component: {fileID: 54053935}
+  - component: {fileID: 54053934}
   - component: {fileID: 54053933}
   m_Layer: 0
   m_Name: EventSystem
@@ -203,7 +205,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &54053933
 MonoBehaviour:
@@ -219,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 0d790478f02e08f2499b0851d9e2ea5b,
     type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 54053930}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -230,12 +232,94 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c8d895f7-5b2f-4f97-ba0a-e13f4e3dbbea
+    m_ActionName: Screen/ToggleFullscreen[/Keyboard/f11]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bc43ce0a-bbd7-42e8-bcd6-1e010f2a8912
+    m_ActionName: Screen/Navigate[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 56ded574-315e-4a5f-9e49-183af5b5b014
+    m_ActionName: Screen/Submit[/Keyboard/enter,/Keyboard/numpadEnter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8dc1aab7-644f-4101-bafe-d2f937337f39
+    m_ActionName: Screen/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6f29d679-4369-40bf-a9d4-2420a7f9fa9f
+    m_ActionName: Screen/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3b4a3c22-e057-4450-b139-d6ddbaeb9d7f
+    m_ActionName: Screen/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 54053935}
+        m_TargetAssemblyTypeName: IP.Debug.DebugConsole, IP.Debug
+        m_MethodName: OnToggleDebug
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 24a9591e-6b95-4d5a-aae1-9c153034748a
+    m_ActionName: Debug/ToggleDebug[/Keyboard/backquote]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 54053935}
+        m_TargetAssemblyTypeName: IP.Debug.DebugConsole, IP.Debug
+        m_MethodName: OnReturn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 22de8b85-28e2-4f92-a0ad-86a48f32c22f
+    m_ActionName: Debug/Return[/Keyboard/enter,/Keyboard/numpadEnter]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Debug
-  m_DefaultActionMap: Screen
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Debug
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 519420031}
+--- !u!114 &54053934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54053929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44321a56221e23108bef1da6eed0442d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Details: Playing
+  State: In the game.
+--- !u!114 &54053935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54053929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d6d5f8efeebc3a28f5d7904ca2c190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &87197300
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,7 +783,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &745605209
 GameObject:
@@ -853,64 +937,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766010692}
   m_CullTransparentMesh: 0
---- !u!1 &815980031
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 815980033}
-  - component: {fileID: 815980032}
-  - component: {fileID: 815980035}
-  m_Layer: 0
-  m_Name: DebugControl
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &815980032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815980031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76d6d5f8efeebc3a28f5d7904ca2c190, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &815980033
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815980031}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &815980035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815980031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44321a56221e23108bef1da6eed0442d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Details: Playing
-  State: In the game.
 --- !u!1 &857932802
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,7 +2229,7 @@ RectTransform:
   - {fileID: 1769579950}
   - {fileID: 140842189}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2247,7 +2273,7 @@ GameObject:
   - component: {fileID: 1504928118214810273}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

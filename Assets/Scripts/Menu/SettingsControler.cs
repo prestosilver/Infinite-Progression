@@ -32,9 +32,9 @@ public class SettingsControler : MonoBehaviour
     public Toggle MenuAnimation;
 
     /// <summary>
-    /// the changelog prefab
+    /// the changelog
     /// </summary>
-    public GameObject ChangeLog;
+    public TextAsset changeLog;
 
     /// <summary>
     /// saves settings
@@ -52,7 +52,23 @@ public class SettingsControler : MonoBehaviour
     /// </summary>
     public void ShowChangeLog()
     {
-        Instantiate(ChangeLog);
+        ModalWindowSpawner.instance.Spawn(new ModalWindow
+        {
+            isScroll = true,
+            canClose = true,
+            title = "ChangeLog",
+            content = new string[1] {
+                    changeLog.text,
+                },
+            buttons = new List<ModalWindowButton>
+                {
+                    new ModalWindowButton{
+                        onClick = ()=>{},
+                        text = "OK",
+                        destroys = true
+                    }
+                }
+        });
     }
 
     /// <summary>

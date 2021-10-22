@@ -459,7 +459,7 @@ namespace PyMods
             {
                 if (m.requires.Contains(name))
                 {
-                    return m.name;
+                    return $"the mod '{m.name}' requires '{name}'";
                 }
             }
             Directory.Delete(path, true);

@@ -27,11 +27,6 @@ public class MenuController : MonoBehaviour
     public Animator transition;
 
     /// <summary>
-    /// the changelog prefab
-    /// </summary>
-    public GameObject ChangeLog;
-
-    /// <summary>
     /// the add mod from github popup
     /// </summary>
     public GameObject GHPopup;
@@ -40,6 +35,11 @@ public class MenuController : MonoBehaviour
     /// the object foreground
     /// </summary>
     public Transform Foreground;
+
+    /// <summary>
+    /// the changelog
+    /// </summary>
+    public TextAsset changeLog;
 
     /// <summary>
     /// setup the menu
@@ -61,7 +61,23 @@ public class MenuController : MonoBehaviour
         // show change log on new save / version
         if (PlayerPrefs.GetString("Version") != VersionPrefix + "-" + Application.version)
         {
-            Instantiate(ChangeLog);
+            ModalWindowSpawner.instance.Spawn(new ModalWindow
+            {
+                isScroll = true,
+                canClose = true,
+                title = "ChangeLog",
+                content = new string[1] {
+                    changeLog.text,
+                },
+                buttons = new List<ModalWindowButton>
+                {
+                    new ModalWindowButton{
+                        onClick = ()=>{},
+                        text = "OK",
+                        destroys = true
+                    }
+                }
+            });
             PlayerPrefs.SetString("Version", VersionPrefix + "-" + Application.version);
         }
     }

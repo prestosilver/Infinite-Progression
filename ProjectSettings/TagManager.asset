@@ -10,6 +10,7 @@ TagManager:
   - AutoController
   - SeedBox
   - Choice
+  - Canvas
   layers:
   - Default
   - TransparentFX

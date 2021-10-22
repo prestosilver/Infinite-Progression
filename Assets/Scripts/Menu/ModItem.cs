@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using PyMods;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class ModItem : MonoBehaviour
 {
@@ -9,11 +10,6 @@ public class ModItem : MonoBehaviour
     /// the prefab that shows the error message
     /// </summary>
     public GameObject aboutPrefab;
-
-    /// <summary>
-    /// the prefab that shows the error message
-    /// </summary>
-    public GameObject confirmPrefab;
 
     /// <summary>
     /// the name of the mod
@@ -77,24 +73,56 @@ public class ModItem : MonoBehaviour
     /// </summary>
     public void Remove()
     {
-        // create confirm dialog
-        GameObject go = Instantiate(confirmPrefab);
 
-        // setup delete action
-        GameObject confirm = GameObject.FindGameObjectsWithTag("ConfirmButton")[0];
-        confirm.GetComponent<Button>().onClick.AddListener(() =>
+        ModalWindowSpawner.instance.Spawn(new ModalWindow
         {
-            string error = mod.Remove();
-            if (error != "")
+            isScroll = false,
+            canClose = true,
+            title = "Are You Sure",
+            content = new string[1] {
+                $"This will remove the mod '{mod.name}'"
+            },
+            buttons = new List<ModalWindowButton>
             {
-                // create the info object
-                Transform t = ModItem.Instantiate(aboutPrefab).transform;
-
-                // setup the info text
-                t.GetChild(0).GetChild(1).GetChild(1).GetComponent<Text>().text = "Error:";
-                t.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>().text = $"The mod {error} requires this mod.";
+                new ModalWindowButton{
+                    onClick = () =>{
+                        string error = mod.Remove();
+                        if (error != "")
+                        {
+                            spawnError(error);
+                        }
+                    },
+                    text = "Confirm",
+                    destroys = true
+                },
+                new ModalWindowButton
+                {
+                    onClick = () => { },
+                    text = "Cancel",
+                    destroys = true
+                }
             }
-            Destroy(go);
+        });
+    }
+
+    public void spawnError(string error)
+    {
+        ModalWindowSpawner.instance.Spawn(new ModalWindow
+        {
+            isScroll = false,
+            canClose = true,
+            title = "There was an error removing the mod",
+            content = new string[1] {
+                error
+            },
+            buttons = new List<ModalWindowButton>
+            {
+                new ModalWindowButton{
+                    onClick = () => {},
+                    text = "OK",
+                    destroys = true
+                }
+            }
         });
     }
 

@@ -17,11 +17,6 @@ public class SaveMenuController : MonoBehaviour
     public GameObject itemPrefab;
 
     /// <summary>
-    /// the save info prefab
-    /// </summary>
-    public GameObject infoPrefab;
-
-    /// <summary>
     /// the create new save prefab
     /// </summary>
     public GameObject newPrefab;
@@ -77,22 +72,36 @@ public class SaveMenuController : MonoBehaviour
     /// <param name="s">the save file</param>
     public void ShowInfo(Save s)
     {
-        // create the info object
-        Transform t = Instantiate(infoPrefab).transform;
-
-        // setup the info text
-        t.GetChild(0).GetChild(1).GetChild(1).GetComponent<Text>().text = "About: " + s.name;
-        t.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>().text = "Mods: ";
+        // setup the mods text
+        string modsText = "Mods: ";
 
         // no mods
-        if (s.mods.Count == 0) t.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>().text += "None";
+        if (s.mods.Count == 0) modsText += "None";
 
         // add mods to list
         foreach (string m in s.mods)
         {
-            if (m != s.mods[0]) t.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>().text += ", ";
-            t.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>().text += m;
+            if (m != s.mods[0]) modsText += ", ";
+            modsText += m;
         }
+
+        ModalWindowSpawner.instance.Spawn(new ModalWindow
+        {
+            isScroll = true,
+            canClose = true,
+            title = "About: " + s.name,
+            content = new string[1] {
+                modsText,
+            },
+            buttons = new List<ModalWindowButton>
+            {
+                new ModalWindowButton{
+                    onClick = ()=>{},
+                    text = "OK",
+                    destroys = true
+                }
+            }
+        });
     }
 
     public void Back()
