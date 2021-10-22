@@ -63,7 +63,64 @@ public class SaveMenuController : MonoBehaviour
     /// </summary>
     public void Create()
     {
-        Instantiate(newPrefab, canvas);
+        string nameText = "";
+        string seedText = "";
+        ModalWindowSpawner.instance.Spawn(new ModalWindow
+        {
+            isScroll = false,
+            canClose = true,
+            title = "Create a save",
+            content = new string[0] {
+            },
+            inputs = new List<ModalWindowInput>
+            {
+                new ModalWindowInput{
+                    onUpdate = (text) => {
+                        nameText = text;
+                    },
+                    hint = "Name",
+                    defaultText = "",
+                },
+                new ModalWindowInput{
+                    onUpdate = (text) => {
+                        seedText = text;
+                    },
+                    hint = "Seed",
+                    defaultText = "",
+                }
+            },
+            buttons = new List<ModalWindowButton>
+            {
+                new ModalWindowButton{
+                    onClick = ()=>{},
+                    text = "Cancel",
+                    destroys = true
+                },
+                new ModalWindowButton{
+                    onClick = ()=>{
+                        // make sure name is not empty
+                        if (nameText == "") return;
+
+                        // init save
+                        Save s = new Save();
+
+                        // set name to user input
+                        s.name = nameText;
+
+                        // setup save name in saves class
+                        Saves.saveName = s.name;
+
+                        // setup mod picker
+                        Mods.save = s;
+
+                        //load mod picker
+                        SceneManager.LoadScene("ModPick");
+                    },
+                    text = "Confirm",
+                    destroys = true
+                }
+            }
+        });
     }
 
     /// <summary>

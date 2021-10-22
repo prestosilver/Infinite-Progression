@@ -50,6 +50,11 @@ public class Mods : MonoBehaviour
     private List<Mod> currentMods;
 
     /// <summary>
+    /// the save file for the picker
+    /// </summary>
+    public static Save save;
+
+    /// <summary>
     /// saetup mod list
     /// </summary>
     void Start()
@@ -193,16 +198,16 @@ public class Mods : MonoBehaviour
         StartCoroutine(Load());
 
         // init mods in save
-        NamePick.modPickSave.mods = new List<string>();
+        save.mods = new List<string>();
 
         // add mods to the save
         foreach (Mod mod in modItems.Keys)
         {
             if (mod.isEnabled)
-                NamePick.modPickSave.mods.Add(mod.name);
+                save.mods.Add(mod.name);
         }
         // create mod save
-        NamePick.modPickSave.Create();
+        save.Create();
 
         // stop run in bg bc done with mods
         Application.runInBackground = false;

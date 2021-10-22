@@ -83,3 +83,4 @@ Assets/Scripts/Mods/Workshop/**
 Assets/Scripts/Menu/DiscordController.cs
 app_build.vdf
 steambuild.sh
+buildoutput/**

@@ -26,6 +26,9 @@ public class ModalWindowManager : MonoBehaviour
     [SerializeField]
     private GameObject ButtonPrefab;
 
+    [SerializeField]
+    private GameObject InputPrefab;
+
     private Transform parentTransform = null;
 
     public void Setup()
@@ -51,6 +54,16 @@ public class ModalWindowManager : MonoBehaviour
                 if (b.destroys) Destroy(gameObject);
             });
             button.GetComponentInChildren<Text>().text = b.text;
+        }
+        foreach (ModalWindowInput i in data.inputs)
+        {
+            GameObject input = Instantiate(InputPrefab, parentTransform);
+            input.GetComponent<InputField>().onValueChanged.AddListener((text) =>
+            {
+                i.onUpdate(text);
+            });
+            input.GetComponent<InputField>().placeholder.GetComponent<Text>().text = i.hint;
+            input.GetComponent<InputField>().text = i.defaultText;
         }
     }
     public IEnumerator UpdateLayout(GameObject go)
