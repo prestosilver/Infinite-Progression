@@ -10,7 +10,7 @@ public class ModalWindowSpawner
 
     private ModalWindowSpawner()
     {
-        prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Menus/ModalWindows/ModalWindow.prefab");
+        prefab = Resources.Load("Prefabs/Menus/ModalWindows/ModalWindow", typeof(GameObject)) as GameObject;
         Debug.Log(prefab.name);
     }
 
