@@ -1,3 +1,11 @@
+<size=30>R-3.0.0b?</size>
++ added steam release
++ added mod maker
++ added a modal window system
+- removed all old popups in favor of modal windows
+* fixed bugs
+- ended android support
+
 <size=30>R-2.1.0b52</size>
 + started switch module type function for mods
 + added debug console
